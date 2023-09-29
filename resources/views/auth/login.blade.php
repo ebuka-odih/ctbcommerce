@@ -33,7 +33,7 @@
                         <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-body-extra-light">
                             <!-- Header -->
                             <div class="mb-2 text-center">
-                                <a class="link-fx fw-bold fs-1" href="{{ env('APP_NAME') }}">
+                                <a class="link-fx fw-bold fs-1" href="{{ route('index') }}">
                                     <img src="{{ asset('img/logo.png') }}" alt="Bootstrap" width="300" height="80">
                                 </a>
                                 <p class="text-uppercase fw-bold fs-sm text-muted mt-4">Sign In</p>
@@ -91,19 +91,7 @@
                             </form>
                             <!-- END Sign In Form -->
                         </div>
-                        <div class="block-content bg-body">
-                            <div class="d-flex justify-content-center text-center push">
-                                <a class="item item-circle item-tiny me-1 bg-default" data-toggle="theme" data-theme="default" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xwork" data-toggle="theme" data-theme="assets/css/themes/xwork.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xmodern" data-toggle="theme" data-theme="assets/css/themes/xmodern.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xeco" data-toggle="theme" data-theme="assets/css/themes/xeco.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xsmooth" data-toggle="theme" data-theme="assets/css/themes/xsmooth.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xinspire" data-toggle="theme" data-theme="assets/css/themes/xinspire.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xdream" data-toggle="theme" data-theme="assets/css/themes/xdream.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny me-1 bg-xpro" data-toggle="theme" data-theme="assets/css/themes/xpro.min.css" href="#"></a>
-                                <a class="item item-circle item-tiny bg-xplay" data-toggle="theme" data-theme="assets/css/themes/xplay.min.css" href="#"></a>
-                            </div>
-                        </div>
+
                     </div>
                     <!-- END Sign In Block -->
                 </div>

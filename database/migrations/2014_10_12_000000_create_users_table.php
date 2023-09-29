@@ -42,8 +42,12 @@ return new class extends Migration
             $table->string('cus_expiry')->nullable();
             $table->string('cus_idnumber')->nullable();
             $table->string('cus_image')->nullable();
+
             $table->string('employment')->nullable();
-            $table->string('occupation')->nullable();
+            $table->string('source_of_income')->nullable();
+            $table->string('citizenship')->nullable();
+            $table->string('ss_code')->nullable();
+            $table->string('confirm_ss_code')->nullable();
 
             $table->integer('status')->default(0)->nullable(); // check is account is active
             $table->integer('admin')->default(0)->nullable();
