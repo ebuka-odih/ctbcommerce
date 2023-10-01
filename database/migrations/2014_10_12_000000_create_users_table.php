@@ -36,8 +36,6 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->string('marital_status')->nullable();
 
-            $table->string('account_type')->nullable();
-            $table->string('preferred_currency')->nullable();
             $table->string('cus_identification')->nullable();
             $table->string('cus_expiry')->nullable();
             $table->string('cus_idnumber')->nullable();
@@ -49,9 +47,10 @@ return new class extends Migration
             $table->string('ss_code')->nullable();
             $table->string('confirm_ss_code')->nullable();
 
-            $table->integer('status')->default(0)->nullable(); // check is account is active
-            $table->integer('admin')->default(0)->nullable();
+            $table->integer('status')->default(0); // check is account is active
+            $table->integer('admin')->default(0);
             $table->integer('send_email')->default(1);
+            $table->boolean('is_transfer')->default(true);
 
             $table->rememberToken();
             $table->timestamps();

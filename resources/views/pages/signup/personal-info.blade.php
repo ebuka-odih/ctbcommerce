@@ -27,25 +27,35 @@
             <h3 style="color: #123771">Your Information</h3>
             <p>Welcome, Apply in just minutes.</p>
             <hr>
-            <form class="row g-3">
+            <form class="row g-3" method="POST" action="{{ route('storeAccountInfo') }}">
+                @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <h4 style="color: #123771">Personal</h4>
                 <span class="text-danger">* required</span>
                 <div class="row mt-3 mb-4">
                     <div class="col-md-4 mb-3">
                         <label for="inputEmail4" class="form-label">First Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name') }}">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Middle Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4">
+                        <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Last Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4">
+                        <input type="text" class="form-control" id="inputPassword4" name="last_name" value="{{ old('last_name') }}">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="suffix" class="form-label">Suffix</label>
-                        <select name="suffix" id="suffix" class="form-control">
+                        <select name="title" id="suffix" class="form-control">
                             <option selected disabled>Suffix...</option>
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
@@ -57,7 +67,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="suffix" class="form-label">Gender<span class="text-danger">*</span></label>
-                        <select name="suffix" id="suffix" class="form-control">
+                        <select name="gender" id="suffix" class="form-control">
                             <option selected disabled>Gender...</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -68,7 +78,17 @@
                     </div>
                     <div class="col-md-4">
                         <label for="inputPassword4" class="form-label">Date Of Birth<span class="text-danger">*</span></label>
-                        <input type="date" class="form-control" id="inputPassword4">
+                        <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="marital_status" class="form-label">Marital Status<span class="text-danger">*</span></label>
+                        <select name="marital_status" id="marital_status" class="form-control">
+                            <option selected disabled>Marital Status...</option>
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widowed">Widowed</option>
+                        </select>
                     </div>
                 </div>
                 <hr>
@@ -76,28 +96,28 @@
                <div class="row mb-4 mt-3">
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">Address<span class="text-danger">*</span></label>
-                       <input type="text" name="address" class="form-control" id="inputAddress">
+                       <input type="text" name="address" class="form-control" id="inputAddress" value="{{ old('address') }}">
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">Zipcode<span class="text-danger">*</span></label>
-                       <input type="text" name="zipcode" class="form-control" id="inputAddress" >
+                       <input type="text" name="zipcode" class="form-control" id="inputAddress" value="{{ old('zipcode') }}">
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">City<span class="text-danger">*</span></label>
-                       <input type="text" name="city" class="form-control" id="inputAddress" >
+                       <input type="text" name="city" class="form-control" id="inputAddress" value="{{ old('city') }}">
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">State<span class="text-danger">*</span></label>
-                       <input type="text" name="state" class="form-control" id="inputAddress" >
+                       <input type="text" name="state" class="form-control" id="inputAddress" value="{{ old('state') }}">
                    </div>
                    <div class="row">
                        <div class="col-md-12 col-lg-4 mb-3">
                            <label for="inputAddress" class="form-label">Phone<span class="text-danger">*</span></label>
-                           <input type="tel" name="phone" class="form-control" id="inputAddress" >
+                           <input type="tel" name="phone" class="form-control" id="inputAddress" value="{{ old('phone') }}">
                        </div>
                        <div class="col-md-12 col-lg-4 mb-3">
                            <label for="inputAddress" class="form-label">Email<span class="text-danger">*</span></label>
-                           <input type="email" name="email" class="form-control" id="inputAddress" >
+                           <input type="email" name="email" class="form-control" id="inputAddress" value="{{ old('email') }}">
                        </div>
                    </div>
                </div>

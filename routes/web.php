@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.index')->name('index');
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');
+Route::post('signup/personal-info', [NewAccountController::class, 'storeAccountInfo'])->name('storeAccountInfo');
+Route::get('account/setup/xd{id}3et64', [NewAccountController::class, 'accountSetup'])->name('accountSetup');
 
 
 Route::get('/dashboard', function () {
