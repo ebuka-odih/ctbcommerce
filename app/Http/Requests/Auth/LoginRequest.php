@@ -37,7 +37,7 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function authenticate(): void
+    public function authenticate(): \Illuminate\Http\RedirectResponse
     {
         $this->ensureIsNotRateLimited();
 
@@ -49,7 +49,24 @@ class LoginRequest extends FormRequest
             ]);
         }
 
+
         RateLimiter::clear($this->throttleKey());
+
+        if ( Auth::user() &&  Auth::user()->admin == 1) {
+            return redirect()->route('admin.dashboard');
+        }else{
+            return redirect()->route('user.dashboard');
+        }
+    }
+
+    protected function authenticated()
+    {
+
+        if ( Auth::user() &&  Auth::user()->admin == 1) {
+            return redirect()->route('admin.dashboard');
+        }
+        return redirect()->route('user.dashboard');
+
     }
 
     /**

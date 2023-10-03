@@ -26,11 +26,11 @@ Route::get('account/review/xd{id}3et64', [NewAccountController::class, 'accountR
 Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDetails'])->name('submitDetails');
 
 Route::get('testing/{id}', [UserController::class, 'testing'])->name('testing');
+Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPending');
 
 
 Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
-    Route::get('pending/', [UserController::class, 'acctPending'])->name('acctPending');
 
 
 });
@@ -46,3 +46,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';

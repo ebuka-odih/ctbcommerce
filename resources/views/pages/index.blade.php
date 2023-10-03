@@ -79,7 +79,7 @@
                 </div>
                 <div class="offcanvas__btn">
                     <div class="header__btn-wrap">
-                        <a class="sub__btn sm" href="login.html">Log In</a>
+                        <a class="sub__btn sm" href="{{ route('login') }}">Log In</a>
                         <a class="bd-gradient-btn" href="contact.html">Get Started</a>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                                                             <li><a href="blog.html">Blog</a></li>
                                                             <li><a href="blog-details.html">Blog Details</a></li>
                                                             <li><a href="error-page.html">Error Page</a></li>
-                                                            <li><a href="login.html">Login</a></li>
+                                                            <li><a href="{{ route('login') }}">Login</a></li>
                                                             <li><a href="register.html">Register</a></li>
                                                             <li><a href="forgot.html">Forgot Password</a></li>
                                                             <li><a href="privacy-policy.html">Privacy & Policy</a></li>
@@ -317,7 +317,7 @@
                     <div class="header__right">
                         <div class="header__action d-flex align-items-center">
                             <div class="header__btn-wrap d-none d-xl-inline-flex">
-                                <a class="sub__btn" href="login.html">Log In</a>
+                                <a class="sub__btn" href="{{ route('login') }}">Log In</a>
                                 <a class="bd-gradient-btn" href="contact.html">Get Started</a>
                             </div>
                             <div class="header__hamburger ml-20 d-xl-none">

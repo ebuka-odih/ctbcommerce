@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function dashboard()
+    {
+        $user = Auth::user();
+        return view('dashboard.index', compact('user'));
+    }
     public function acctPending($id)
     {
         $user = User::findOrFail($id);
