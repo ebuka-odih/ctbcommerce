@@ -16,7 +16,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function autoCreate($user_id){
+    public function autoCreate($user_id, $account_type, $currency){
         $accounts = Account::orderBy('created_at', 'desc')->first();
         if($accounts){
             $last_account_num = $accounts->account_number ;
@@ -26,12 +26,11 @@ class Controller extends BaseController
 
         $account_num = (int)$last_account_num + 1;
 
-        $save = Account::create(['user_id' => $user_id, 'account_number' => $account_num]);
-        $user = User::findOrFail($user_id);
-        $data = ['user' => $user, 'account' => $save];
-        $admin = User::where('admin', 1)->first();
+        Account::create(['user_id' => $user_id, 'account_number' => $account_num,
+            'account_type' => $account_type, 'currency' => $currency]);
 
-        Mail::to($user->email)->send( new NewAccount($data));
-        Mail::to($admin->email)->send( new AdminNewAcctAlert($data));
+
+//        Mail::to($user->email)->send( new NewAccount($data));
+//        Mail::to($admin->email)->send( new AdminNewAcctAlert($data));
     }
 }

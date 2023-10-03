@@ -43,15 +43,15 @@
                 <div class="row mt-3 mb-4">
                     <div class="col-md-4 mb-3">
                         <label for="inputEmail4" class="form-label">First Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name') }}">
+                        <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Middle Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}">
+                        <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Last Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4" name="last_name" value="{{ old('last_name') }}">
+                        <input type="text" class="form-control" id="inputPassword4" name="last_name" value="{{ old('last_name') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="suffix" class="form-label">Suffix</label>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="inputPassword4" class="form-label">Date Of Birth<span class="text-danger">*</span></label>
-                        <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                        <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="marital_status" class="form-label">Marital Status<span class="text-danger">*</span></label>
@@ -96,28 +96,28 @@
                <div class="row mb-4 mt-3">
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">Address<span class="text-danger">*</span></label>
-                       <input type="text" name="address" class="form-control" id="inputAddress" value="{{ old('address') }}">
+                       <input type="text" name="address" class="form-control" id="inputAddress" value="{{ old('address') }}" required>
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">Zipcode<span class="text-danger">*</span></label>
-                       <input type="text" name="zipcode" class="form-control" id="inputAddress" value="{{ old('zipcode') }}">
+                       <input type="text" name="zipcode" class="form-control" id="inputAddress" value="{{ old('zipcode') }}" required>
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">City<span class="text-danger">*</span></label>
-                       <input type="text" name="city" class="form-control" id="inputAddress" value="{{ old('city') }}">
+                       <input type="text" name="city" class="form-control" id="inputAddress" value="{{ old('city') }}" required>
                    </div>
                    <div class="col-md-12 col-lg-4 mb-3">
                        <label for="inputAddress" class="form-label">State<span class="text-danger">*</span></label>
-                       <input type="text" name="state" class="form-control" id="inputAddress" value="{{ old('state') }}">
+                       <input type="text" name="state" class="form-control" id="inputAddress" value="{{ old('state') }}" required>
                    </div>
                    <div class="row">
                        <div class="col-md-12 col-lg-4 mb-3">
                            <label for="inputAddress" class="form-label">Phone<span class="text-danger">*</span></label>
-                           <input type="tel" name="phone" class="form-control" id="inputAddress" value="{{ old('phone') }}">
+                           <input type="tel" name="phone" class="form-control" id="inputAddress" value="{{ old('phone') }}" required>
                        </div>
                        <div class="col-md-12 col-lg-4 mb-3">
                            <label for="inputAddress" class="form-label">Email<span class="text-danger">*</span></label>
-                           <input type="email" name="email" class="form-control" id="inputAddress" value="{{ old('email') }}">
+                           <input type="email" name="email" class="form-control" id="inputAddress" value="{{ old('email') }}" required>
                        </div>
                    </div>
                </div>
@@ -143,11 +143,11 @@
                     <div id="yesFields" style="display: none;" >
                         <div class="col-md-12 col-lg-4 mb-3" >
                             <label for="inputAddress" class="form-label">Social Security number<span class="text-danger">*</span></label>
-                            <input type="password" name="ss_code" class="form-control" id="beneficiaryField1" >
+                            <input type="password" name="ss_code" class="form-control" id="beneficiaryField1" required >
                         </div>
                         <div class="col-md-12 col-lg-4 mb-3" >
                             <label for="inputAddress" class="form-label">Confirm Social Security number<span class="text-danger">*</span></label>
-                            <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" >
+                            <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" required>
                         </div>
                     </div>
 
@@ -435,7 +435,7 @@
                 <div class="row mt-3">
                     <div class="col-4 mb-3">
                         <label for="username" class="form-label">Username<span class="text-danger">*</span></label>
-                        <input type="text" name="username" class="form-control" id="username" autocomplete="off">
+                        <input type="text" name="username" class="form-control" id="username" autocomplete="off" required>
                     </div>
                     <div class="col-4 mb-3">
                         <label for="inputAddress" class="form-label">Password<span class="text-danger">*</span></label>
@@ -448,7 +448,7 @@
                 </div>
 
                 <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Continue</button>
                 </div>
             </form>
             <hr>

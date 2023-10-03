@@ -36,10 +36,11 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->string('marital_status')->nullable();
 
-            $table->string('cus_identification')->nullable();
-            $table->string('cus_expiry')->nullable();
-            $table->string('cus_idnumber')->nullable();
-            $table->string('cus_image')->nullable();
+            $table->string('identification_type')->nullable();
+            $table->string('id_expiry')->nullable();
+            $table->string('id_number')->nullable();
+            $table->string('id_front_img')->nullable();
+            $table->string('id_back_img')->nullable();
 
             $table->string('employment')->nullable();
             $table->string('source_of_income')->nullable();

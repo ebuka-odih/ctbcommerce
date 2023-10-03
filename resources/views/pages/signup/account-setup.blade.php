@@ -26,7 +26,7 @@
         <div style="background-color: #f2f2f2" class="card-body">
             <h3 style="color: #123771">Account Setup</h3>
             <hr>
-            <form class="row g-3" method="POST" action="{{ route('storeAccountInfo') }}">
+            <form class="row g-3" method="POST" action="{{ route('storeAccountSetup') }}" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -37,12 +37,14 @@
                         </ul>
                     </div>
                 @endif
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+
                 <h4 style="color: #123771">Identification</h4>
                 <span class="text-danger">* required</span>
                 <div class="row mt-3 mb-4">
                     <div class="col-md-4 mb-3">
-                        <label for="inputEmail4" class="form-label">Identification Type<span class="text-danger">*</span></label>
-                        <select name="cus_identification" class="form-control" id="cus_identification">
+                        <label for="cus_identification" class="form-label">Identification Type<span class="text-danger">*</span></label>
+                        <select name="identification_type" class="form-control" id="cus_identification">
                             <option selected disabled>Identification...</option>
                             <option value="passport">Passport</option>
                             <option value="driver_license">Driver's License</option>
@@ -56,50 +58,59 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">ID Number<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4" name="cus_idnumber" value="{{ old('cus_idnumber') }}">
+                        <input type="text" class="form-control" id="inputPassword4" name="id_number" value="{{ old('id_number') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">ID Expiry Date<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="inputPassword4" name="cus_expiry" value="{{ old('cus_expiry') }}">
+                        <input type="date" class="form-control" id="inputPassword4" name="id_expiry" value="{{ old('id_expiry') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="suffix" class="form-label">Suffix</label>
-                        <select name="title" id="suffix" class="form-control">
-                            <option selected disabled>Suffix...</option>
-                            <option value="Mr.">Mr.</option>
-                            <option value="Mrs.">Mrs.</option>
-                            <option value="Ms.">Ms.</option>
-                            <option value="Miss">Miss</option>
-                            <option value="Dr.">Dr.</option>
-                            <option value="Prof.">Prof.</option>
-                        </select>
+                        <label for="inputPassword4" class="form-label">ID Image Front<span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" id="inputPassword4" name="id_front_img"  required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="suffix" class="form-label">Gender<span class="text-danger">*</span></label>
-                        <select name="gender" id="suffix" class="form-control">
-                            <option selected disabled>Gender...</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="non-binary">Non-binary</option>
-                            <option value="transgender">Transgender</option>
-                            <option value="other">Other</option>
+                        <label for="inputPassword4" class="form-label">ID Image Back<span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" id="inputPassword4" name="id_back_img"  required>
+                    </div>
+
+                </div>
+                <hr>
+                <h4 style="color: #123771">Account Info</h4>
+                <div class="row mb-4 mt-3">
+                    <div class="col-md-12 col-lg-4 mb-3">
+                        <label for="inputAddress" class="form-label">Account Type<span class="text-danger">*</span></label>
+                        <select id="inputAddress" name="account_type" class="form-control">
+                            <option selected disabled>Choose Account Type...</option>
+                            <option value="savings">Savings Account</option>
+                            <option value="checking">Checking Account</option>
+                            <option value="business">Business Account</option>
+                            <option value="joint">Joint Account</option>
+                            <option value="fixed_deposit">Fixed Deposit Account</option>
+                            <option value="current">Current Account</option>
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Date Of Birth<span class="text-danger">*</span></label>
-                        <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth') }}">
+                    <div class="col-md-12 col-lg-4 mb-3">
+                        <label for="inputAddress" class="form-label">Preferred Currency<span class="text-danger">*</span></label>
+                        <select id="inputAddress" name="currency" class="form-control">
+                            <option selected disabled>Choose Currency...</option>
+                            <option value="USD">USD</option>
+                            <option value="EURO">EURO</option>
+                            <option value="GBP">GBP</option>
+                        </select>
                     </div>
+                    <div class="col-md-12 col-lg-4 mb-3">
+                        <label for="inputAddress" class="form-label">Profit Picture<span class="text-danger">*</span></label>
+                        <input type="file" name="avatar" class="form-control" id="inputAddress"  required>
+                    </div>
+
                 </div>
 
 
                 <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Continue</button>
                 </div>
             </form>
-            <hr>
-            <span class="navbar-text mt-3">
-               Have an account?<a href="{{ route('login') }}" target="_blank" class="btn btn-link text-primary">Login</a>
-          </span>
+
         </div>
     </div>
 
