@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NewAccountController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,17 @@ Route::get('account/setup/xd{id}3et64', [NewAccountController::class, 'accountSe
 Route::post('account/setup/', [NewAccountController::class, 'storeAccountSetup'])->name('storeAccountSetup');
 Route::get('account/terms-and-conditions/xd{id}3et64', [NewAccountController::class, 'terms'])->name('terms');
 Route::get('account/review/xd{id}3et64', [NewAccountController::class, 'accountReview'])->name('accountReview');
+Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDetails'])->name('submitDetails');
 
+Route::get('testing/{id}', [UserController::class, 'testing'])->name('testing');
+
+
+Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('pending/', [UserController::class, 'acctPending'])->name('acctPending');
+
+
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,11 +43,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
-
 });
 
 require __DIR__.'/auth.php';

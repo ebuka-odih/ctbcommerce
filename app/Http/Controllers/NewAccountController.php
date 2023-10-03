@@ -41,6 +41,14 @@ class NewAccountController extends Controller
         $user = User::findOrFail($id);
         return view('pages.signup.review', compact('user'));
     }
+    public function submitDetails($id)
+    {
+        $user = User::findOrFail($id);
+        $admin = User::where('admin', 1)->first();
+        Mail::to($user->email)->send( new NewAccount($user));
+        Mail::to($admin->email)->send( new AdminNewAcctAlert($user));
+        return redirect()->route('user.acctPending');
+    }
 
     public function storeAccountSetup(Request $request)
     {

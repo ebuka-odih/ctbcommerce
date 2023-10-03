@@ -36,7 +36,7 @@
             <h3 style="color: #123771">Account Revision</h3>
             <hr>
 
-            <form class="row g-3" method="GET" action="{{ route('accountReview', $user->id) }}" enctype="multipart/form-data">
+            <form class="row g-3" method="GET" action="{{ route('submitDetails', $user->id) }}" enctype="multipart/form-data">
                 @csrf
 
                <div>
@@ -75,6 +75,10 @@
                                <th>Marital Status:</th>
                                <td>{{ $user->marital_status }}</td>
                            </tr>
+                           <tr>
+                               <th>Profile Picture:</th>
+                               <td><img height="100" width="100" src="{{ asset('files/'.$user->avatar) }}" alt=""></td>
+                           </tr>
 
                        </table>
                        <h5 style="color: #123771">Contact Info</h5>
@@ -109,32 +113,81 @@
                        <table class="table table-striped">
 
                            <tr>
-                               <th>US Citizen:</th>
+                               <th>Are you a US Citizen:</th>
                                <td>{{ $user->citizenship }}</td>
                            </tr>
+                           @if($user->citizenship == "No")
                            <tr>
                                <th>Country:</th>
                                <td>{{ $user->country }}</td>
                            </tr>
+                           @else
+                               <tr>
+                                   <th>Social Security Number:</th>
+                                   <td>******</td>
+                               </tr>
+                           @endif
 
+                       </table>
+
+                       <h5 style="color: #123771">Employment & finances</h5>
+                       <table class="table table-striped">
+                           <tr>
+                               <th>Employment Status:</th>
+                               <td>{{ $user->employment }}</td>
+                           </tr>
+                           <tr>
+                               <th>Source Of Income:</th>
+                               <td>{{ $user->source_of_income }}</td>
+                           </tr>
+                       </table>
+                       <h5 style="color: #123771">Auth Info</h5>
+                       <table class="table table-striped">
+                           <tr>
+                               <th>Username:</th>
+                               <td>{{ $user->username }}</td>
+                           </tr>
+                       </table>
+                       <h5 style="color: #123771">Identification</h5>
+                       <table class="table table-striped">
+                           <tr>
+                               <th>Identification Type:</th>
+                               <td>{{ $user->identification_type }}</td>
+                           </tr>
+                           <tr>
+                               <th>ID Number:</th>
+                               <td>{{ $user->id_number }}</td>
+                           </tr>
+                           <tr>
+                               <th>ID Expiry Date:</th>
+                               <td>{{ $user->id_expiry }}</td>
+                           </tr>
+                           <tr>
+                               <th>ID Image Front:</th>
+                               <td><img width="200" height="150" src="{{ asset('files/'.$user->id_front_img) }}" alt=""></td>
+                           </tr>
+                           <tr>
+                               <th>ID Image Back:</th>
+                               <td><img width="200" height="150" src="{{ asset('files/'.$user->id_back_img) }}" alt=""></td>
+                           </tr>
+                       </table>
+
+                       <h5 style="color: #123771">Account Setup</h5>
+                       <table class="table table-striped">
+                           <tr>
+                               <th>Account Type:</th>
+                               <td>{{ $user->account->account_type }}</td>
+                           </tr>
+                           <tr>
+                               <th>Currency Type:</th>
+                               <td>{{ $user->account->currency }}</td>
+                           </tr>
                        </table>
                    </div>
                </div>
 
-
-                <div class="mb-4">
-                    <div class="space-x-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="example-checkbox-inline1" name="example-checkbox-inline1" required>
-                            <label class="form-check-label" for="example-checkbox-inline1"> I Agree to the terms & conditions</label>
-                        </div>
-
-                    </div>
-                </div>
-
-
                 <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary">Continue</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
 

@@ -18,9 +18,10 @@ class NewAccount extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $user;
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -31,7 +32,7 @@ class NewAccount extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'New Account',
+            subject: env('APP_NAME'),
         );
     }
 
@@ -43,7 +44,7 @@ class NewAccount extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'emails.new-account',
+            view: 'emails.new-account',
         );
     }
 
