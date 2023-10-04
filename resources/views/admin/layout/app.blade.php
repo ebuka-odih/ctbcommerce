@@ -27,6 +27,11 @@
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
     <!-- END Stylesheets -->
+    <style>
+        #sidebar {
+            background-color: #0c0b0b;
+        }
+    </style>
 </head>
 <body>
 <!-- Page Container -->
@@ -482,7 +487,7 @@
 
     <!-- Sidebar -->
 
-    <nav id="sidebar" aria-label="Main Navigation">
+    <nav  id="sidebar" aria-label="Main Navigation">
         <!-- Side Header -->
         <div class="bg-header-dark">
             <div class="content-header bg-white-5">
@@ -527,7 +532,7 @@
         <!-- END Side Header -->
 
         <!-- Sidebar Scrolling -->
-        <div class="js-sidebar-scroll">
+        <div  class="js-sidebar-scroll">
             <!-- Side Navigation -->
             <div class="content-side">
                 <ul class="nav-main">

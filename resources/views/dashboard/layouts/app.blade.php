@@ -35,6 +35,11 @@
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/xwork.min.css"> -->
     <link rel="stylesheet" id="css-theme" href="{{ asset('assets/css/themes/xdream.min.css') }}">
     <!-- END Stylesheets -->
+    <style>
+        span{
+            color: #8d8d90
+        }
+    </style>
 </head>
 <body>
 <!-- Page Container -->
@@ -43,7 +48,7 @@
 
     <!-- Sidebar -->
 
-    <nav id="sidebar" aria-label="Main Navigation">
+    <nav style="background-color: #0a0c15;" id="sidebar" aria-label="Main Navigation">
         <!-- Side Header (mini Sidebar mode) -->
         <div class="smini-visible-block">
             <div class="content-header bg-header-dark">
@@ -83,45 +88,73 @@
         <!-- Sidebar Scrolling -->
         <div class="js-sidebar-scroll">
             <!-- Side Actions -->
-            <div class="content-side content-side-full text-center bg-body-light">
+            <div style="background-color: #272626;" class="content-side content-side-full text-center ">
                 <div class="smini-hide">
-                    <img class="img-avatar" src="assets/media/avatars/avatar10.jpg" alt="">
-                    <div class="mt-3 fw-semibold">Henry Harrison</div>
-                    <a class="link-fx text-muted" href="javascript:void(0)">$ 49.680,00</a>
+                    <img class="img-avatar" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="">
+                    <div class="mt-3 fw-semibold text-white">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</div>
+                    <a class="link-fx text-muted" href="javascript:void(0)">@money(optional(auth()->user())->account->balance)</a>
                 </div>
             </div>
             <!-- END Side Actions -->
 
             <!-- Side Navigation -->
-            <div class="content-side">
+            <div class="content-side" style="color: #8492b1">
                 <ul class="nav-main">
                     <li class="nav-main-item">
                         <a class="nav-main-link active" href="{{ route('user.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-rocket"></i>
-                            <span class="nav-main-link-name">Overview</span>
+                            <span class="nav-main-link-name text-black">Overview</span>
                         </a>
                     </li>
                     <li class="nav-main-heading">Manage</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <a class="nav-main-link "  href="#">
                             <i class="nav-main-link-icon fa fa-piggy-bank"></i>
                             <span class="nav-main-link-name">Accounts</span>
                         </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill"></i>
+                            <span class="nav-main-link-name">Transfer</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-arrow-down"></i>
+                            <span class="nav-main-link-name"> Deposits</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-money-check-alt"></i>
+                            <span class="nav-main-link-name">Deposits Methods</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="#">
+                            <i class="nav-main-link-icon fa fa-file-alt"></i>
+                            <span class="nav-main-link-name">Transactions</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                            <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
+                            <span class="nav-main-link-name">Loan</span>
+                        </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Active</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Manage</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
+                                <a class="nav-main-link" href="#">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
-                                    <span class="nav-main-link-name">New Account</span>
+                                    <span class="nav-main-link-name">New Loan</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="#">
+                                    <span class="nav-main-link-name">Loans</span>
+                                    {{--                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>--}}
                                 </a>
                             </li>
                         </ul>
@@ -133,96 +166,22 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Approved</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
+                                <a class="nav-main-link" href="#">
+                                    <span class="nav-main-link-name">All Card</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Pending</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-warning">1</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Manage</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
+                                <a class="nav-main-link" href="#">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
                                     <span class="nav-main-link-name">New Card</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                            <i class="nav-main-link-icon fa fa-money-bill"></i>
-                            <span class="nav-main-link-name">Payments</span>
-                        </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Scheduled</span>
-                                    <span class="nav-main-link-badge badge rounded-pill bg-success">2</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Recurring</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Manage</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <i class="nav-main-link-icon fa fa-plus-circle"></i>
-                                    <span class="nav-main-link-name">New Payment</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                            <i class="nav-main-link-icon fa fa-money-bill-wave-alt"></i>
-                            <span class="nav-main-link-name">Services</span>
-                        </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Transfers</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Loans</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Credit</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Bonds</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="">
-                                    <span class="nav-main-link-name">Stocks</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li class="nav-main-heading">Personal</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
+                        <a class="nav-main-link" href="#">
                             <i class="nav-main-link-icon fa fa-user-circle"></i>
                             <span class="nav-main-link-name">Profile</span>
                         </a>
@@ -244,7 +203,12 @@
                         <a class="nav-main-link" href="">
                             <i class="nav-main-link-icon fa fa-lock"></i>
                             <span class="nav-main-link-name">Security</span>
-                            <span class="nav-main-link-badge badge rounded-pill bg-danger">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="#">
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Support</span>
                         </a>
                     </li>
                     <li class="nav-main-heading">Dashboards</li>
@@ -263,7 +227,7 @@
     <!-- END Sidebar -->
 
     <!-- Header -->
-    <header id="page-header">
+    <header id="page-header" style="background-color: #000000;">
         <!-- Header Content -->
         <div class="content-header">
             <!-- Left Section -->
