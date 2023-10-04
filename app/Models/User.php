@@ -31,5 +31,14 @@ class User extends Authenticatable
         return $this->first_name.' '.$this->middle_name.' '.$this->last_name;
     }
 
+    public function status()
+    {
+        if ($this->status == 1){
+            return "<span class='badge bg-success'>Active</span>";
+        }else{
+            return "<span class='badge bg-danger'>InActive</span>";
+        }
+    }
+
 
 }

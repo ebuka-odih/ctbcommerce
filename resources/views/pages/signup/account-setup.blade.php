@@ -81,21 +81,21 @@
                         <label for="inputAddress" class="form-label">Account Type<span class="text-danger">*</span></label>
                         <select id="inputAddress" name="account_type" class="form-control">
                             <option selected disabled>Choose Account Type...</option>
-                            <option value="savings">Savings Account</option>
-                            <option value="checking">Checking Account</option>
-                            <option value="business">Business Account</option>
-                            <option value="joint">Joint Account</option>
-                            <option value="fixed_deposit">Fixed Deposit Account</option>
-                            <option value="current">Current Account</option>
+                            <option value="Savings Account">Savings Account</option>
+                            <option value="Checking Account">Checking Account</option>
+                            <option value="Business Account">Business Account</option>
+                            <option value="Joint Account">Joint Account</option>
+                            <option value="Fixed Deposit Account">Fixed Deposit Account</option>
+                            <option value="Current Account">Current Account</option>
                         </select>
                     </div>
                     <div class="col-md-12 col-lg-4 mb-3">
                         <label for="inputAddress" class="form-label">Preferred Currency<span class="text-danger">*</span></label>
                         <select id="inputAddress" name="currency" class="form-control">
                             <option selected disabled>Choose Currency...</option>
-                            <option value="USD">USD</option>
-                            <option value="EURO">EURO</option>
-                            <option value="GBP">GBP</option>
+                            <option value="$">USD</option>
+                            <option value="€">EURO</option>
+                            <option value="£">GBP</option>
                         </select>
                     </div>
                     <div class="col-md-12 col-lg-4 mb-3">

@@ -129,7 +129,7 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="#">
                             <i class="nav-main-link-icon fa fa-money-check-alt"></i>
-                            <span class="nav-main-link-name">Deposits Methods</span>
+                            <span class="nav-main-link-name">Funding Methods</span>
                         </a>
                     </li>
                     <li class="nav-main-item">

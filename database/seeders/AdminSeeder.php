@@ -25,7 +25,8 @@ class AdminSeeder extends Seeder
         }
 
         $account_num = (int)$last_account_num + 1;
-        $save = Account::create(['user_id' => $user_id, 'account_number' => $account_num, 'balance' => 1000000]);
+        $save = Account::create(['user_id' => $user_id, 'account_number' => $account_num, 'balance' => 1000000,
+            'account_type' => 'Current Account', 'currency' => '$']);
         $user = User::findOrFail($user_id);
     }
 
