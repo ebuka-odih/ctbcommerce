@@ -22,11 +22,11 @@ class InternalTransferController extends Controller
         if ($user_acct)
         {
             if ($account_number != auth()->user()->account->account_number){
-            $transfer = new Transfer();
-            $transfer->amount = $request->amount;
-            $transfer->acct_number = $request->acct_number;
-            $transfer->save();
-            return view('dashboard.transfer.confirm-internal-transfer', compact('user_acct', 'transfer'));
+                $transfer = new Transfer();
+                $transfer->amount = $request->amount;
+                $transfer->acct_number = $request->acct_number;
+                $transfer->save();
+                return view('dashboard.transfer.confirm-internal-transfer', compact('user_acct', 'transfer'));
             }
             else{
                 return redirect()->back()->with('error', 'Illicit Transaction');
@@ -35,6 +35,8 @@ class InternalTransferController extends Controller
         return redirect()->back()->with('error', "Sorry! No Such Account Number");
 
     }
+
+
 
     public function storeInternalTransfer(Request $request)
     {

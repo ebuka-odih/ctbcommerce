@@ -1,6 +1,37 @@
 
 @extends('dashboard.layouts.app')
 @section('content')
+    <style>
+        /* Style for the loading container */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's above other elements */
+        }
+
+        /* Style for the loading spinner */
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+    <div class="loading-container">
+        <div class="loading-spinner">
+            <strong>Loading...</strong>
+            <div class="spinner-border" role="status" aria-hidden="true"></div>
+        </div>
+    </div>
+
+
 
 
     <main id="main-container">
@@ -25,6 +56,7 @@
                     <h3 class="block-title">Confirm Transfer Details</h3>
                 </div>
                 <div class="block-content">
+
 
                     <div class="row">
 
@@ -75,4 +107,11 @@
         <!-- END Page Content -->
     </main>
 
+    <script>
+        // Simulate a delay (e.g., 3 seconds) for demonstration purposes
+        setTimeout(function() {
+            // Remove the loading container when the page is loaded
+            document.querySelector('.loading-container').style.display = 'none';
+        }, 3000); // Adjust the delay time as needed
+    </script>
 @endsection
