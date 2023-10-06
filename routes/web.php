@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\InternalTransferController;
 use App\Http\Controllers\NewAccountController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransferController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,11 @@ Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPe
 
 Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
+    Route::get('internal/transfer', [InternalTransferController::class, 'internalTransfer'])->name('internalTransfer');
+    Route::post('internal/transfer', [InternalTransferController::class, 'storeInternalTransfer'])->name('storeInternalTransfer');
+    Route::get('confirm/internal/transfer', [InternalTransferController::class, 'confirmDetail'])->name('confirmDetail');
 
 
 });
