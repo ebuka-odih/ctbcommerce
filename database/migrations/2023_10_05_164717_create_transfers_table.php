@@ -20,22 +20,17 @@ return new class extends Migration
             $table->bigInteger('account_id')->nullable();
             $table->string('from')->nullable();
             $table->decimal('amount', 11, 2)->default(0);
-            $table->string('acct_number')->nullable();
-            $table->string('recipient_name')->nullable();
-            $table->string('account_type')->nullable();
-            $table->string('bank_name')->nullable();
-            $table->string('note')->nullable();
 
             //benefactor
+            $table->string('ben_bank')->nullable();
+            $table->string('acct_number')->nullable();
             $table->string('ben_name')->nullable();
             $table->string('ben_country')->nullable();
-            $table->string('ben_city')->nullable();
             $table->string('ben_address')->nullable();
-            $table->string('country')->nullable();
+            $table->string('routing_number')->nullable();
+            $table->string('note')->nullable();
 
             $table->integer('status')->default(0)->nullable();
-            $table->string('trans_type')->nullable();
-            $table->string('swift_code')->nullable();
 
             // Transfer Code
             $table->string('first_code')->nullable();

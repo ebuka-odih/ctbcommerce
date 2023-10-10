@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="rep_name" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_name" placeholder="">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Country<span class="text-danger">*</span></label>
@@ -338,11 +338,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Address<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_city" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_address" placeholder="">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Routing Number<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="swift_code" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="routing_number" placeholder="">
                                 </div>
 
                                 <div class="col-lg-6">
