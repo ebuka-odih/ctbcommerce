@@ -537,16 +537,15 @@
             <div class="content-side">
                 <ul class="nav-main">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="be_pages_dashboard.html">
+                        <a class="nav-main-link active" href="{{ route('admin.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-location-arrow"></i>
                             <span class="nav-main-link-name">Dashboard</span>
-                            <span class="nav-main-link-badge badge rounded-pill bg-primary">8</span>
                         </a>
                     </li>
                     <li class="nav-main-heading">Transactions</li>
 
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
+                        <a class="nav-main-link" href="{{ route('admin.internalTransfer') }}">
                             <i class="nav-main-link-icon fa fa-money-check"></i>
                             <span class="nav-main-link-name">Internal Transfers</span>
                         </a>

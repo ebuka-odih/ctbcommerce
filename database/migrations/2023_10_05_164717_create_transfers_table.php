@@ -45,9 +45,6 @@ return new class extends Migration
             $table->string('third_code')->nullable();
             $table->string('admin_third_code')->nullable();
 
-
-            $table->integer('internal_transfer')->default(0)->nullable();
-            $table->integer('other_bank_transfer')->default(0)->nullable();
             $table->integer('wire_transfer')->default(0)->nullable();
             $table->boolean('credit_inflow')->default(false);
             $table->boolean('debit_inflow')->default(false);

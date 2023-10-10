@@ -50,8 +50,8 @@ return new class extends Migration
 
             $table->integer('status')->default(0); // check is account is active
             $table->integer('admin')->default(0);
-            $table->integer('send_email')->default(1);
-            $table->boolean('is_transfer')->default(true);
+            $table->boolean('send_email')->default(true);
+            $table->boolean('bypass_code')->default(true);
 
             $table->rememberToken();
             $table->timestamps();

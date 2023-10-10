@@ -73,11 +73,18 @@
                                         </ul>
                                     </div>
                                 @endif
+                                <input type="hidden" name="transfer_id" value="{{ $transfer->id }}" >
+
                                 <div class="col-lg-12">
                                     <input type="hidden" name="transfer_id" value="{{ $transfer->id }}" >
                                     <div class="col-lg-6 offset-lg-2 mb-3">
                                         <label for="example-ltf-text">NSB Code</label>
                                         <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="119900">
+                                    </div>
+                                    <div class="col-lg-6 offset-lg-2 mb-3">
+                                        <p></p>
+                                        <p>Please contact customer care if you don't have your NSB Code
+                                            <a href="mailto:{{ env('MAIL_FROM_ADDRESS') }}">{{ env('MAIL_FROM_ADDRESS') }}</a></p>
                                     </div>
                                     <div class="col-lg-4 offset-lg-2">
                                         <button class="btn btn-dark" type="submit">Send</button>
