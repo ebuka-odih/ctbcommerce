@@ -53,7 +53,7 @@
             <!-- Layouts -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Confirm Transfer Details</h3>
+                    <h3 class="block-title text-center">Authorization Code</h3>
                 </div>
                 <div class="block-content">
 
@@ -74,31 +74,12 @@
                                     </div>
                                 @endif
                                 <div class="col-lg-12">
-                                    <table class="table table-striped" >
-                                        <tr>
-                                            <th>Account Name:</th>
-                                            <td>{{ optional($user_acct->user)->fullname() }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Account Number:</th>
-                                            <td>{{ $user_acct->account_number }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Account Email:</th>
-                                            <td>{{ optional($user_acct->user)->email }}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Amount:</th>
-                                            <td> {{ $user_acct->currency }}@money($transfer->amount)</td>
-                                        </tr>
-                                    </table>
                                     <input type="hidden" name="transfer_id" value="{{ $transfer->id }}" >
-                                    <input type="hidden" name="receiver_id" value="{{ $user_acct->id }}" >
-                                    <div class="col-lg-6 mb-3">
-                                        <label for="example-ltf-text">Note (Optional)</label>
-                                        <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" >
+                                    <div class="col-lg-6 offset-lg-2 mb-3">
+                                        <label for="example-ltf-text">NSB Code</label>
+                                        <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="119900">
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4 offset-lg-2">
                                         <button class="btn btn-dark" type="submit">Send</button>
                                     </div>
                                 </div>

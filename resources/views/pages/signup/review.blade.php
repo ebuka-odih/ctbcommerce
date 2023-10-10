@@ -14,8 +14,39 @@
             margin-left: 10px;
         }
     </style>
+    <style>
+        /* Style for the loading container */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's above other elements */
+        }
+
+        /* Style for the loading spinner */
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
+
+
+<div class="loading-container">
+    <div class="loading-spinner">
+        <strong>Loading...</strong>
+        <div class="spinner-border" role="status" aria-hidden="true"></div>
+    </div>
+</div>
+
 <nav class="navbar bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}">
@@ -198,7 +229,13 @@
 
 
 
-
+<script>
+    // Simulate a delay (e.g., 3 seconds) for demonstration purposes
+    setTimeout(function() {
+        // Remove the loading container when the page is loaded
+        document.querySelector('.loading-container').style.display = 'none';
+    }, 3000); // Adjust the delay time as needed
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

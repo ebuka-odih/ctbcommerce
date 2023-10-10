@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ env('APP_NAME') }} | Open Account</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        /* Style for the loading container */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it's above other elements */
+        }
+
+        /* Style for the loading spinner */
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+
+
 </head>
 <body>
+
+<div class="loading-container">
+    <div class="loading-spinner">
+        <strong>Loading...</strong>
+        <div class="spinner-border" role="status" aria-hidden="true"></div>
+    </div>
+</div>
+
 <nav class="navbar bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}">
@@ -117,28 +150,11 @@
 </div>
 
 <script>
-    const yesRadio = document.getElementById("yes");
-    const noRadio = document.getElementById("no");
-    const yesFields = document.getElementById("yesFields");
-    const noField = document.getElementById("noField");
-
-    // Function to show/hide fields based on radio selection
-    function toggleFields() {
-        if (yesRadio.checked) {
-            yesFields.style.display = "block";
-            noField.style.display = "none";
-        } else if (noRadio.checked) {
-            yesFields.style.display = "none";
-            noField.style.display = "block";
-        }
-    }
-
-    // Initial call to set the initial state
-    toggleFields();
-
-    // Attach an event listener to the radio inputs
-    yesRadio.addEventListener("change", toggleFields);
-    noRadio.addEventListener("change", toggleFields);
+    // Simulate a delay (e.g., 3 seconds) for demonstration purposes
+    setTimeout(function() {
+        // Remove the loading container when the page is loaded
+        document.querySelector('.loading-container').style.display = 'none';
+    }, 3000); // Adjust the delay time as needed
 </script>
 
 

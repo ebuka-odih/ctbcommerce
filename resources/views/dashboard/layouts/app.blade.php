@@ -99,12 +99,14 @@
             <!-- Side Navigation -->
             <div class="content-side" style="color: #8492b1">
                 <ul class="nav-main">
+                    @if(auth()->user()->admin = 1)
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="{{ route('user.dashboard') }}">
-                            <i class="nav-main-link-icon fa fa-rocket"></i>
-                            <span class="nav-main-link-name text-black">Overview</span>
+                        <a class="nav-main-link active" href="{{ route('admin.dashboard') }}">
+                            <i class="nav-main-link-icon fa fa-users"></i>
+                            <span class="nav-main-link-name text-black">Goto Admin</span>
                         </a>
                     </li>
+                    @endif
                     <li class="nav-main-heading">Manage</li>
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="#">

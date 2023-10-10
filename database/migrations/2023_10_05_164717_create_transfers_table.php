@@ -21,38 +21,33 @@ return new class extends Migration
             $table->string('from')->nullable();
             $table->decimal('amount', 11, 2)->default(0);
             $table->string('acct_number')->nullable();
-            $table->string('rep_name')->nullable();
+            $table->string('recipient_name')->nullable();
             $table->string('account_type')->nullable();
             $table->string('bank_name')->nullable();
             $table->string('note')->nullable();
 
+            //benefactor
             $table->string('ben_name')->nullable();
             $table->string('ben_country')->nullable();
             $table->string('ben_city')->nullable();
             $table->string('ben_address')->nullable();
             $table->string('country')->nullable();
 
-            $table->boolean('is_admin')->default(false)->nullable();
-            $table->boolean('is_code')->default(false)->nullable();
             $table->integer('status')->default(0)->nullable();
-            $table->integer('credit')->nullable()->default(0);
-            $table->integer('debit')->nullable()->default(0);
             $table->string('trans_type')->nullable();
-
             $table->string('swift_code')->nullable();
 
-            $table->string('trn')->nullable();
-            $table->string('admin_trn')->nullable();
-            $table->string('atc_code')->nullable();
-            $table->string('admin_atc_code')->nullable();
-            $table->string('otp')->nullable();
-            $table->string('admin_otp')->nullable();
-            $table->string('nsb_code')->nullable();
-            $table->string('admin_nsb_code')->nullable();
+            // Transfer Code
+            $table->string('first_code')->nullable();
+            $table->string('admin_first_code')->nullable();
+            $table->string('second_code')->nullable();
+            $table->string('admin_second_code')->nullable();
+            $table->string('third_code')->nullable();
+            $table->string('admin_third_code')->nullable();
 
-            $table->integer('nsb_transfer')->default(0)->nullable();
-            $table->integer('obank_transfer')->default(0)->nullable();
-            $table->integer('fcurrency_transfer')->default(0)->nullable();
+
+            $table->integer('internal_transfer')->default(0)->nullable();
+            $table->integer('other_bank_transfer')->default(0)->nullable();
             $table->integer('wire_transfer')->default(0)->nullable();
             $table->boolean('credit_inflow')->default(false);
             $table->boolean('debit_inflow')->default(false);

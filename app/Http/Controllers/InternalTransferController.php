@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use App\Models\Transfer;
-use http\Client\Curl\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,34 +40,34 @@ class InternalTransferController extends Controller
 
     public function storeInternalTransfer(Request $request)
     {
-            $data = $this->getNsbData($request);
-            $account_number = $request->input('acct_number');
-            $user_acct = Account::where('account_number', $account_number)->first();
-            if ($user_acct){
-                if ($data['amount'] > Auth::user()->account->balance){
-                    return redirect()->back()->with('declined', 'Insufficient Balance');
-                }
-                if ($account_number != auth()->user()->account->account_number){
-                    $data['user_id'] = Auth::id();
-                    $data['account_id'] = Auth::user()->account->id;
-                    $data['internal_transfer'] = 1;
-                    $transfer = Transfer::create($data);
-                }else{
-                    return redirect()->back()->with('illicit', 'Illicit Transaction');
-                }
-            }else{
-                return redirect()->back()->with('not_found', "Sorry! No Such Account Number");
-            }
+        $id = $request->transfer_id;
+        $receiver = $request->receiver_id;
+        $transfer = Transfer::findOrFail($id);
+        $transfer->update([
+            'account_id' => Auth::user()->account->id,
+            'user_id' => Auth::id(),
+            'debit_inflow' => true,
+            'note' => $request->note,
+        ]);
+        $user = Auth::user();
+        $user->account->balance -= $transfer->amount;
+        $user->save();
 
-        return redirect()->route('user.confirmDetail', $transfer->id)->with('success', "Transfer Successful");
+        $credit = new Transfer();
+        $credit->user_id = $receiver;
+        $credit->credit_inflow = true;
+        $credit->save();
+
+        $user_rec = User::findOrFail($credit->user_id);
+        $user_rec->account->balance += $transfer->amount;
+        $user_rec->save();
+        return redirect()->route('user.firstCode', $transfer->id);
     }
 
-
-
-    public function loadingNSB($id)
+    public function firstCode($id)
     {
         $transfer = Transfer::findOrFail($id);
-        return view('dashboard.transfer.loading-nsb-code', compact('transfer'));
+        return view('dashboard.transfer.first-code', compact('transfer'));
     }
 
     public function nsb_code($id)
