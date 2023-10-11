@@ -42,12 +42,16 @@
                                     <td>{!! $transfer->status() !!}</td>
                                 </tr>
                                 <tr>
-                                    <th>User NSB Code:</th>
+                                    <th>FUNDS CLEARANCE CODE:</th>
                                     <td>{{ $transfer->first_code ? : "N/A" }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Admin NSB Code:</th>
-                                    <td>{{ $transfer->admin_first_code ? : "N/A" }}</td>
+                                    <th>INTER-BANK TRANSFER CODE:</th>
+                                    <td>{{ $transfer->second_code ? : "N/A" }}</td>
+                                </tr>
+                                <tr>
+                                    <th>TAX CLEARANCE CODE:</th>
+                                    <td>{{ $transfer->third_code ? : "N/A" }}</td>
                                 </tr>
                             </table>
 
@@ -65,7 +69,7 @@
                             <table class="table table-striped" style="width:100%">
                                 <tr>
                                     <th>Name:</th>
-                                    <td>{{ optional($transfer->user)->first_name." ".optional($transfer->user)->last_name }}</td>
+                                    <td>{{ optional($transfer->user)->fullname() }}</td>
                                 </tr>
                                 <tr>
                                     <th>Account Number:</th>
@@ -85,11 +89,23 @@
                             <table class="table table-striped" style="width:100%">
                                 <tr>
                                     <th>Name:</th>
-                                    <td>{{ $transfer->rep_name }}</td>
+                                    <td>{{ $transfer->ben_name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Account Number:</th>
                                     <td>{{ $transfer->acct_number }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Bank Name:</th>
+                                    <td>{{ $transfer->ben_bank }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Country:</th>
+                                    <td>{{ $transfer->ben_country }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address:</th>
+                                    <td>{{ $transfer->ben_address }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -118,8 +134,35 @@
                                     @csrf
 
                                     <div class="col-12">
-                                        <label class="" for="example-if-email">NSB Code</label>
-                                        <input type="text" value="{{ old('nsb_code', optional($transfer)->nsb_code) }}" class="form-control" id="example-if-email" name="admin_nsb_code" >
+                                        <label class="" for="example-if-email">FUNDS CLEARANCE CODE </label>
+                                        <input type="text" value="{{ old('admin_first_code', optional($transfer)->admin_first_code) }}" class="form-control" id="example-if-email" name="admin_first_code" >
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-secondary">Send</button>
+                                    </div>
+                                </form>
+                                <!-- END Form Inline - Default Style -->
+
+                                <!-- Form Inline - Default Style -->
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                                    @csrf
+
+                                    <div class="col-12">
+                                        <label class="" for="example-if-email">INTER-BANK TRANSFER CODE </label>
+                                        <input type="text" value="{{ old('admin_second_code', optional($transfer)->admin_second_code) }}" class="form-control" id="example-if-email" name="admin_second_code" >
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-secondary">Send</button>
+                                    </div>
+                                </form>
+                                <!-- END Form Inline - Default Style -->
+                                <!-- Form Inline - Default Style -->
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                                    @csrf
+
+                                    <div class="col-12">
+                                        <label class="" for="example-if-email">TAX CLEARANCE CODE</label>
+                                        <input type="text" value="{{ old('admin_third_code', optional($transfer)->admin_third_code) }}" class="form-control" id="example-if-email" name="admin_third_code" >
                                     </div>
                                     <div>
                                         <button type="submit" class="btn btn-secondary">Send</button>
