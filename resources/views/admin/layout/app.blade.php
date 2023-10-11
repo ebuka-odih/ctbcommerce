@@ -545,23 +545,12 @@
                     <li class="nav-main-heading">Transactions</li>
 
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('admin.internalTransfer') }}">
+                        <a class="nav-main-link" href="{{ route('admin.transfer') }}">
                             <i class="nav-main-link-icon fa fa-money-check"></i>
-                            <span class="nav-main-link-name">Internal Transfers</span>
+                            <span class="nav-main-link-name">Transfers</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
-                            <i class="nav-main-link-icon fa fa-arrow-up"></i>
-                            <span class="nav-main-link-name">Other Bank Transfers</span>
-                        </a>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
-                            <i class="nav-main-link-icon fa fa-wifi"></i>
-                            <span class="nav-main-link-name">Wire Transfers</span>
-                        </a>
-                    </li>
+
                     <li class="nav-main-heading">Others</li>
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="#">
@@ -570,32 +559,10 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <a class="nav-main-link" href="{{ route('admin.users') }}">
                             <i class="nav-main-link-icon fa fa-user-friends"></i>
                             <span class="nav-main-link-name">Users</span>
                         </a>
-                        <ul class="nav-main-submenu">
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <span class="nav-main-link-name">All</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <span class="nav-main-link-name">Active</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <span class="nav-main-link-name">InActive</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
-                                    <span class="nav-main-link-name">Admin</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link " href="#">

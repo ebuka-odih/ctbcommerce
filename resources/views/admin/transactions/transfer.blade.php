@@ -54,7 +54,7 @@
                                 </td>
 
                                 <td class="fw-semibold">
-                                    {{ $item->acct_number }}
+                                    {{ $item->ben_name }}
                                 </td>
                                 <td class="fw-semibold">
                                     $@money($item->amount)

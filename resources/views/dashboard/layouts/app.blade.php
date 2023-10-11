@@ -89,7 +89,7 @@
             <!-- Side Actions -->
             <div style="background-color: #272626;" class="content-side content-side-full text-center ">
                 <div class="smini-hide">
-                    <img class="img-avatar" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="">
+                    <img class="img-avatar" src="{{ asset(auth()->user()->avatar) }}" alt="">
                     <div class="mt-3 fw-semibold text-white">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</div>
                     <a class="link-fx text-muted" href="javascript:void(0)">@money(optional(auth()->user())->account->balance)</a>
                 </div>

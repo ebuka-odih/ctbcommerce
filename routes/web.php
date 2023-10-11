@@ -35,11 +35,8 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
-    Route::get('internal/transfer', [InternalTransferController::class, 'internalTransfer'])->name('internalTransfer');
-    Route::post('internal/transfer', [InternalTransferController::class, 'storeInternalTransfer'])->name('storeInternalTransfer');
-    Route::get('confirm/internal/transfer', [InternalTransferController::class, 'confirmDetail'])->name('confirmDetail');
-    Route::get('nsb/transfer/code/{id}', [InternalTransferController::class, 'firstCode'])->name('firstCode');
-    Route::post('nsb/transfer/code/{id}', [InternalTransferController::class, 'storeFirstCode'])->name('storeFirstCode');
+    Route::post('storeTransfer', [TransferController::class, 'storeTransfer'])->name('storeTransfer');
+    Route::get('nsb/transfer/code/{id}', [TransferController::class, 'firstCode'])->name('firstCode');
 
 
 });

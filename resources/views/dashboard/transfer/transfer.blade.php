@@ -43,9 +43,9 @@
                                 </div>
                             @endif
 
-                            @if(session()->has('declined'))
+                            @if(session()->has('error'))
                                 <div class="alert alert-danger">
-                                    {{ session()->get('declined') }}
+                                    {{ session()->get('error') }}
                                 </div>
                             @endif
                             @if(session()->has('illicit'))
@@ -53,38 +53,32 @@
                                     {{ session()->get('illicit') }}
                                 </div>
                             @endif
-                            @if(session()->has('not_found'))
-                                <div class="alert alert-danger">
-                                    {{ session()->get('not_found') }}
-                                </div>
-                            @endif
                         </div>
 
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST">
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeTransfer') }}" method="POST">
                                 @csrf
 
-                                <input type="hidden" name="trans_type" value="wire_transfer">
                                 <input type="hidden"  class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
 
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Enter Recipient Bank<span class="text-danger">*</span></label>
-                                    <input type="text"  class="form-control form-control-lg" id="example-if-email" name="bank_name" placeholder="">
+                                    <input type="text"  class="form-control form-control-lg" id="example-if-email" name="ben_bank" placeholder="" value="{{ old('ben_bank') }}">
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Enter Account Number <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control form-control-lg" id="example-if-password" name="acct_number" placeholder="">
+                                    <input type="number" class="form-control form-control-lg" id="example-if-password" name="acct_number" placeholder="" value="{{ old('acct_number') }}">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Enter Amount <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$">
+                                    <input type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$" value="{{ old('amount') }}">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_name" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_name" placeholder="" value="{{ old('ben_name') }}">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Country<span class="text-danger">*</span></label>
@@ -338,16 +332,16 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Address<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_address" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_address" placeholder="" value="{{ old('ben_address') }}">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Routing Number<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="routing_number" placeholder="">
+                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="routing_number" placeholder="" value="{{ old('routing_number') }}">
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="example-ltf-text">Description</label>
-                                    <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="">
+                                    <label for="Description">Description</label>
+                                    <input type="text" class="form-control form-control-lg" id="Description" name="note" placeholder="" value="{{ old('note') }}">
                                 </div>
                                 <div class="col-lg-12">
                                     <button type="submit" class="btn btn-secondary">Send</button>

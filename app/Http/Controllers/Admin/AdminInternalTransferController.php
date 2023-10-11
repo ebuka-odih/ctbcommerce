@@ -14,16 +14,5 @@ class AdminInternalTransferController extends Controller
         return view('admin.transactions.internal-transfer', compact('transfer'));
     }
 
-    public function viewTransfer($id)
-    {
-        $transfer = Transfer::findOrFail($id);
-        return view('admin.transactions.view-transfer', compact('transfer'));
-    }
 
-    public function deleteTransfer($id)
-    {
-        $transfer = Transfer::findOrFail($id);
-        $transfer->delete();
-        return redirect()->back()->with('success', 'Transaction Deleted');
-    }
 }
