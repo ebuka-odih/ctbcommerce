@@ -123,15 +123,26 @@
                         <hr>
 
                         <div class="row">
-                            @if(session()->has('admin_nsb_code'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('admin_nsb_code') }}
-                                </div>
-                            @endif
+
                             <div class="col-lg-8 space-y-2">
                                 <!-- Form Inline - Default Style -->
-                                <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.adminFirstCode') }}" method="POST" >
                                     @csrf
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    @if(session()->has('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session()->get('error') }}
+                                        </div>
+                                    @endif
+                                    <input type="hidden" name="transfer_id" value="{{ $transfer->id }}">
 
                                     <div class="col-12">
                                         <label class="" for="example-if-email">FUNDS CLEARANCE CODE </label>
@@ -144,8 +155,9 @@
                                 <!-- END Form Inline - Default Style -->
 
                                 <!-- Form Inline - Default Style -->
-                                <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.adminSecondCode', $transfer->id) }}" method="POST" >
                                     @csrf
+                                    <input type="hidden" name="transfer_id" value="{{ $transfer->id }}">
 
                                     <div class="col-12">
                                         <label class="" for="example-if-email">INTER-BANK TRANSFER CODE </label>
@@ -157,8 +169,9 @@
                                 </form>
                                 <!-- END Form Inline - Default Style -->
                                 <!-- Form Inline - Default Style -->
-                                <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                                <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.adminThirdCode', $transfer->id) }}" method="POST" >
                                     @csrf
+                                    <input type="hidden" name="transfer_id" value="{{ $transfer->id }}">
 
                                     <div class="col-12">
                                         <label class="" for="example-if-email">TAX CLEARANCE CODE</label>

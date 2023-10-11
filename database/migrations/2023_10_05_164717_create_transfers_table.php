@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('user_id')->nullable();
-            $table->bigInteger('account_id')->nullable();
+            $table->bigInteger('user_id');
+            $table->bigInteger('account_id');
             $table->string('from')->nullable();
             $table->decimal('amount', 11, 2)->default(0);
 

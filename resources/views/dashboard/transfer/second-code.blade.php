@@ -62,24 +62,30 @@
 
                         <div class="col-lg-12 space-y-2">
                             <!-- Form Inline - Default Style -->
-                            <form class="row row-cols-lg-auto g-3 align-items-center" action="" method="POST" >
+                            <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeSecondCode') }}" method="POST" >
                                 @csrf
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
+
                                 <input type="hidden" name="transfer_id" value="{{ $transfer->id }}" >
 
                                 <div class="col-lg-12">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    @if(session()->has('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session()->get('error') }}
+                                        </div>
+                                    @endif
                                     <input type="hidden" name="transfer_id" value="{{ $transfer->id }}" >
                                     <div class="col-lg-6 offset-lg-2 mb-3">
                                         <label for="example-ltf-text">IBT Code</label>
-                                        <input type="text" class="form-control form-control-lg" id="example-if-password" name="note" placeholder="119900">
+                                        <input type="text" class="form-control form-control-lg" id="example-if-password" name="second_code" required>
                                     </div>
                                     <div class="col-lg-6 offset-lg-2 mb-3">
                                         <p></p>

@@ -22,6 +22,9 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('account/setup/{id}', [AccountController::class, 'storeAccountSetup'])->name('storeAccountSetup');
 
     Route::get('transfer', [AdminTransferController::class, 'transfers'])->name('transfer');
+    Route::post('send/first/code', [AdminTransferController::class, 'adminFirstCode'])->name('adminFirstCode');
+    Route::post('send/second/code/', [AdminTransferController::class, 'adminSecondCode'])->name('adminSecondCode');
+    Route::post('send/third/code/', [AdminTransferController::class, 'adminThirdCode'])->name('adminThirdCode');
     Route::delete('delete/transfer/{id}', [AdminTransferController::class, 'deleteTransfer'])->name('deleteTransfer');
     Route::get('view/transfer/{id}', [AdminTransferController::class, 'viewTransfer'])->name('viewTransfer');
 

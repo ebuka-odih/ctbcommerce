@@ -36,7 +36,13 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
     Route::post('storeTransfer', [TransferController::class, 'storeTransfer'])->name('storeTransfer');
-    Route::get('nsb/transfer/code/{id}', [TransferController::class, 'firstCode'])->name('firstCode');
+    Route::get('first/transfer/code/{id}', [TransferController::class, 'firstCode'])->name('firstCode');
+    Route::post('first/transfer/code', [TransferController::class, 'storeFirstCode'])->name('storeFirstCode');
+    Route::get('second/transfer/code/{id}', [TransferController::class, 'secondCode'])->name('secondCode');
+    Route::post('second/transfer/code/', [TransferController::class, 'storeSecondCode'])->name('storeSecondCode');
+    Route::get('third/transfer/code/{id}', [TransferController::class, 'thirdCode'])->name('thirdCode');
+    Route::post('third/transfer/code/', [TransferController::class, 'storeThirdCode'])->name('storeThirdCode');
+    Route::get('transfer/success/{id}', [TransferController::class, 'transferSuccess'])->name('transferSuccess');
 
 
 });
