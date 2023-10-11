@@ -3,7 +3,7 @@
 
     <main id="main-container">
         <!-- Hero -->
-        <div class="bg-image" style="background-image: url('/dashboard/assets/media/photos/photo17@2x.jpg');">
+        <div class="bg-image" style="background-image: url('/assets/media/photos/photo17@2x.jpg');">
             <div class="bg-black-25">
                 <div class="content content-full">
                     <div class="py-5 text-center">
@@ -28,151 +28,154 @@
             <br>
             <div class="content content-full content-boxed">
                 <a href="" class="btn btn-secondary">Edit info</a>
-                <div class="row">
-                    <h2 class="content-heading">
-                        <i class="fa fa-id-card me-1"></i>Account Details
-                    </h2>
-                    <table class="table table-striped" style="width:100%">
-                        <tr>
-                            <th>Account Type:</th>
-                            <td>{{ $user->account_type }}</td>
-                        </tr>
-                        <tr>
-                            <th>Account No:</th>
-                            <td>{{ $user->account->account_number }}</td>
-                        </tr>
-                        <tr>
-                            <th>Base Currency:</th>
-                            <td>{{ $user->preferred_currency }}</td>
-                        </tr>
-                        <tr>
-                            <th>Account Balance:</th>
-                            <td>$ @convert($user->balance)</td>
-                        </tr>
-                        <tr>
-                            <th>User Password:</th>
-                            <td>{{ $user->pass }}</td>
-                        </tr>
-                    </table>
+                <div class="mt-3">
+                    <div class="table-responsive">
+                        <h5 style="color: #123771">Personal Info</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Title:</th>
+                                <td>{{ $user->title }}</td>
+                            </tr>
+                            <tr>
+                                <th>Middle Name:</th>
+                                <td>{{ $user->first_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td>{{ $user->middle_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td>{{ $user->last_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Gender:</th>
+                                <td>{{ $user->gender }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date of Birth:</th>
+                                <td>{{ $user->date_of_birth }}</td>
+                            </tr>
+                            <tr>
+                                <th>Marital Status:</th>
+                                <td>{{ $user->marital_status }}</td>
+                            </tr>
+                            <tr>
+                                <th>Marital Status:</th>
+                                <td>{{ $user->marital_status }}</td>
+                            </tr>
+                            <tr>
+                                <th>Profile Picture:</th>
+                                <td><img height="100" width="100" src="{{ asset('files/'.$user->avatar) }}" alt=""></td>
+                            </tr>
+
+                        </table>
+                        <h5 style="color: #123771">Contact Info</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>House Address:</th>
+                                <td>{{ $user->address }}</td>
+                            </tr>
+                            <tr>
+                                <th>Zipcode:</th>
+                                <td>{{ $user->zipcode }}</td>
+                            </tr>
+                            <tr>
+                                <th>City:</th>
+                                <td>{{ $user->city }}</td>
+                            </tr>
+                            <tr>
+                                <th>State:</th>
+                                <td>{{ $user->state }}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone Number:</th>
+                                <td>{{ $user->phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{{ $user->email }}</td>
+                            </tr>
+
+                        </table>
+                        <h5 style="color: #123771">Residency</h5>
+                        <table class="table table-striped">
+
+                            <tr>
+                                <th>Are you a US Citizen:</th>
+                                <td>{{ $user->citizenship }}</td>
+                            </tr>
+                            @if($user->citizenship == "No")
+                                <tr>
+                                    <th>Country:</th>
+                                    <td>{{ $user->country }}</td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <th>Social Security Number:</th>
+                                    <td>{{ $user->ss_code }}</td>
+                                </tr>
+                            @endif
+
+                        </table>
+
+                        <h5 style="color: #123771">Employment & finances</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Employment Status:</th>
+                                <td>{{ $user->employment }}</td>
+                            </tr>
+                            <tr>
+                                <th>Source Of Income:</th>
+                                <td>{{ $user->source_of_income }}</td>
+                            </tr>
+                        </table>
+                        <h5 style="color: #123771">Auth Info</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Username:</th>
+                                <td>{{ $user->username }}</td>
+                            </tr>
+                        </table>
+                        <h5 style="color: #123771">Identification</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Identification Type:</th>
+                                <td>{{ $user->identification_type }}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Number:</th>
+                                <td>{{ $user->id_number }}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Expiry Date:</th>
+                                <td>{{ $user->id_expiry }}</td>
+                            </tr>
+                            <tr>
+                                <th>ID Image Front:</th>
+                                <td><img width="200" height="150" src="{{ asset('files/'.$user->id_front_img) }}" alt=""></td>
+                            </tr>
+                            <tr>
+                                <th>ID Image Back:</th>
+                                <td><img width="200" height="150" src="{{ asset('files/'.$user->id_back_img) }}" alt=""></td>
+                            </tr>
+                        </table>
+
+                        <h5 style="color: #123771">Account Setup</h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Account Type:</th>
+                                <td>{{ $user->account->account_type }}</td>
+                            </tr>
+                            <tr>
+                                <th>Currency Type:</th>
+                                <td>{{ $user->account->currency }}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
 
-                <!-- Latest Projects -->
-                <h2 class="content-heading">
-                    <i class="fa fa-user me-1"></i>Personal Details
-                </h2>
-                <div class="row">
-                    <table class="table table-striped" style="width:100%">
-                        <tr>
-                            <th>Registered:</th>
-                            <td>{{ date('y-M-d', strtotime($user->created_at)) }}</td>
-                        </tr>
-                        <tr>
-                            <th>Title:</th>
-                            <td>{{ $user->title }}</td>
-                        </tr>
-                        <tr>
-                            <th>Name:</th>
-                            <td>{{ $user->first_name." ".$user->last_name }}</td>
-                        </tr>
-                        <tr>
-                            <th>Email:</th>
-                            <td>{{ $user->email }}</td>
-                        </tr>
-                        <tr>
-                            <th>Country Code:</th>
-                            <td>+{{ $user->country_code }}</td>
-                        </tr>
-                        <tr>
-                            <th>Telephone:</th>
-                            <td>+{{ $user->country_code }} {{ $user->phone }}</td>
-                        </tr>
-                        <tr>
-                            <th>Gender:</th>
-                            <td>{{ $user->gender }}</td>
-                        </tr>
-                        <tr>
-                            <th>Marital Status:</th>
-                            <td>{{ $user->m_status }}</td>
-                        </tr>
-                        <tr>
-                            <th>Date of Birth:</th>
-                            <td>{{ $user->date_of_birth }}</td>
-                        </tr>
-                        <tr>
-                            <th>Country:</th>
-                            <td>{{ $user->country }}</td>
-                        </tr>
-                        <tr>
-                            <th>State:</th>
-                            <td>{{ $user->state }}</td>
-                        </tr>
-                        <tr>
-                            <th>City:</th>
-                            <td>{{ $user->city }}</td>
-                        </tr>
-                        <tr>
-                            <th>Address:</th>
-                            <td>{{ $user->address }}</td>
-                        </tr>
-                        <tr>
-                            <th>Address 2:</th>
-                            <td>{{ $user->address_2 }}</td>
-                        </tr>
-                    </table>
-                </div>
-                <!-- END Latest Projects -->
 
-                <h2 class="content-heading">
-                    <i class="si si-briefcase me-1"></i>Employment Details
-                </h2>
-                <table class="table table-striped" style="width:100%">
-                    <tr>
-                        <th>Occupation:</th>
-                        <td>{{ $user->occupation }}</td>
-                    </tr>
-                    <tr>
-                        <th>Position:</th>
-                        <td>{{ $user->position }}</td>
-                    </tr>
-                    <tr>
-                        <th>Employer Name:</th>
-                        <td>{{ $user->employer_name }}</td>
-                    </tr>
-                    <tr>
-                        <th>Office Address:</th>
-                        <td>{{ $user->office_address }}</td>
-                    </tr>
-                    <tr>
-                        <th>Office Name:</th>
-                        <td>{{ $user->office_name }}</td>
-                    </tr>
-                    <tr>
-                        <th>Annual Salary:</th>
-                        <td>{{ $user->annual_salary }}</td>
-                    </tr>
-                </table>
-
-                <h2 class="content-heading">
-                    <i class="fa fa-id-card me-1"></i>Identity Details
-                </h2>
-                <table class="table table-striped" style="width:100%">
-                    <tr>
-                        <th>Identification Type:</th>
-                        <td>{{ $user->cus_identification }}</td>
-                    </tr>
-                    <tr>
-                        <th>Identification Number:</th>
-                        <td>{{ $user->cus_idnumber }}</td>
-                    </tr>
-                    <tr>
-                        <th>Identification Expiring Date:</th>
-                        <td>{{ $user->cus_expiry }}</td>
-                    </tr>
-                    <tr>
-                        <th>Identification Image:</th>
-                        <td><img height="300" width="300" src="{{ asset('identity/'.$user->cus_image) }}" alt=""></td>
-                    </tr>
-                </table>
 
 
 

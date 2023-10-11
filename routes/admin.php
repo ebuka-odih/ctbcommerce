@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminInternalTransferController;
 use App\Http\Controllers\Admin\AdminTransferController;
@@ -14,6 +15,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('users', [UserController::class, 'users'])->name('users');
     Route::get('user/detail/{id}', [UserController::class, 'viewUser'])->name('viewUser');
     Route::delete('delete/user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+
+    Route::get('add/user/', [AccountController::class, 'createAccount'])->name('createAccount');
+    Route::post('add/user/', [AccountController::class, 'storeAccount'])->name('storeAccount');
+    Route::get('account/setup/{id}', [AccountController::class, 'accountSetup'])->name('accountSetup');
+    Route::post('account/setup/{id}', [AccountController::class, 'storeAccountSetup'])->name('storeAccountSetup');
 
     Route::get('transfer', [AdminTransferController::class, 'transfers'])->name('transfer');
     Route::delete('delete/transfer/{id}', [AdminTransferController::class, 'deleteTransfer'])->name('deleteTransfer');

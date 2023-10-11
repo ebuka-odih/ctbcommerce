@@ -565,7 +565,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link " href="#">
+                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">
                             <i class="nav-main-link-icon fa fa-user-plus"></i>
                             <span class="nav-main-link-name">Create Account</span>
                         </a>
