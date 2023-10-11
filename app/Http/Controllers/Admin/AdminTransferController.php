@@ -42,19 +42,19 @@ class AdminTransferController extends Controller
 
         $data = ['user' => $user, 'transfer' => $transfer];
         Notification::route('mail', $user->email)->notify(new SecondCode($data));
-
         return redirect()->back()->with('success', "Code Sent Successfully");
     }
 
-    public function adminThirdCode(Request $request, $id)
+    public function adminThirdCode(Request $request)
     {
-        $wit = Transfer::findOrFail($id);
-        $user = User::findOrFail($wit->user_id);
-        $user_email = $user->email;
-        $wit->admin_third_code = $request->get('admin_third_code');
-        $data = ['user' => $user, 'wit' => $wit];
-        Notification::route('mail', $user_email)->notify(new ThirdCode($data));
-        $wit->save();
+        $id = $request->transfer_id;
+        $transfer = Transfer::findOrFail($id);
+        $transfer->admin_third_code = $request->get('admin_third_code');
+        $transfer->save();
+        $user = User::findOrFail($transfer->user_id);
+
+        $data = ['user' => $user, 'transfer' => $transfer];
+        Notification::route('mail', $user->email)->notify(new ThirdCode($data));
         return redirect()->back()->with('success', "Code Sent Successfully");
     }
 

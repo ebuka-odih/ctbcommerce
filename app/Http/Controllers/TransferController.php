@@ -70,14 +70,20 @@ class TransferController extends Controller
 
     public function storeThirdCode(Request $request)
     {
-        $withdrawal = Transfer::findOrFail($request->transfer_id);
-        if ($request->third_code == $withdrawal->admin_third_code)
+        $transfer = Transfer::findOrFail($request->transfer_id);
+        if ($request->third_code == $transfer->admin_third_code)
         {
-            $withdrawal->third_code = $request->third_code;
-            $withdrawal->save();
-            return redirect()->route('user.transferSuccess', $withdrawal->id);
+            $transfer->third_code = $request->third_code;
+            $transfer->save();
+            return redirect()->route('user.transferSuccess', $transfer->id);
         }
         return redirect()->back()->with('error', "Invalid Code, Please enter the correct code.");
+    }
+
+    public function transferSuccess($id)
+    {
+        $transfer = Transfer::findOrFail($id);
+        return view('dashboard.transfer.transfer-success', compact('transfer'));
     }
 
 
