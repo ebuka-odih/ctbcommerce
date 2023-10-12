@@ -18,9 +18,10 @@ class CreditAlert extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -43,7 +44,7 @@ class CreditAlert extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'emails.credit-alert',
+            view: 'emails.credit-alert',
         );
     }
 

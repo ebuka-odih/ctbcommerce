@@ -25,7 +25,7 @@ class Transfer extends Model
 
     public function transId()
     {
-        return '#D45G'.$this->id;
+        return '#D76462352445G'.$this->id;
     }
 
     public function type()

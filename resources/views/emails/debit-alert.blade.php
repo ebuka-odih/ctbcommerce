@@ -47,45 +47,47 @@
 
                                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                         <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                            <strong>We are delighted to inform you that your bank account with {{ env('APP_NAME') }} has been successfully created. Welcome to our banking family!
-                                            </strong>
-                                            <h5 class="mt-4">Account Summary</h5>
+                                            <p>A debit of <strong>{{ $data['user']->account->currency }}@money($data['transfer']->amount)</strong> has occurred on your account
+                                            </p>
+                                            <h5 class="mt-4">Details</h5>
                                             <table class="table table-striped mt-3">
                                                 <tr>
-                                                    <th>Full Name:</th>
-                                                    <td>{{ $user->fullname() }}</td>
-                                                </tr>
-                                                <tr>
                                                     <th>Account Number:</th>
-                                                    <td >{{ $user->account->account_number }}</td>
+                                                    <td>{{ substr($data['transfer']->from, 4) }}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>Description:</th>
+                                                    <td >{{ $data['transfer']->note }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Account Type:</th>
-                                                    <td class="text-capitalize">{{ $user->account->account_type }}</td>
+                                                    <th>Transaction ID:</th>
+                                                    <td >{{ $data['transfer']->transId() }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Currency Type:</th>
-                                                    <td>{{ $user->account->currency }}</td>
+                                                    <th>Amount:</th>
+                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount)</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Username:</th>
-                                                    <td>{{ $user->username }}</td>
+                                                    <th>Date:</th>
+                                                    <td>{{ date('D, M d, Y', strtotime($data['transfer']->created_at)) }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Password:</th>
-                                                    <td>{{ $user->pass }}</td>
+                                                    <th>Time:</th>
+                                                    <td>{{ date('h:i A', strtotime($data['transfer']->created_at)) }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Balance:</th>
+                                                    <td>{{ $data['user']->account->balance }}</td>
                                                 </tr>
                                             </table>
                                             <br>
-                                            <p>To get started, you can log in to your online banking portal using the provided credentials. If you have any questions or require assistance with setting up your online banking, please do not hesitate to contact our customer support team at
-                                                {{ env('MAIL_FROM_ADDRESS') }}</p>
                                         </td>
                                     </tr>
 
-
                                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                         <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                            Thank you for choosing <b>{{ env('APP_NAME') }}</b> as your trusted banking partner. We look forward to serving you and helping you achieve your financial goals.
+                                            Thank you for choosing <b>{{ env('APP_NAME') }}</b> as your trusted banking partner.
                                         </td>
                                     </tr>
                                     </tbody>

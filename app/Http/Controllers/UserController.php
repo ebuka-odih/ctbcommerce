@@ -27,7 +27,7 @@ class UserController extends Controller
     public function testing($id)
     {
         $user = User::findOrFail($id);
-        return view('emails.new-account', compact('user'));
+        return view('emails.debit-alert', compact('user'));
     }
 
 

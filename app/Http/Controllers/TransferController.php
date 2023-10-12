@@ -9,6 +9,7 @@ use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use function Symfony\Component\String\u;
 
 class TransferController extends Controller
 {
@@ -87,9 +88,10 @@ class TransferController extends Controller
                 $new_balance->save();
 
                 //send mail
-                $sender = Auth::user();
-                Mail::to($sender->email)->send(new DebitAlert($transfer));
-                Mail::to($transfer->ben_email)->send(new CreditAlert($transfer));
+                $user = Auth::user();
+                $data = ['user' => $user, 'transfer' => $transfer];
+                Mail::to($user->email)->send(new DebitAlert($data));
+                Mail::to($transfer->ben_email)->send(new CreditAlert($data));
             }
             return redirect()->route('user.transferSuccess', $transfer->id);
         }
