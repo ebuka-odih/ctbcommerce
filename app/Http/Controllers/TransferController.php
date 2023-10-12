@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CreditAlert;
+use App\Mail\DebitAlert;
+use App\Models\Account;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class TransferController extends Controller
 {
@@ -74,18 +78,40 @@ class TransferController extends Controller
         if ($request->third_code == $transfer->admin_third_code)
         {
             $transfer->third_code = $request->third_code;
+            $transfer->status = 1;
             $transfer->save();
+            if ($transfer->status == 1)
+            {
+                $new_balance = Account::findOrFail(\auth()->id());
+                $new_balance->balance -= $transfer->amount;
+                $new_balance->save();
+
+                //send mail
+                $sender = Auth::user();
+                Mail::to($sender->email)->send(new DebitAlert($transfer));
+                Mail::to($transfer->ben_email)->send(new CreditAlert($transfer));
+            }
             return redirect()->route('user.transferSuccess', $transfer->id);
         }
         return redirect()->back()->with('error', "Invalid Code, Please enter the correct code.");
     }
 
+
     public function transferSuccess($id)
     {
         $transfer = Transfer::findOrFail($id);
+        if ( $transfer->first_code == null){
+            return redirect()->route('user.firstCode', $transfer->id);
+        }elseif ($transfer->second_code == null)
+        {
+            return redirect()->route('user.secondCode', $transfer->id);
+        }elseif ($transfer->third_code == null)
+        {
+            return redirect()->route('user.thirdCode', $transfer->id);
+        }
         return view('dashboard.transfer.transfer-success', compact('transfer'));
-    }
 
+    }
 
     protected function getData(Request $request)
     {
@@ -102,4 +128,5 @@ class TransferController extends Controller
         ];
         return $request->validate($rules);
     }
+
 }

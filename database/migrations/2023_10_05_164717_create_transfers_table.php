@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('ben_name')->nullable();
             $table->string('ben_country')->nullable();
             $table->string('ben_address')->nullable();
+            $table->string('ben_email')->nullable();
             $table->string('routing_number')->nullable();
             $table->string('note')->nullable();
 

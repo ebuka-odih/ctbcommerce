@@ -48,7 +48,7 @@
             <!-- Invoice -->
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">#INV0{{ $transfer->withdraw_id }}</h3>
+                    <h3 class="block-title">{{ $transfer->transId() }}</h3>
                     <div class="block-options">
                         <!-- Print Page functionality is initialized dmPrint() -->
                         <button type="button" class="btn-block-option" onclick="Dashmix.helpers('dm-print');">
@@ -87,45 +87,23 @@
                         <!-- END Invoice Info -->
 
                         <!-- Table -->
+                        <hr>
                         <div class="table-responsive push">
-                            <table class="table table-bordered">
-                                <thead class="bg-body">
+                            <table style="width:100%; border: 1px solid white" class="table">
                                 <tr>
-                                    <th class="text-center" style="width: 60px;">Date</th>
-                                    <th>Description</th>
-                                    <th class="text-center" style="width: 90px;">Status</th>
-                                    <th class="text-right" style="width: 120px;">Unit</th>
-                                    <th class="text-right" style="width: 120px;">Amount</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-center">{{ date('d.M.y h:i A', strtotime($transfer->created_at)) }}</td>
-                                    <td>
-
-                                        <div class="text-muted">{{ $transfer->note }}</div>
-                                    </td>
-                                    <td class="text-center">
-                                        {!! $transfer->status() !!}
-                                    </td>
-                                    <td class="text-right">$@money( $transfer->amount)</td>
-                                    <td class="text-right">$@money( $transfer->amount)</td>
-                                </tr>
-
-                                <tr style="visibility: hidden">
-                                    <td colspan="4" class="fw-semibold text-end">Vat Rate</td>
-                                    <td class="text-end">{{ $transfer->vat}}%</td>
-                                </tr>
-                                <tr style="visibility: hidden">
-                                    <td colspan="4" class="fw-semibold text-end">Vat Due</td>
-                                    <td class="text-end">$@convert( $transfer->vat() )</td>
+                                    <th>Date:</th>
+                                    <td>{{ date('d M, Y', strtotime($transfer->created_at)) }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4" class="fw-bold text-uppercase text-end bg-body-light">Total</td>
-                                    <td class="fw-bold text-end bg-body-light">$@money( $transfer->amount )</td>
+                                    <th>Status:</th>
+                                    <td>{!! $transfer->status() !!}</td>
                                 </tr>
-                                </tbody>
+                                <tr>
+                                    <th>Amount:</th>
+                                    <td>$@money($transfer->amount )</td>
+                                </tr>
                             </table>
+
                         </div>
                         <!-- END Table -->
 

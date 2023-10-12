@@ -23,6 +23,11 @@ class Transfer extends Model
 
     }
 
+    public function transId()
+    {
+        return '#D45G'.$this->id;
+    }
+
     public function type()
     {
         if ($this->debit_inflow = 1)
