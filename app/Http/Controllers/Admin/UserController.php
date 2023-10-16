@@ -19,6 +19,20 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         return view('admin.user.user-detail', compact('user'));
     }
+    public function userSetting($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.user.user-setting', compact('user'));
+    }
+    public function storeUserSetting(Request $request)
+    {
+        $id = $request->user_id;
+        $user = User::findOrFail($id);
+        $user->bypass_code = $request->bypass_code;
+        $user->send_email = $request->send_email;
+        $user->save();
+        return redirect()->back()->with('success', 'setting saved');
+    }
 
     public function approveUser($id)
     {

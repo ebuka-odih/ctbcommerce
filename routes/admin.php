@@ -15,6 +15,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('users', [UserController::class, 'users'])->name('users');
     Route::get('user/detail/{id}', [UserController::class, 'viewUser'])->name('viewUser');
     Route::delete('delete/user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+    Route::get('user/setting/{id}', [UserController::class, 'userSetting'])->name('userSetting');
+    Route::post('user/setting', [UserController::class, 'storeUserSetting'])->name('storeUserSetting');
 
     Route::get('add/user/', [AccountController::class, 'createAccount'])->name('createAccount');
     Route::post('add/user/', [AccountController::class, 'storeAccount'])->name('storeAccount');

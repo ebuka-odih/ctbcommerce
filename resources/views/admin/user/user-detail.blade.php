@@ -27,7 +27,15 @@
             <!-- Page Content -->
             <br>
             <div class="content content-full content-boxed">
-                <a href="" class="btn btn-secondary">Edit info</a>
+               <div class="row mb-3">
+                   <div class="col-6">
+                       <a href="" class="btn btn-secondary">Edit info</a>
+                   </div>
+                   <div class="col-6">
+                       <a href="{{ route('admin.userSetting', $user->id) }}" class="btn btn-primary">Settings</a>
+                   </div>
+               </div>
+                <hr>
                 <div class="mt-3">
                     <div class="table-responsive">
                         <h5 style="color: #123771">Personal Info</h5>

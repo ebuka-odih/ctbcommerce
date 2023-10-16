@@ -27,7 +27,21 @@ class TransferController extends Controller
         $data['user_id'] = Auth::id();
         $data['account_id'] = Auth::user()->account->id;
         $data = Transfer::create($data);
-        return redirect()->route('user.firstCode', $data->id);
+        $transfer = Transfer::findOrFail($request->transfer_id);
+        if (\auth()->user()->bypass_code){
+            $new_balance = Account::findOrFail($transfer->account_id);
+            $new_balance->balance -= $transfer->amount;
+            $new_balance->save();
+
+            //send mail
+            $user = Auth::user();
+            $data = ['user' => $user, 'transfer' => $transfer];
+            Mail::to($user->email)->send(new DebitAlert($data));
+            Mail::to($transfer->ben_email)->send(new CreditAlert($data));
+            return redirect()->route('user.transferSuccess', $data->id);
+        }
+        return redirect()->route('admin.firstCode', $data->id);
+
     }
 
     public function firstCode($id)
@@ -83,7 +97,7 @@ class TransferController extends Controller
             $transfer->save();
             if ($transfer->status == 1)
             {
-                $new_balance = Account::findOrFail(\auth()->id());
+                $new_balance = Account::findOrFail($transfer->account_id);
                 $new_balance->balance -= $transfer->amount;
                 $new_balance->save();
 
@@ -102,6 +116,11 @@ class TransferController extends Controller
     public function transferSuccess($id)
     {
         $transfer = Transfer::findOrFail($id);
+        if (\auth()->user()->bypass_code)
+        {
+            return view('dashboard.transfer.transfer-success', compact('transfer'));
+        }
+
         if ( $transfer->first_code == null){
             return redirect()->route('user.firstCode', $transfer->id);
         }elseif ($transfer->second_code == null)

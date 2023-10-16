@@ -15,6 +15,17 @@ class Account extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function currency()
+    {
+        if ($this->currency == "$")
+        {
+            return "USD";
+        }elseif($this->currency == "€"){
+            return "EURO";
+        }
+        return "GBP";
+    }
+
 
     public function active(){
         if($this->active == 1)

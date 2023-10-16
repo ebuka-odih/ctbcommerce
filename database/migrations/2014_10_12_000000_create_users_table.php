@@ -51,7 +51,7 @@ return new class extends Migration
             $table->integer('status')->default(0); // check is account is active
             $table->integer('admin')->default(0);
             $table->boolean('send_email')->default(true);
-            $table->boolean('bypass_code')->default(true);
+            $table->boolean('bypass_code')->default(false);
 
             $table->rememberToken();
             $table->timestamps();

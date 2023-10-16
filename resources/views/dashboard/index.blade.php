@@ -11,27 +11,27 @@
         <div class="block block-rounded">
             <div class="block-content block-content-full">
                 <div class="row text-center">
-                    <div class="col-md-3 py-3">
-                        <div class="fs-1 fw-light text-dark mb-1">
-                            {{ optional($user->account)->currency }}@money(optional(auth()->user()->account)->ledger_balance)
-                        </div>
-                        <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Ledger Balance</a>
-                    </div>
-                    <div class="col-md-3 py-3">
+{{--                    <div class="col-md-3 py-3">--}}
+{{--                        <div class="fs-1 fw-light text-dark mb-1">--}}
+{{--                            {{ optional($user->account)->currency }}@money(optional(auth()->user()->account)->ledger_balance)--}}
+{{--                        </div>--}}
+{{--                        <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Ledger Balance</a>--}}
+{{--                    </div>--}}
+                    <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-info mb-1">
                             {{ optional($user->account)->currency }}@money(optional(auth()->user()->account)->balance)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Available balance
                         </a>
                     </div>
-                    <div class="col-md-3 py-3">
+                    <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-success mb-1">
                             +{{ optional($user->account)->currency }}@money(optional(auth()->user()->account)->balance)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Today Income
                         </a>
                     </div>
-                    <div class="col-md-3 py-3">
+                    <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-danger mb-1">
                             -{{ optional($user->account)->currency }}0.0
                         </div>
@@ -56,6 +56,7 @@
                                     <tr role="row">
                                         <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 131px;">Account Number</th>
                                         <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 136px;">Account Type</th>
+                                        <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 136px;">Account Currency</th>
                                         <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 175px;">Available Balance</th>
                                         <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 152px;">Account Status</th>
                                     </tr>
@@ -66,6 +67,7 @@
                                             <a href="account_activities?HKjkjepsjl3208flsjkjiowurwoupweuiuvlnzewipPIE29IJMD=1">{{ optional($user->account)->account_number }}</a>
                                         </td>
                                         <td>{{ optional($user->account)->account_type }}</td>
+                                        <td>{{ optional($user->account)->currency() }}</td>
                                         <td>{{ optional($user->account)->currency }}@money(optional($user->account)->balance)</td>
                                         <td>
                                             <span >{!! $user->status() !!}</span>
