@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
+    Route::get('transactions', [TransferController::class, 'transactions'])->name('transactions');
     Route::post('storeTransfer', [TransferController::class, 'storeTransfer'])->name('storeTransfer');
     Route::get('first/transfer/code/{id}', [TransferController::class, 'firstCode'])->name('firstCode');
     Route::post('first/transfer/code', [TransferController::class, 'storeFirstCode'])->name('storeFirstCode');

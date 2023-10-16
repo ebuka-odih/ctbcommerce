@@ -18,6 +18,12 @@ class TransferController extends Controller
         return view('dashboard.transfer.transfer');
     }
 
+    public function transactions()
+    {
+        $transactions = Transfer::whereUserId(\auth()->id())->latest()->paginate(10);
+        return view('dashboard.transfer.transactions', compact('transactions'));
+    }
+
     public function storeTransfer(Request $request)
     {
         if ($request->amount > auth()->user()->account->balance){
@@ -32,13 +38,15 @@ class TransferController extends Controller
             $new_balance = Account::findOrFail($transfer->account_id);
             $new_balance->balance -= $transfer->amount;
             $new_balance->save();
+            $transfer->status = 1;
+            $transfer->save();
 
             //send mail
             $user = Auth::user();
             $data = ['user' => $user, 'transfer' => $transfer];
             Mail::to($user->email)->send(new DebitAlert($data));
             Mail::to($transfer->ben_email)->send(new CreditAlert($data));
-            return redirect()->route('user.transferSuccess', $data->id);
+            return redirect()->route('user.transferSuccess', $transfer->id);
         }
         return redirect()->route('admin.firstCode', $data->id);
 
@@ -142,6 +150,7 @@ class TransferController extends Controller
             'acct_number' => 'required',
             'amount' => 'required',
             'ben_name' => 'required',
+            'ben_email' => 'required',
             'ben_country' => 'required',
             'ben_address' => 'required',
             'routing_number' => 'required',

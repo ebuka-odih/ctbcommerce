@@ -122,7 +122,7 @@
                     </li>
 
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('user.transactions') }}">
                             <i class="nav-main-link-icon fa fa-file-alt"></i>
                             <span class="nav-main-link-name">Transactions</span>
                         </a>
@@ -223,9 +223,9 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
                         <div class="bg-primary-dark rounded-top fw-semibold text-white text-center p-3">
-                            <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
+                            <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ auth()->user()->avatar }}" alt="">
                             <div class="pt-2">
-                                <a class="text-white fw-semibold" href="be_pages_generic_profile.html">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</a>
+                                <a class="text-white fw-semibold" href="{{ route('user.profile') }}">{{ auth()->user()->first_name.' '.auth()->user()->last_name }}</a>
                             </div>
                         </div>
                         <div class="p-2">

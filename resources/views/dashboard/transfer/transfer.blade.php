@@ -60,6 +60,7 @@
                             <!-- Form Inline - Default Style -->
                             <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('user.storeTransfer') }}" method="POST">
                                 @csrf
+                                <input type="hidden" value="{{ auth()->user()->account->id }}" name="transfer_id">
 
                                 <input type="hidden"  class="form-control form-control-lg" id="example-if-email" name="from" value="{{ auth()->user()->account->account_number }}">
 
@@ -76,9 +77,13 @@
                                     <label for="example-ltf-text">Enter Amount <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control form-control-lg" id="example-if-password" name="amount" placeholder="$" value="{{ old('amount') }}">
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-3">
                                     <label for="example-ltf-text">Beneficiary Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control form-control-lg" id="example-if-password" name="ben_name" placeholder="" value="{{ old('ben_name') }}">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="example-ltf-text">Beneficiary Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control form-control-lg" id="example-if-password" name="ben_email" placeholder="" value="{{ old('ben_name') }}">
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="example-ltf-text">Beneficiary Country<span class="text-danger">*</span></label>

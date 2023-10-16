@@ -14,12 +14,12 @@ class Transfer extends Model
     {
         if ($this->status == 1)
         {
-            return "<span class='badge rounded-pill bg-success'>Successful</span>";
+            return "<strong class='badge rounded-pill bg-success'>Successful</strong>";
         }elseif($this->status == 0)
         {
-            return "<span class='badge rounded-pill bg-warning'>Pending</span>";
+            return "<strong class='badge rounded-pill bg-warning'>Pending</strong>";
         }
-        return "<span class='badge rounded-pill bg-danger'>Canceled</span>";
+        return "<strong class='badge rounded-pill bg-danger'>Canceled</strong>";
 
     }
 
