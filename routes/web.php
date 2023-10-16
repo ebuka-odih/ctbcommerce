@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DebitCardController;
 use App\Http\Controllers\InternalTransferController;
 use App\Http\Controllers\NewAccountController;
 use App\Http\Controllers\ProfileController;
@@ -44,6 +45,8 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     Route::post('third/transfer/code/', [TransferController::class, 'storeThirdCode'])->name('storeThirdCode');
     Route::get('transfer/success/{id}', [TransferController::class, 'transferSuccess'])->name('transferSuccess');
 
+    // Card Route
+    Route::resource('card', DebitCardController::class);
 
 });
 

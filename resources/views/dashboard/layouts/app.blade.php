@@ -135,12 +135,12 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{{ route('user.card.index') }}">
                                     <span class="nav-main-link-name">All Card</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="#">
+                                <a class="nav-main-link" href="{{ route('user.card.create') }}">
                                     <i class="nav-main-link-icon fa fa-plus-circle"></i>
                                     <span class="nav-main-link-name">New Card</span>
                                 </a>
