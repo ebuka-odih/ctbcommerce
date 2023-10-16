@@ -32,5 +32,11 @@ class UserController extends Controller
         return view('emails.debit-alert', compact('user'));
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('dashboard.user.profile', compact('user'));
+    }
+
 
 }

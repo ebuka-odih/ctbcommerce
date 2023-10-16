@@ -32,5 +32,5 @@ class DebitCard extends Model
     {
         return "NSB0".$this->id.'CRDPX';
     }
-    
+
 }
