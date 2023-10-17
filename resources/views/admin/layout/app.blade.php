@@ -553,7 +553,7 @@
 
                     <li class="nav-main-heading">Others</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
+                        <a class="nav-main-link" href="{{ route('admin.cards') }}">
                             <i class="nav-main-link-icon fa fa-credit-card"></i>
                             <span class="nav-main-link-name">Debit Cards</span>
                         </a>
@@ -570,11 +570,17 @@
                             <span class="nav-main-link-name">Create Account</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Send Message</span>
+                        </a>
+                    </li>
 
 
                     <li class="nav-main-heading">Settings</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('admin.password') }}">
                             <i class="nav-main-link-icon fa fa-shield-alt"></i>
                             <span class="nav-main-link-name">Security</span>
                         </a>

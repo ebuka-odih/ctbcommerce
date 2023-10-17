@@ -109,7 +109,7 @@
                     @endif
                     <li class="nav-main-heading">Manage</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link "  href="#">
+                        <a class="nav-main-link "  href="{{ route('user.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-piggy-bank"></i>
                             <span class="nav-main-link-name">Accounts</span>
                         </a>
@@ -164,12 +164,6 @@
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="">
-                            <i class="nav-main-link-icon fa fa-cog"></i>
-                            <span class="nav-main-link-name">Settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
                             <i class="nav-main-link-icon fa fa-lock"></i>
                             <span class="nav-main-link-name">Security</span>
                         </a>
@@ -180,9 +174,9 @@
                             <span class="nav-main-link-name">Support</span>
                         </a>
                     </li>
-                    <li class="nav-main-heading">Dashboards</li>
+                    <li class="nav-main-heading">Frontpage</li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_pages_dashboard_all.html">
+                        <a class="nav-main-link" href="{{ route('index') }}">
                             <i class="nav-main-link-icon fa fa-arrow-left"></i>
                             <span class="nav-main-link-name">Go Back</span>
                         </a>

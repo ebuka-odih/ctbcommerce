@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminDebitCardController;
 use App\Http\Controllers\Admin\AdminInternalTransferController;
 use App\Http\Controllers\Admin\AdminTransferController;
 use App\Http\Controllers\Admin\UserController;
@@ -30,6 +31,14 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::delete('delete/transfer/{id}', [AdminTransferController::class, 'deleteTransfer'])->name('deleteTransfer');
     Route::get('view/transfer/{id}', [AdminTransferController::class, 'viewTransfer'])->name('viewTransfer');
 
+    //    Cards Route
+    Route::get('cards', [AdminDebitCardController::class, 'cards'])->name('cards');
+    Route::get('approveCard', [AdminDebitCardController::class, 'approveCard'])->name('approveCard');
+    Route::delete('delete/card/{id}', [AdminDebitCardController::class, 'deleteCard'])->name('deleteCard');
+
+    //  Password Route
+    Route::get('security', [AdminController::class, 'password'])->name('password');
+    Route::post('password/store', "Admin\AdminController@storePassword")->name('storePassword');
 
 });
 
