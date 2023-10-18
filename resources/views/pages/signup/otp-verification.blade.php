@@ -55,18 +55,32 @@
     </div>
 </nav>
 <div class="container mt-5">
-    <h1>OTP Verification</h1>
-    <p>Please enter the OTP code you received.</p>
 
-    <form method="POST" action="{{ route('otp-verify') }}">
-        @csrf
-        <input type="text" name="otp" placeholder="Enter OTP" required>
-        <button type="submit">Verify OTP</button>
-    </form>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-lg-8 offset-2">
+                <h1>OTP Verification</h1>
+                <p>Please enter the OTP code you received.</p>
 
-    @if(session('error'))
-        <div class="alert alert-danger">{{ session('error') }}</div>
-    @endif
+                <form method="POST" action="{{ route('otp-verify') }}">
+                    @csrf
+                   <div class="row">
+                       <div class="col-lg-8">
+                           <input class="form-control mb-2" type="text" name="otp" placeholder="Enter OTP" required>
+
+                       </div>
+                      <div class="col-4">
+                          <button type="submit" class="btn btn-dark">Verify OTP</button>
+                      </div>
+                   </div>
+                </form>
+
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+            </div>
+        </div>
+    </div>
 
 </div>
 
