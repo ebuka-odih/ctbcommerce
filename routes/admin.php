@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\AdminAddFundController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminDebitCardController;
 use App\Http\Controllers\Admin\AdminInternalTransferController;
@@ -40,5 +41,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('security', [AdminController::class, 'password'])->name('password');
     Route::post('storePassword', [AdminController::class, 'storePassword'])->name('storePassword');
 
+    Route::get('add/fund', [AdminAddFundController::class, 'addFund'])->name('addFund');
+    Route::post('add/fund', [AdminAddFundController::class, 'storeDeposit'])->name('storeDeposit');
+    Route::delete('delete/fund', [AdminAddFundController::class, 'deleteDeposit'])->name('deleteDeposit');
 });
 

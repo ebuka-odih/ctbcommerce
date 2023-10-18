@@ -35,6 +35,10 @@ class User extends Authenticatable
         return $this->hasOne(Account::class, 'user_id');
     }
 
+    public function addfund(){
+        return $this->hasMany(AddFund::class, 'user_id');
+    }
+
     public function fullname()
     {
         return $this->first_name.' '.$this->middle_name.' '.$this->last_name;

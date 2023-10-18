@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AddFund;
 use App\Models\Transfer;
 use App\Models\User;
 use App\Rules\MatchOldPassword;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +18,10 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $transactions = Transfer::whereUserId(auth()->id())->latest()->paginate(4);
-        return view('dashboard.index', compact('user', 'transactions'));
+        $income = AddFund::whereUserId(\auth()->id())->whereDate('created_at', Carbon::today())->select('amount')->sum('amount');
+        $expenses = Transfer::whereUserId(\auth()->id())->whereDate('created_at', Carbon::today())
+            ->where('debit_inflow', true)->select('amount')->sum('amount');
+        return view('dashboard.index', compact('user', 'transactions', 'income', 'expenses'));
     }
     public function acctPending($id)
     {

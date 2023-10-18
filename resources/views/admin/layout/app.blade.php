@@ -550,6 +550,18 @@
                             <span class="nav-main-link-name">Transfers</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link " href="{{ route('admin.addFund') }}">
+                            <i class="nav-main-link-icon fa fa-plus"></i>
+                            <span class="nav-main-link-name">Add Fund</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">
+                            <i class="nav-main-link-icon fa fa-minus-circle"></i>
+                            <span class="nav-main-link-name">Remove Fund</span>
+                        </a>
+                    </li>
 
                     <li class="nav-main-heading">Others</li>
                     <li class="nav-main-item">
@@ -570,12 +582,7 @@
                             <span class="nav-main-link-name">Create Account</span>
                         </a>
                     </li>
-{{--                    <li class="nav-main-item">--}}
-{{--                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">--}}
-{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
-{{--                            <span class="nav-main-link-name">Send Message</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
+
 
 
                     <li class="nav-main-heading">Settings</li>

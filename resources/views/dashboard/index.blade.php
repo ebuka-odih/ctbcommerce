@@ -26,14 +26,14 @@
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-success mb-1">
-                            +{{ optional($user->account)->currency }}@money(optional(auth()->user()->account)->balance)
+                            +{{ optional($user->account)->currency }}@money($income)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Today Income
                         </a>
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-danger mb-1">
-                            -{{ optional($user->account)->currency }}0.0
+                            -{{ optional($user->account)->currency }}@money($expenses)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Today Expenses</a>
                     </div>

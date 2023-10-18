@@ -39,6 +39,7 @@ class TransferController extends Controller
             $new_balance->balance -= $transfer->amount;
             $new_balance->save();
             $transfer->status = 1;
+            $transfer->debit_inflow = true;
             $transfer->save();
 
             //send mail
@@ -102,6 +103,7 @@ class TransferController extends Controller
         {
             $transfer->third_code = $request->third_code;
             $transfer->status = 1;
+            $transfer->debit_inflow = true;
             $transfer->save();
             if ($transfer->status == 1)
             {
