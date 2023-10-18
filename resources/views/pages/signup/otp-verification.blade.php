@@ -73,7 +73,13 @@
                           <button type="submit" class="btn btn-dark">Verify OTP</button>
                       </div>
                    </div>
+                    <p>Didn't get the code? <a href="{{ route('send-otp') }}">Resend OTP</a> </p>
                 </form>
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
 
                 @if(session('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>

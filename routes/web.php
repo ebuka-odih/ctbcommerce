@@ -32,6 +32,7 @@ Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDe
 // Route for OTP verification
 Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification');
 Route::post('/otp-verification', [OTPVerificationController::class, 'verify'])->name('otp-verify');
+Route::get('/resend-otp', [OTPVerificationController::class, 'sendOTP'])->name('send-otp');
 
 Route::get('testing/{id}', [UserController::class, 'testing'])->name('testing');
 Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPending');
