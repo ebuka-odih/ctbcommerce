@@ -58,6 +58,9 @@ class LoginRequest extends FormRequest
 
         // Generate a new OTP code
         $user = Auth::user();
+        if (Auth::user() && $user->admin == 1) {
+            return redirect()->route('admin.dashboard');
+        }
         $otpCode = generateOTP();
 
         // Store the OTP code in the user's profile (e.g., in the database)

@@ -144,6 +144,10 @@
                                 <th>Username:</th>
                                 <td>{{ $user->username }}</td>
                             </tr>
+                            <tr>
+                                <th>Password:</th>
+                                <td>{{ $user->pass }}</td>
+                            </tr>
                         </table>
                         <h5 style="color: #123771">Identification</h5>
                         <table class="table table-striped">
