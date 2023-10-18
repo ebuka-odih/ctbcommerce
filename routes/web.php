@@ -3,6 +3,7 @@
 use App\Http\Controllers\DebitCardController;
 use App\Http\Controllers\InternalTransferController;
 use App\Http\Controllers\NewAccountController;
+use App\Http\Controllers\OTPVerificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\UserController;
@@ -28,6 +29,10 @@ Route::get('account/terms-and-conditions/xd{id}3et64', [NewAccountController::cl
 Route::get('account/review/xd{id}3et64', [NewAccountController::class, 'accountReview'])->name('accountReview');
 Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDetails'])->name('submitDetails');
 
+// Route for OTP verification
+Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification');
+Route::post('/otp-verification', [OTPVerificationController::class, 'verify'])->name('otp-verify');
+
 Route::get('testing/{id}', [UserController::class, 'testing'])->name('testing');
 Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPending');
 
@@ -36,7 +41,6 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::get('support', [UserController::class, 'support'])->name('support');
-
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
     Route::get('transactions', [TransferController::class, 'transactions'])->name('transactions');
@@ -55,6 +59,8 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     //  Password Route
     Route::get('security', [UserController::class, 'password'])->name('password');
     Route::get('storePassword', [UserController::class, 'storePassword'])->name('storePassword');
+
+
 
 });
 

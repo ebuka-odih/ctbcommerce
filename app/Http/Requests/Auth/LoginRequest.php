@@ -2,12 +2,19 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Notifications\DepositAlert;
+use App\Notifications\UserOTP;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+
+function generateOTP($length = 6) {
+    return Str::random($length);
+}
 
 class LoginRequest extends FormRequest
 {
@@ -32,11 +39,8 @@ class LoginRequest extends FormRequest
         ];
     }
 
-    /**
-     * Attempt to authenticate the request's credentials.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
+
     public function authenticate(): \Illuminate\Http\RedirectResponse
     {
         $this->ensureIsNotRateLimited();
@@ -52,11 +56,18 @@ class LoginRequest extends FormRequest
 
         RateLimiter::clear($this->throttleKey());
 
-        if ( Auth::user() &&  Auth::user()->admin == 1) {
-            return redirect()->route('admin.dashboard');
-        }else{
-            return redirect()->route('user.dashboard');
-        }
+        // Generate a new OTP code
+        $user = Auth::user();
+        $otpCode = generateOTP();
+
+        // Store the OTP code in the user's profile (e.g., in the database)
+        $user->otp_code = $otpCode;
+        $user->save();
+        Notification::route('mail', $user->email)->notify(new UserOTP($user));
+
+        // Redirect to OTP verification page
+        return redirect()->route('otp-verification');
+
     }
 
     protected function authenticated()
