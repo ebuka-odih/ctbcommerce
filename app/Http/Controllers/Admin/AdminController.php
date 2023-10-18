@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\AddFund;
+use App\Models\DebitCard;
+use App\Models\Transfer;
 use App\Models\User;
 use App\Rules\MatchOldPassword;
 use Illuminate\Http\Request;
@@ -12,7 +15,10 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.index');
+        $users = User::all()->count();
+        $transfer = Transfer::select('amount')->sum('amount');
+        $deposits = AddFund::select('amount')->sum('amount');
+        return view('admin.index', compact('users', 'transfer', 'deposits'));
     }
 
     public function password()

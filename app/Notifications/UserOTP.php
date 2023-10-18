@@ -42,8 +42,8 @@ class UserOTP extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Your OTP verification code is '.$this->user->otp_code)
-                    ->line('Thank you for choosing '.env('APP_NAME'));
+            ->subject(env('APP_NAME'))
+                    ->line('Your OTP verification code is '.$this->user->otp_code);
     }
 
     /**
