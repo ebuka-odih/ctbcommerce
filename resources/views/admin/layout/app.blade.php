@@ -570,12 +570,12 @@
                             <span class="nav-main-link-name">Create Account</span>
                         </a>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">
-                            <i class="nav-main-link-icon fa fa-envelope"></i>
-                            <span class="nav-main-link-name">Send Message</span>
-                        </a>
-                    </li>
+{{--                    <li class="nav-main-item">--}}
+{{--                        <a class="nav-main-link " href="{{ route('admin.createAccount') }}">--}}
+{{--                            <i class="nav-main-link-icon fa fa-envelope"></i>--}}
+{{--                            <span class="nav-main-link-name">Send Message</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
 
 
                     <li class="nav-main-heading">Settings</li>

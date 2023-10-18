@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
 
     //  Password Route
     Route::get('security', [AdminController::class, 'password'])->name('password');
-    Route::post('password/store', "Admin\AdminController@storePassword")->name('storePassword');
+    Route::post('storePassword', [AdminController::class, 'storePassword'])->name('storePassword');
 
 });
 

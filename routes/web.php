@@ -35,6 +35,8 @@ Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPe
 Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('support', [UserController::class, 'support'])->name('support');
+
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
     Route::get('transactions', [TransferController::class, 'transactions'])->name('transactions');
@@ -49,6 +51,10 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
 
     // Card Route
     Route::resource('card', DebitCardController::class);
+
+    //  Password Route
+    Route::get('security', [UserController::class, 'password'])->name('password');
+    Route::get('storePassword', [UserController::class, 'storePassword'])->name('storePassword');
 
 });
 

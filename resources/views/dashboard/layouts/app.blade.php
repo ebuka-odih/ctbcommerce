@@ -155,21 +155,15 @@
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
+
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
-                            <i class="nav-main-link-icon fa fa-envelope"></i>
-                            <span class="nav-main-link-name">Messages</span>
-                            <span class="nav-main-link-badge badge rounded-pill bg-success">3</span>
-                        </a>
-                    </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="">
+                        <a class="nav-main-link" href="{{ route('user.password') }}">
                             <i class="nav-main-link-icon fa fa-lock"></i>
                             <span class="nav-main-link-name">Security</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="#">
+                        <a class="nav-main-link" href="{{ route('user.support') }}">
                             <i class="nav-main-link-icon fa fa-envelope"></i>
                             <span class="nav-main-link-name">Support</span>
                         </a>
