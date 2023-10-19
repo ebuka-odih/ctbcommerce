@@ -21,6 +21,6 @@ class OTPVerify
             return redirect()->route('admin.dashboard');
         }
 
-        return redirect('/');
+        return redirect('/user/dashboard');
     }
 }
