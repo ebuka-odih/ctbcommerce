@@ -33,7 +33,7 @@ Route::get('account/review/xd{id}3et64', [NewAccountController::class, 'accountR
 Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDetails'])->name('submitDetails');
 
 // Route for OTP verification
-Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification')->middleware('otp_verify');
+Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification');
 Route::post('/otp-verification', [OTPVerificationController::class, 'verify'])->name('otp-verify');
 Route::get('/resend-otp', [OTPVerificationController::class, 'sendOTP'])->name('send-otp');
 
@@ -42,7 +42,7 @@ Route::get('pending/{id}', [UserController::class, 'acctPending'])->name('acctPe
 
 
 Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware('otp_verify');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::get('support', [UserController::class, 'support'])->name('support');
 

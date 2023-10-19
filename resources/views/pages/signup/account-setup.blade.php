@@ -117,9 +117,12 @@
                             <option value="Savings Account">Savings Account</option>
                             <option value="Checking Account">Checking Account</option>
                             <option value="Business Account">Business Account</option>
+                            <option value="Private Client Account ">Private Client Account</option>
                             <option value="Joint Account">Joint Account</option>
                             <option value="Fixed Deposit Account">Fixed Deposit Account</option>
                             <option value="Current Account">Current Account</option>
+                            <option value="Individual Retirement Account (IRA)">Individual Retirement Account (IRA) </option>
+                            <option value="Trust Fund Account">Trust Fund Account</option>
                         </select>
                     </div>
                     <div class="col-md-12 col-lg-4 mb-3">

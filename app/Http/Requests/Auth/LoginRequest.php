@@ -66,7 +66,7 @@ class LoginRequest extends FormRequest
         $user->otp_code = $otpCode;
         $user->save();
         Notification::route('mail', $user->email)->notify(new UserOTP($user));
-        return redirect()->route('otp-verification');
+        return redirect()->route('user.dashboard');
 
     }
 
