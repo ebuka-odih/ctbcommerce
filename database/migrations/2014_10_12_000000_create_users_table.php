@@ -54,6 +54,11 @@ return new class extends Migration
             $table->boolean('send_email')->default(true);
             $table->boolean('bypass_code')->default(false);
 
+            // Transfer Code
+            $table->string('admin_first_code')->nullable();
+            $table->string('admin_second_code')->nullable();
+            $table->string('admin_third_code')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
