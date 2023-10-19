@@ -61,14 +61,11 @@ class LoginRequest extends FormRequest
         if (Auth::user() && $user->admin == 1) {
             return redirect()->route('admin.dashboard');
         }
-        $otpCode = generateOTP();
 
-        // Store the OTP code in the user's profile (e.g., in the database)
+        $otpCode = generateOTP();
         $user->otp_code = $otpCode;
         $user->save();
         Notification::route('mail', $user->email)->notify(new UserOTP($user));
-
-        // Redirect to OTP verification page
         return redirect()->route('otp-verification');
 
     }

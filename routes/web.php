@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DebitCardController;
 use App\Http\Controllers\InternalTransferController;
 use App\Http\Controllers\NewAccountController;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('demo', [AccountController::class, 'demo']);
+Route::post('demo', [AccountController::class, 'storeDemo'])->name('storeDemo');
 
 Route::view('/', 'pages.index')->name('index');
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');

@@ -46,7 +46,7 @@
                         <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="inputPassword4" class="form-label">Middle Name<span class="text-danger">*</span></label>
+                        <label for="inputPassword4" class="form-label">Middle Name</label>
                         <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}" required>
                     </div>
                     <div class="col-md-4 mb-3">
@@ -143,11 +143,11 @@
                     <div id="yesFields" style="display: none;" >
                         <div class="col-md-12 col-lg-4 mb-3" >
                             <label for="inputAddress" class="form-label">Social Security number<span class="text-danger">*</span></label>
-                            <input type="password" name="ss_code" class="form-control" id="beneficiaryField1" required >
+                            <input type="password" name="ss_code" class="form-control" id="beneficiaryField1"  >
                         </div>
                         <div class="col-md-12 col-lg-4 mb-3" >
                             <label for="inputAddress" class="form-label">Confirm Social Security number<span class="text-danger">*</span></label>
-                            <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" required>
+                            <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" >
                         </div>
                     </div>
 
@@ -448,6 +448,7 @@
                 </div>
 
                 <div class="col-12 mt-4">
+                    <input type="submit" value="Submit">
                     <button type="submit" class="btn btn-primary">Continue</button>
                 </div>
             </form>
@@ -484,25 +485,6 @@
     yesRadio.addEventListener("change", toggleFields);
     noRadio.addEventListener("change", toggleFields);
 </script>
-
-{{--<script>--}}
-{{--    function toggleBeneficiaryFields() {--}}
-{{--        const pairType = document.getElementById('pairType').value;--}}
-{{--        const beneficiaryField1 = document.getElementById('beneficiaryField1');--}}
-{{--        const beneficiaryField2 = document.getElementById('beneficiaryField2');--}}
-{{--        const beneficiaryField3 = document.getElementById('beneficiaryField3');--}}
-
-{{--        if (pairType === 'Yes') {--}}
-{{--            beneficiaryField1.style.display = 'block';--}}
-{{--            beneficiaryField2.style.display = 'block';--}}
-{{--            beneficiaryField3.style.display = 'none';--}}
-{{--        } else if (pairType === 'No') {--}}
-{{--            beneficiaryField1.style.display = 'none';--}}
-{{--            beneficiaryField2.style.display = 'none';--}}
-{{--            beneficiaryField3.style.display = 'block';--}}
-{{--        }--}}
-{{--    }--}}
-{{--</script>--}}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
