@@ -27,18 +27,35 @@ class AdminAddFundController extends Controller
             'note' => 'nullable',
         ]);
 
-        $deposit = new AddFund();
-        $deposit->from = $request->from;
-        $deposit->amount = $request->amount;
-        $deposit->note = $request->note;
-        $deposit->status = 1;
-        $deposit->user_id = $request->user_id;
-        $deposit->save();
-        $user = User::findOrFail($request->user_id);
-        $user->account->balance += $request->amount;
-        $user->account->save();
-        Notification::route('mail', $user->email)->notify(new DepositAlert($deposit));
-        return redirect()->route('admin.deposits');
+        $input = $request->input('amount');
+        if (strpos($input, '-')) {
+            $deposit = new AddFund();
+            $deposit->from = $request->from;
+            $deposit->amount = $request->amount;
+            $deposit->note = $request->note;
+            $deposit->status = 1;
+            $deposit->user_id = $request->user_id;
+            $deposit->save();
+            $user = User::findOrFail($request->user_id);
+            $user->account->balance -= $request->amount;
+            $user->account->save();
+            Notification::route('mail', $user->email)->notify(new DepositAlert($deposit));
+            return redirect()->back()->with('success', "Money Debited");
+        } else {
+            $deposit = new AddFund();
+            $deposit->from = $request->from;
+            $deposit->amount = $request->amount;
+            $deposit->note = $request->note;
+            $deposit->status = 1;
+            $deposit->user_id = $request->user_id;
+            $deposit->save();
+            $user = User::findOrFail($request->user_id);
+            $user->account->balance += $request->amount;
+            $user->account->save();
+            Notification::route('mail', $user->email)->notify(new DepositAlert($deposit));
+            return redirect()->back()->with('success', "Money Added");
+        }
+
 
     }
 
