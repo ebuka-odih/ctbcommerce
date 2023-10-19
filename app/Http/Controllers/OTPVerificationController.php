@@ -20,7 +20,6 @@ class OTPVerificationController extends Controller
     public function verify(Request $request)
     {
         $user = Auth::user();
-
         if ($user && $user->otp_code == $request->otp) {
             $user->otp_code = null;
             $user->save();

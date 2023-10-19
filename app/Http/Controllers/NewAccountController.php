@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AdminNewAcctAlert;
 use App\Mail\NewAccount;
 use App\Models\Account;
 use App\Models\User;
@@ -45,9 +46,9 @@ class NewAccountController extends Controller
     {
         $user = User::findOrFail($id);
         $admin = User::where('admin', 1)->first();
-//        Mail::to($user->email)->send( new NewAccount($user));
-//        Mail::to($admin->email)->send( new AdminNewAcctAlert($user));
-        return redirect()->route('user.acctPending');
+        Mail::to($user->email)->send( new NewAccount($user));
+        Mail::to($admin->email)->send( new AdminNewAcctAlert($user));
+        return redirect()->route('acctPending');
     }
 
     public function storeAccountSetup(Request $request)

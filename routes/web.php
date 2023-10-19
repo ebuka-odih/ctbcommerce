@@ -33,7 +33,7 @@ Route::get('account/review/xd{id}3et64', [NewAccountController::class, 'accountR
 Route::get('submit/details/xd{id}3et64', [NewAccountController::class, 'submitDetails'])->name('submitDetails');
 
 // Route for OTP verification
-Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification');
+Route::get('/otp-verification', [OTPVerificationController::class, 'show'])->name('otp-verification')->middleware('otp_verify');
 Route::post('/otp-verification', [OTPVerificationController::class, 'verify'])->name('otp-verify');
 Route::get('/resend-otp', [OTPVerificationController::class, 'sendOTP'])->name('send-otp');
 

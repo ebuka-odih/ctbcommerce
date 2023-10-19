@@ -18,9 +18,10 @@ class AdminNewAcctAlert extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $user;
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -31,7 +32,7 @@ class AdminNewAcctAlert extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Admin New Acct Alert',
+            subject: env('APP_NAME'),
         );
     }
 
@@ -43,7 +44,7 @@ class AdminNewAcctAlert extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'emails.admin-new-account-alert',
+            view: 'emails.admin-new-account-alert',
         );
     }
 

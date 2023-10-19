@@ -577,8 +577,6 @@
                         </a>
                     </li>
 
-
-
                     <li class="nav-main-heading">Settings</li>
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="{{ route('admin.password') }}">
