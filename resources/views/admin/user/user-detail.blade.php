@@ -7,7 +7,7 @@
             <div class="bg-black-25">
                 <div class="content content-full">
                     <div class="py-5 text-center">
-                        <a class="img-link" > <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ asset($user->avatar) }}" alt=""> </a>
+                        <a class="img-link" > <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ asset('files/'.$user->avatar) }}" alt=""> </a>
                         <h1 class="fw-bold my-2 text-white">{{ $user->first_name." ".$user->last_name }}</h1>
                         <h2 class="h4 fw-bold text-white-75">
                             {{ $user->email }}
