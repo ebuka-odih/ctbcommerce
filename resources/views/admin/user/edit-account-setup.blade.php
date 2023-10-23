@@ -28,7 +28,7 @@
                 <div class="block-content">
 
 
-                    <form class="row g-3" method="POST" action="{{ route('storeAccountSetup') }}" enctype="multipart/form-data">
+                    <form class="row g-3" method="POST" action="{{ route('admin.updateAccountSetup', $user->id) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         @if ($errors->any())
@@ -66,20 +66,20 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="inputPassword4" class="form-label">ID Number<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="inputPassword4" name="id_number" value="{{ old('id_number') }}" required>
+                                <input type="text" class="form-control" id="inputPassword4" name="id_number" value="{{ old('id_number', optional($user)->id_number) }}" >
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="inputPassword4" class="form-label">ID Expiry Date<span class="text-danger">*</span></label>
-                                <input type="date" class="form-control" id="inputPassword4" name="id_expiry" value="{{ old('id_expiry') }}" required>
+                                <input type="date" class="form-control" id="inputPassword4" name="id_expiry" value="{{ old('id_expiry', optional($user)->id_expiry) }}" >
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="inputPassword4" class="form-label">ID Image Front<span class="text-danger">*</span></label>
-                                <input type="file" class="form-control" id="inputPassword4" name="id_front_img"  required>
+                                <input type="file" class="form-control" id="inputPassword4" name="id_front_img"  >
                                 <img class="mt-2" src="{{ asset('files/'.$user->id_front_img) }}" height="100" width="100" alt="">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="inputPassword4" class="form-label">ID Image Back<span class="text-danger">*</span></label>
-                                <input type="file" class="form-control" id="inputPassword4" name="id_back_img"  required>
+                                <input type="file" class="form-control" id="inputPassword4" name="id_back_img"  >
                                 <img class="mt-2" src="{{ asset('files/'.$user->id_back_img) }}" height="100" width="100" alt="">
 
                             </div>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="col-md-12 col-lg-4 mb-3">
                                 <label for="inputAddress" class="form-label">Profit Picture<span class="text-danger">*</span></label>
-                                <input type="file" name="avatar" class="form-control" id="inputAddress"  required>
+                                <input type="file" name="avatar" class="form-control" id="inputAddress"  >
                                 <img class="mt-2" src="{{ asset('files/'.$user->avatar) }}" height="100" width="100" alt="">
                             </div>
 

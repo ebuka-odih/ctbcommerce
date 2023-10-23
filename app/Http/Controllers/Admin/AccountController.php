@@ -159,6 +159,8 @@ class AccountController extends Controller
             'id_back_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+        $id = $request->user_id;
+        $user = User::findOrFail($id);
 
         // Upload and store the first image
         if ($request->hasFile('id_front_img')) {
@@ -166,6 +168,10 @@ class AccountController extends Controller
             $input1['imagename'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
             $image->move($destinationPath, $input1['imagename']);
+
+            $user->id_front_img = $input1['imagename'];
+            $user->save();
+            return redirect()->back()->with('success', "User Account info updated successfully");
         }
         // Upload and store the second image
         if ($request->hasFile('id_back_img')) {
@@ -173,26 +179,28 @@ class AccountController extends Controller
             $input2['imagename'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
             $image->move($destinationPath, $input2['imagename']);
+
+            $user->id_back_img = $input2['imagename'];
+            $user->save();
+            return redirect()->back()->with('success', "User Account info updated successfully");
         }
         if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
             $input3['imagename'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
             $image->move($destinationPath, $input3['imagename']);
+
+            $user->avatar = $input3['imagename'];
+            $user->save();
+            return redirect()->back()->with('success', "User Account info updated successfully");
         }
-        $id = $request->user_id;
-        $user = User::findOrFail($id);
+
         $user->identification_type = $request->identification_type;
         $user->id_number = $request->id_number;
         $user->id_expiry = $request->id_expiry;
-        $user->id_front_img = $input1['imagename'];
-        $user->id_back_img = $input2['imagename'];
-        $user->avatar = $input3['imagename'];
         $user->save();
         $account = Account::whereUserId($user->id);
-        $account->currency = $request->currency;
-        $account->account_type = $request->account_type;
-        $account->save();
+        $account->update(['currency' => $request->currency, 'account_type' => $request->account_type]);
         return redirect()->back()->with('success', "User Account info updated successfully");
     }
 
