@@ -26,6 +26,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('account/setup/{id}', [AccountController::class, 'storeAccountSetup'])->name('storeAccountSetup');
     Route::get('edit/user/{id}', [AccountController::class, 'editInfo'])->name('editInfo');
     Route::patch('update/user/{id}', [AccountController::class, 'updateUser'])->name('updateUser');
+    Route::get('edit/user/account/{id}', [AccountController::class, 'editAccountSetup'])->name('editAccountSetup');
 
     Route::get('transfer', [AdminTransferController::class, 'transfers'])->name('transfer');
     Route::post('send/first/code', [AdminTransferController::class, 'adminFirstCode'])->name('adminFirstCode');

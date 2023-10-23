@@ -40,7 +40,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editAccountSetup', $user->id) }}">
                                 Edit Account Info
                             </a>
                         </li>

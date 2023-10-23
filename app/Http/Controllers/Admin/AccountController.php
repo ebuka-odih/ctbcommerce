@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -145,18 +146,18 @@ class AccountController extends Controller
     public function editAccountSetup($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.user.acct-setup', compact('user'));
+        return view('admin.user.edit-account-setup', compact('user'));
     }
 
     public function updateAccountSetup(Request $request)
     {
         $request->validate([
-            'identification_type' => 'required|string|max:255',
-            'id_expiry' => 'required|string|max:255',
-            'id_number' => 'required|string|max:255',
-            'id_front_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'id_back_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'identification_type' => 'nullable|string|max:255',
+            'id_expiry' => 'nullable|string|max:255',
+            'id_number' => 'nullable|string|max:255',
+            'id_front_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'id_back_img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Upload and store the first image
@@ -188,9 +189,11 @@ class AccountController extends Controller
         $user->id_back_img = $input2['imagename'];
         $user->avatar = $input3['imagename'];
         $user->save();
-
-        $this->autoCreate($user->id, $request['account_type'], $request['currency']);
-        return redirect()->route('admin.viewUser', $user->id);
+        $account = Account::whereUserId($user->id);
+        $account->currency = $request->currency;
+        $account->account_type = $request->account_type;
+        $account->save();
+        return redirect()->back()->with('success', "User Account info updated successfully");
     }
 
 }
