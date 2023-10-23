@@ -56,5 +56,22 @@ class User extends Authenticatable
         }
     }
 
+    public function bypass_code()
+    {
+        if ($this->bypass_code == 1)
+        {
+            return "Yes";
+        }
+        return "No";
+    }
+    public function sendMail()
+    {
+        if ($this->send_email == 1)
+        {
+            return "Yes";
+        }
+        return "No";
+    }
+
 
 }

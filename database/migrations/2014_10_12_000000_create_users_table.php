@@ -51,13 +51,13 @@ return new class extends Migration
 
             $table->integer('status')->default(0); // check is account is active
             $table->integer('admin')->default(0);
-            $table->boolean('send_email')->default(true);
-            $table->boolean('bypass_code')->default(false);
+            $table->integer('send_email')->default(1)->nullable();
+            $table->integer('bypass_code')->default(0)->nullable();
 
             // Transfer Code
-            $table->string('admin_first_code')->nullable();
-            $table->string('admin_second_code')->nullable();
-            $table->string('admin_third_code')->nullable();
+            $table->string('admin_first_code')->default('000000');
+            $table->string('admin_second_code')->default('000000');
+            $table->string('admin_third_code')->default('000000');
 
             $table->rememberToken();
             $table->timestamps();

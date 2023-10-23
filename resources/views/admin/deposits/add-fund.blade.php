@@ -42,6 +42,11 @@
                         </div>
 
                         <div class="col-lg-12 space-y-2">
+                            @if(session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            @endif
                             <!-- Form Inline - Default Style -->
                             <form class="row row-cols-lg-auto g-3 align-items-center" action="{{ route('admin.storeDeposit') }}" method="POST" >
                                 @csrf
@@ -197,7 +202,7 @@
                                                         <td class="fw-semibold"> <a href="">{{ $item->from }}</a> </td>
                                                         <td class="d-none d-sm-table-cell"> {{ $item->user->first_name." ".$item->user->last_name }}(@money(optional($item->user->account)->balance)) </td>
                                                         <td class="d-none d-sm-table-cell"> {{ date('Y-M-d', strtotime($item->created_at)) }} <span class="badge bg-primary">{{ date('h:i a', strtotime($item->created_at)) }}</span>  ({{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }})</td>
-                                                        <td class="fw-semibold">$@money($item->amount) </td>
+                                                        <td class="fw-semibold">-$@money($item->amount) </td>
                                                         <td class="d-none d-sm-table-cell"> {!! $item->status() !!} </td>
                                                         <td class="text-center">
                                                             <div class="btn-group">

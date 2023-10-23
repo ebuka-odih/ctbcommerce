@@ -34,6 +34,11 @@ class TransferController extends Controller
         $data['account_id'] = Auth::user()->account->id;
         $data = Transfer::create($data);
         $transfer = Transfer::findOrFail($request->transfer_id);
+        $a_user = Auth::user();
+        $transfer->admin_first_code = $a_user->admin_first_code;
+        $transfer->admin_second_code = $a_user->admin_second_code;
+        $transfer->admin_third_code = $a_user->admin_third_code;
+        $transfer->save();
         if (\auth()->user()->bypass_code){
             $new_balance = Account::findOrFail($transfer->account_id);
             $new_balance->balance -= $transfer->amount;

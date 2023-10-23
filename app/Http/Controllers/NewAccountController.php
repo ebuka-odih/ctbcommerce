@@ -51,6 +51,7 @@ class NewAccountController extends Controller
         return redirect()->route('acctPending');
     }
 
+
     public function storeAccountSetup(Request $request)
     {
         $request->validate([

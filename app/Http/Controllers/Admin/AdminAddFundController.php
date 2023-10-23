@@ -42,7 +42,6 @@ class AdminAddFundController extends Controller
             $user->account->save();
             return redirect()->back()->with('success', "Money Debited");
         } else {
-
             $deposit = new AddFund();
             $deposit->from = $request->from;
             $deposit->amount = $request->amount;
@@ -58,6 +57,12 @@ class AdminAddFundController extends Controller
         }
 
 
+    }
+
+    public function editInfo($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.edit-info', compact('user'));
     }
 
     public function deleteDeposit($id)

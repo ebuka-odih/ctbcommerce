@@ -32,6 +32,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->bypass_code = $request->bypass_code;
         $user->send_email = $request->send_email;
+        $user->admin_first_code = $request->admin_first_code;
+        $user->admin_second_code = $request->admin_second_code;
+        $user->admin_third_code = $request->admin_third_code;
         $user->save();
         return redirect()->back()->with('success', 'setting saved');
     }

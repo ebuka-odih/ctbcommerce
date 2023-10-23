@@ -2,12 +2,10 @@
 
 namespace App\Http\Requests\Auth;
 
-use App\Models\User;
 use App\Notifications\DepositAlert;
 use App\Notifications\UserOTP;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
@@ -56,26 +54,21 @@ class LoginRequest extends FormRequest
         }
 
 
+        RateLimiter::clear($this->throttleKey());
+
+        // Generate a new OTP code
         $user = Auth::user();
-        if ($user->admin == 1) {
-            // Admin user login, no OTP required
-            RateLimiter::clear($this->throttleKey());
+        if (Auth::user() && $user->admin == 1) {
             return redirect()->route('admin.dashboard');
-        } else {
-            // Non-admin user login, require OTP
-            // Generate OTP, store it, and redirect to OTP verification page
-            $otpCode = generateOTP();
-            $user->otp_code = $otpCode;
-            $user->save();
-            Notification::route('mail', $user->email)->notify(new UserOTP($user));
-            RateLimiter::clear($this->throttleKey());
-            return redirect()->route('otp-verification');
         }
 
+        $otpCode = generateOTP();
+        $user->otp_code = $otpCode;
+        $user->save();
+        Notification::route('mail', $user->email)->notify(new UserOTP($user));
+        return redirect()->route('otp-verification');
+
     }
-
-
-
 
     protected function authenticated()
     {
