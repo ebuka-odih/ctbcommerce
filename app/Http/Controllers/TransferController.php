@@ -127,7 +127,6 @@ class TransferController extends Controller
         return redirect()->back()->with('error', "Invalid Code, Please enter the correct code.");
     }
 
-
     public function transferSuccess($id)
     {
         $transfer = Transfer::findOrFail($id);

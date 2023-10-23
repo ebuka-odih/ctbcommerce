@@ -31,12 +31,22 @@
                         </li>
                         <li class="nav-item me-1">
                             <a class="nav-link d-flex align-items-center" href="{{ route('admin.userSetting', $user->id) }}">
-                                Settings
+                                User Settings
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center active" href="{{ route('admin.editInfo', $user->id) }}">
-                                Edit Info
+                                Edit Personal Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
+                                Edit Account Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
+                               Change Password
                             </a>
                         </li>
                     </ul>
@@ -52,9 +62,8 @@
                             <!-- Page Content -->
                             <br>
                             <div class="content content-full content-boxed">
-
-
-                                <form method="POST" action="{{ route('admin.storeAccount') }}" class="row g-3" >
+                                <form method="POST" action="{{ route('admin.updateUser', $user->id) }}" class="row g-3" >
+                                    @method('PATCH')
                                     @csrf
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
@@ -65,20 +74,25 @@
                                             </ul>
                                         </div>
                                     @endif
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('success') }}
+                                        </div>
+                                    @endif
                                     <h4 style="color: #123771">Personal</h4>
                                     <span class="text-danger">* required</span>
                                     <div class="row mt-3 mb-4">
                                         <div class="col-md-4 mb-3">
                                             <label for="inputEmail4" class="form-label">First Name<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name') }}" required>
+                                            <input type="text" class="form-control" id="inputEmail4" name="first_name" value="{{ old('first_name', optional($user)->first_name) }}" >
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="inputPassword4" class="form-label">Middle Name</label>
-                                            <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}" required>
+                                            <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name', optional($user)->middle_name) }}" >
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="inputPassword4" class="form-label">Last Name<span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="inputPassword4" name="last_name" value="{{ old('last_name') }}" required>
+                                            <input type="text" class="form-control" id="inputPassword4" name="last_name" value="{{ old('last_name', optional($user)->last_name) }}" >
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="suffix" class="form-label">Suffix</label>
@@ -105,7 +119,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="inputPassword4" class="form-label">Date Of Birth<span class="text-danger">*</span></label>
-                                            <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth') }}" required>
+                                            <input type="date" class="form-control" id="inputPassword4" name="date_of_birth" value="{{ old('date_of_birth', optional($user)->date_of_birth) }}" >
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="marital_status" class="form-label">Marital Status<span class="text-danger">*</span></label>
@@ -123,28 +137,28 @@
                                     <div class="row mb-4 mt-3">
                                         <div class="col-md-12 col-lg-4 mb-3">
                                             <label for="inputAddress" class="form-label">Address<span class="text-danger">*</span></label>
-                                            <input type="text" name="address" class="form-control" id="inputAddress" value="{{ old('address') }}" required>
+                                            <input type="text" name="address" class="form-control" id="inputAddress" value="{{ old('address', optional($user)->address) }}" >
                                         </div>
                                         <div class="col-md-12 col-lg-4 mb-3">
                                             <label for="inputAddress" class="form-label">Zipcode<span class="text-danger">*</span></label>
-                                            <input type="text" name="zipcode" class="form-control" id="inputAddress" value="{{ old('zipcode') }}" required>
+                                            <input type="text" name="zipcode" class="form-control" id="inputAddress" value="{{ old('zipcode', optional($user)->zipcode) }}" >
                                         </div>
                                         <div class="col-md-12 col-lg-4 mb-3">
                                             <label for="inputAddress" class="form-label">City<span class="text-danger">*</span></label>
-                                            <input type="text" name="city" class="form-control" id="inputAddress" value="{{ old('city') }}" required>
+                                            <input type="text" name="city" class="form-control" id="inputAddress" value="{{ old('city', optional($user)->city) }}" >
                                         </div>
                                         <div class="col-md-12 col-lg-4 mb-3">
                                             <label for="inputAddress" class="form-label">State<span class="text-danger">*</span></label>
-                                            <input type="text" name="state" class="form-control" id="inputAddress" value="{{ old('state') }}" required>
+                                            <input type="text" name="state" class="form-control" id="inputAddress" value="{{ old('state', optional($user)->state) }}" >
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 col-lg-4 mb-3">
                                                 <label for="inputAddress" class="form-label">Phone<span class="text-danger">*</span></label>
-                                                <input type="tel" name="phone" class="form-control" id="inputAddress" value="{{ old('phone') }}" required>
+                                                <input type="tel" name="phone" class="form-control" id="inputAddress" value="{{ old('phone', optional($user)->phone) }}" >
                                             </div>
                                             <div class="col-md-12 col-lg-4 mb-3">
                                                 <label for="inputAddress" class="form-label">Email<span class="text-danger">*</span></label>
-                                                <input type="email" name="email" class="form-control" id="inputAddress" value="{{ old('email') }}" required>
+                                                <input type="email" name="email" class="form-control" id="inputAddress" value="{{ old('email', optional($user)->email) }}" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -170,11 +184,11 @@
                                         <div id="yesFields" style="display: none;" >
                                             <div class="col-md-12 col-lg-4 mb-3" >
                                                 <label for="inputAddress" class="form-label">Social Security number<span class="text-danger">*</span></label>
-                                                <input type="password" name="ss_code" class="form-control" id="beneficiaryField1"  >
+                                                <input type="password" name="ss_code" class="form-control" id="beneficiaryField1" value="{{ old('ss_code', optional($user)->ss_code) }}">
                                             </div>
                                             <div class="col-md-12 col-lg-4 mb-3" >
                                                 <label for="inputAddress" class="form-label">Confirm Social Security number<span class="text-danger">*</span></label>
-                                                <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" >
+                                                <input type="password" name="confirm_ss_code" class="form-control" id="inputAddress" value="{{ old('confirm_ss_code', optional($user)->confirm_ss_code) }}">
                                             </div>
                                         </div>
 
@@ -457,25 +471,9 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <h4 style="color: #123771">Auth Info</h4>
-                                    <div class="row mt-3">
-                                        <div class="col-4 mb-3">
-                                            <label for="username" class="form-label">Username<span class="text-danger">*</span></label>
-                                            <input type="text" name="username" class="form-control" id="username" autocomplete="off" required>
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <label for="inputAddress" class="form-label">Password<span class="text-danger">*</span></label>
-                                            <input type="password" name="password" class="form-control" id="inputAddress" >
-                                        </div>
-                                        <div class="col-4 mb-3">
-                                            <label for="inputAddress" class="form-label">Confirm Password<span class="text-danger">*</span></label>
-                                            <input type="password" name="password_confirmation" class="form-control" id="inputAddress" >
-                                        </div>
-                                    </div>
 
                                     <div class="col-12 mt-4 mb-5">
-                                        <button type="submit" class="btn btn-primary">Continue</button>
+                                        <button type="submit" class="btn btn-primary">Update Info</button>
                                     </div>
                                 </form>
 

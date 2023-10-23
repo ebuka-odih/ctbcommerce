@@ -101,4 +101,96 @@ class AccountController extends Controller
         return $request->validate($rules);
     }
 
+    public function editInfo($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.user.edit-info', compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $data = $this->getUpdateData($request);
+        $user->update($data);
+        return redirect()->back()->with('success', 'Profile Updated Successful');
+    }
+
+    protected function getUpdateData(Request $request)
+    {
+        $rules = [
+            'first_name' => 'required',
+            'middle_name' => 'nullable',
+            'last_name' => 'required',
+            'email' => 'nullable',
+            'title' => 'nullable',
+            'date_of_birth' => 'nullable',
+            'country' => 'nullable',
+            'state' => 'nullable',
+            'city' => 'nullable',
+            'address' => 'nullable',
+            'zipcode' => 'nullable',
+            'phone' => 'nullable',
+            'gender' => 'nullable',
+            'marital_status' => 'nullable',
+            'employment' => 'nullable',
+            'source_of_income' => 'nullable',
+            'citizenship' => 'nullable',
+            'ss_code' => 'nullable',
+            'confirm_ss_code' => 'nullable',
+        ];
+
+        return $request->validate($rules);
+    }
+
+    public function editAccountSetup($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.user.acct-setup', compact('user'));
+    }
+
+    public function updateAccountSetup(Request $request)
+    {
+        $request->validate([
+            'identification_type' => 'required|string|max:255',
+            'id_expiry' => 'required|string|max:255',
+            'id_number' => 'required|string|max:255',
+            'id_front_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'id_back_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Upload and store the first image
+        if ($request->hasFile('id_front_img')) {
+            $image = $request->file('id_front_img');
+            $input1['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/files');
+            $image->move($destinationPath, $input1['imagename']);
+        }
+        // Upload and store the second image
+        if ($request->hasFile('id_back_img')) {
+            $image = $request->file('id_back_img');
+            $input2['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/files');
+            $image->move($destinationPath, $input2['imagename']);
+        }
+        if ($request->hasFile('avatar')) {
+            $image = $request->file('avatar');
+            $input3['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/files');
+            $image->move($destinationPath, $input3['imagename']);
+        }
+        $id = $request->user_id;
+        $user = User::findOrFail($id);
+        $user->identification_type = $request->identification_type;
+        $user->id_number = $request->id_number;
+        $user->id_expiry = $request->id_expiry;
+        $user->id_front_img = $input1['imagename'];
+        $user->id_back_img = $input2['imagename'];
+        $user->avatar = $input3['imagename'];
+        $user->save();
+
+        $this->autoCreate($user->id, $request['account_type'], $request['currency']);
+        return redirect()->route('admin.viewUser', $user->id);
+    }
+
 }

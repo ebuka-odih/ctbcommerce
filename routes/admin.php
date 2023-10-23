@@ -21,10 +21,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::post('user/setting', [UserController::class, 'storeUserSetting'])->name('storeUserSetting');
 
     Route::get('add/user/', [AccountController::class, 'createAccount'])->name('createAccount');
-    Route::get('edit/user/{id}', [AccountController::class, 'editInfo'])->name('editInfo');
     Route::post('add/user/', [AccountController::class, 'storeAccount'])->name('storeAccount');
     Route::get('account/setup/{id}', [AccountController::class, 'accountSetup'])->name('accountSetup');
     Route::post('account/setup/{id}', [AccountController::class, 'storeAccountSetup'])->name('storeAccountSetup');
+    Route::get('edit/user/{id}', [AccountController::class, 'editInfo'])->name('editInfo');
+    Route::patch('update/user/{id}', [AccountController::class, 'updateUser'])->name('updateUser');
 
     Route::get('transfer', [AdminTransferController::class, 'transfers'])->name('transfer');
     Route::post('send/first/code', [AdminTransferController::class, 'adminFirstCode'])->name('adminFirstCode');
