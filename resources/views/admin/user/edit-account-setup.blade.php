@@ -45,7 +45,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.userChangePassword', $user->id) }}">
                                 Change Password
                             </a>
                         </li>

@@ -25,18 +25,28 @@
                 <div class="block-content">
                     <ul class="nav nav-pills push">
                         <li class="nav-item me-1">
-                            <a class="nav-link active d-flex align-items-center" href="{{ route('admin.viewUser', $user->id) }}">
+                            <a class="nav-link  d-flex align-items-center active" href="{{ route('admin.viewUser', $user->id) }}">
                                 User Details
                             </a>
                         </li>
                         <li class="nav-item me-1">
                             <a class="nav-link d-flex align-items-center" href="{{ route('admin.userSetting', $user->id) }}">
-                                Settings
+                                User Settings
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
-                                Edit Info
+                                Edit Personal Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editAccountSetup', $user->id) }}">
+                                Edit Account Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.userChangePassword', $user->id) }}">
+                                Change Password
                             </a>
                         </li>
                     </ul>

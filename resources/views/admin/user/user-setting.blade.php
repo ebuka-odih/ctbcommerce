@@ -30,13 +30,23 @@
                             </a>
                         </li>
                         <li class="nav-item me-1">
-                            <a class="nav-link d-flex active align-items-center" href="{{ route('admin.userSetting', $user->id) }}">
-                                Settings
+                            <a class="nav-link d-flex align-items-center active" href="{{ route('admin.userSetting', $user->id) }}">
+                                User Settings
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center" href="{{ route('admin.editInfo', $user->id) }}">
-                                Edit Info
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.editInfo', $user->id) }}">
+                                Edit Personal Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="{{ route('admin.editAccountSetup', $user->id) }}">
+                                Edit Account Info
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " href="{{ route('admin.userChangePassword', $user->id) }}">
+                                Change Password
                             </a>
                         </li>
                     </ul>
