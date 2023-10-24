@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}" required>
+                        <input type="text" class="form-control" id="inputPassword4" name="middle_name" value="{{ old('middle_name') }}" >
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">Last Name<span class="text-danger">*</span></label>
