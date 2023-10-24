@@ -155,6 +155,12 @@
                             <span class="nav-main-link-name">Profile</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="{{ route('user.messages') }}">
+                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <span class="nav-main-link-name">Send Message</span>
+                        </a>
+                    </li>
 
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('user.password') }}">
@@ -164,7 +170,7 @@
                     </li>
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('user.support') }}">
-                            <i class="nav-main-link-icon fa fa-envelope"></i>
+                            <i class="nav-main-link-icon fa fa-mail-bulk"></i>
                             <span class="nav-main-link-name">Support</span>
                         </a>
                     </li>

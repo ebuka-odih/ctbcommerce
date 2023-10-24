@@ -41,6 +41,9 @@ class User extends Authenticatable
     public function debit(){
         return $this->hasMany(DebitFund::class, 'user_id');
     }
+    public function send_message(){
+        return $this->hasMany(SendMessage::class, 'user_id');
+    }
 
     public function fullname()
     {
