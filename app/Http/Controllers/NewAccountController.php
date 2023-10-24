@@ -48,7 +48,7 @@ class NewAccountController extends Controller
         $admin = User::where('admin', 1)->first();
         Mail::to($user->email)->send( new NewAccount($user));
         Mail::to($admin->email)->send( new AdminNewAcctAlert($user));
-        return redirect()->route('acctPending');
+        return redirect()->route('acctPending', $user->id);
     }
 
 
