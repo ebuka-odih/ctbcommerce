@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminAddFundController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminDebitCardController;
 use App\Http\Controllers\Admin\AdminInternalTransferController;
+use App\Http\Controllers\Admin\AdminSendMessage;
 use App\Http\Controllers\Admin\AdminTransferController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewAccountController;
@@ -50,5 +51,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('add/fund', [AdminAddFundController::class, 'addFund'])->name('addFund');
     Route::post('add/fund', [AdminAddFundController::class, 'storeDeposit'])->name('storeDeposit');
     Route::delete('delete/fund', [AdminAddFundController::class, 'deleteDeposit'])->name('deleteDeposit');
+
+    // Message Routes
+    Route::get('send/message', [AdminSendMessage::class, 'messages'])->name('message');
+    Route::post('send/message', [AdminSendMessage::class, 'storeMessage'])->name('storeMessage');
+    Route::delete('delete/message/{id}', [AdminSendMessage::class, 'deleteMessage'])->name('deleteMessage');
 });
 

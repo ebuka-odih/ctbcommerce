@@ -101,7 +101,7 @@
                                         </tr>
                                         <tr>
                                             <th>Profile Picture:</th>
-                                            <td><img height="100" width="100" src="{{ $user->avatar }}" alt=""></td>
+                                            <td><img height="100" width="100" src="{{ asset('files/'.$user->avatar) }}" alt=""></td>
                                         </tr>
 
                                     </table>
