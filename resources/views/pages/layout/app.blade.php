@@ -151,7 +151,7 @@
         <div class="tp-header-logo p-relative">
             <span class="tp-header-logo-bg"></span>
             <a href="{{ route('index') }}">
-                <img height="100" width="300" src="{{ asset('img/logo.png') }}" alt="">
+                <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt="">
             </a>
         </div>
         <div class="tp-header-wrapper-inner header__sticky p-relative">
@@ -159,68 +159,13 @@
                 <div class="tp-header-top-info">
                     <a href="https://www.google.com/maps/search/6391+Elgin+St,+Wilmington,+DE,+USA/@39.7298967,-75.5645038,13z/data=!3m1!4b1" target="_blank"><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>6391 Elgin St. Celina, 10299</a>
                 </div>
-                <div class="tp-header-top-right d-flex justify-content-end align-items-center">
-                    <div class="header-social ">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
+
             </div>
             <div class="tp-header-main-menu d-flex align-items-center justify-content-between">
                 <div class="tp-main-menu d-none d-xl-block">
                     <nav class="tp-main-menu-content">
                         <ul>
-                            <li class="has-dropdown">
-                                <a href="index.html">Home</a>
-                                <div class="tp-submenu submenu has-homemenu">
-                                    <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                                        <div class="col homemenu">
-                                            <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/img-1.jpg" alt="">
-                                                <div class="homemenu-btn">
-                                                    <a class="menu-btn show-1" href="index.html">Multi Page</a> <br>
-                                                    <a class="menu-btn show-2" href="index1-one-page.html">One Page</a>
-                                                </div>
-                                            </div>
-                                            <div class="homemenu-content text-center">
-                                                <h4 class="homemenu-title">
-                                                    <a href="index.html">Home 01</a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="col homemenu">
-                                            <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/img-2.jpg" alt="">
-                                                <div class="homemenu-btn">
-                                                    <a class="menu-btn show-1" href="index-2.html">Multi Page</a> <br>
-                                                    <a class="menu-btn show-2" href="index2-one-page.html">One Page</a>
-                                                </div>
-                                            </div>
-                                            <div class="homemenu-content text-center">
-                                                <h4 class="homemenu-title">
-                                                    <a href="index-2.html">Home 02</a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="col homemenu">
-                                            <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/img-3.jpg" alt="">
-                                                <div class="homemenu-btn">
-                                                    <a class="menu-btn show-1" href="index-3.html">Multi Page</a> <br>
-                                                    <a class="menu-btn show-2" href="index3-one-page.html">One Page</a>
-                                                </div>
-                                            </div>
-                                            <div class="homemenu-content text-center">
-                                                <h4 class="homemenu-title">
-                                                    <a href="index-3.html">Home 03</a>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            <li><a href="{{ route('index') }}">Home</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li class="has-dropdown"><a href="service.html">Services</a>
                                 <ul class="submenu">
