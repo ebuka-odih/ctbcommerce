@@ -52,9 +52,18 @@ class User extends Authenticatable
 
     public function status()
     {
-        if ($this->status == 1){
+        if ($this->status > 4){
             return "<span class='badge bg-success'>Active</span>";
-        }else{
+        }elseif($this->status == 1){
+            return "<span class='badge bg-warning'>OnHold</span>";
+        }
+        elseif($this->status == 2){
+            return "<span class='badge bg-info'>Dormant</span>";
+        }
+        elseif($this->status == 3){
+            return "<span class='badge bg-danger'>Frozen</span>";
+        }
+        else{
             return "<span class='badge bg-danger'>InActive</span>";
         }
     }

@@ -26,10 +26,10 @@ class UserController extends Controller
     public function acctPending($id)
     {
         $user = User::findOrFail($id);
-        if (auth()->user()->status == 1)
+        if (auth()->user()->status > 0)
         {
             return view('dashboard.index', compact('user'));
-        }
+        }else
         return view('dashboard.pending', compact('user'));
     }
 

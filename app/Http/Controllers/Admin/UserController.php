@@ -39,11 +39,12 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'setting saved');
     }
 
-    public function approveUser($id)
+    public function userStatus(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->status = 1;
+        $user->status = $request->status;
         $user->save();
+        return redirect()->back()->with('success', "User Status Updated Successfully");
     }
 
     public function deleteUser($id)

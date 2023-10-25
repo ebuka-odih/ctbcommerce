@@ -62,6 +62,31 @@
                         <!-- Page Content -->
                         <br>
                         <div class="content content-full content-boxed">
+                            <form action="{{ route('admin.userStatus', $user->id) }}" method="POST">
+                                @csrf
+                                @if(session()->has('success'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('success') }}
+                                    </div>
+                                @endif
+                                <h4>Current User Status {!! $user->status() !!}</h4>
+                                <div class="col-md-6">
+                                    <label for="">User Status</label>
+                                    <select name="status" class="form-control" id="">
+                                        <option disabled selected>Select Status</option>
+                                        <option value="0">InActive</option>
+                                        <option value="1">OnHold</option>
+                                        <option value="2">Dormant</option>
+                                        <option value="3">Frozen</option>
+                                        <option value="5">Active</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mt-3">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                            <br>
+                            <hr>
 
                             <div class="mt-3">
                                 <div class="table-responsive">

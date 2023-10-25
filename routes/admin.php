@@ -16,6 +16,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
     Route::get('users', [UserController::class, 'users'])->name('users');
+    Route::post('user/status/{id}', [UserController::class, 'userStatus'])->name('userStatus');
     Route::get('user/detail/{id}', [UserController::class, 'viewUser'])->name('viewUser');
     Route::delete('delete/user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
     Route::get('user/setting/{id}', [UserController::class, 'userSetting'])->name('userSetting');

@@ -39,7 +39,7 @@ class TransferController extends Controller
         $transfer->admin_second_code = $a_user->admin_second_code;
         $transfer->admin_third_code = $a_user->admin_third_code;
         $transfer->save();
-        if (\auth()->user()->bypass_code){
+        if (\auth()->user()->bypass_code == 1){
             $new_balance = Account::findOrFail($transfer->account_id);
             $new_balance->balance -= $transfer->amount;
             $new_balance->save();
@@ -50,11 +50,11 @@ class TransferController extends Controller
             //send mail
             $user = Auth::user();
             $data = ['user' => $user, 'transfer' => $transfer];
-            Mail::to($user->email)->send(new DebitAlert($data));
-            Mail::to($transfer->ben_email)->send(new CreditAlert($data));
+//            Mail::to($user->email)->send(new DebitAlert($data));
+//            Mail::to($transfer->ben_email)->send(new CreditAlert($data));
             return redirect()->route('user.transferSuccess', $transfer->id);
         }
-        return redirect()->route('admin.firstCode', $data->id);
+        return redirect()->route('user.firstCode', $data->id);
 
     }
 
