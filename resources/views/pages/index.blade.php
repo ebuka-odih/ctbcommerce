@@ -21,7 +21,7 @@
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
                                             <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="{{ route('personalInfo') }}">Get Started <span><i class="fa-regular fa-plus"></i></span></a>
+                                                <a class="tp-btn" target="_blank" href="{{ route('personalInfo') }}">Get Started <span><i class="fa-regular fa-plus"></i></span></a>
                                             </div>
 
                                         </div>
@@ -41,118 +41,65 @@
                         </div>
                     </div>
                     <div class="swiper-slide pt-160 pb-115" data-bg-color="#16243E">
-                        <div class="tp-hero-bg" data-background="assets/img/hero/shape-bg.png"></div>
+                        <div class="tp-hero-bg" data-background="{{ asset('front/assets/img/hero/shape-bg.png') }}"></div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="tp-hero-content p-relative">
                                         <div class="tp-hero-title-wrapper">
-                                            <span class="tp-hero-subtitle">Be Invest</span>
-                                            <h2 class="tp-hero-title">Where your
-                                                financial dreams
-                                                become reality</h2>
-                                            <p>And In Order To Make A Business, Brand Advertising And Marketing Plays An Important <br> In Making Cultivation Business A Brand, Good Slogans Are Necessary.</p>
+                                            <span class="tp-hero-subtitle">Your success is our dream</span>
+                                            <h2 class="tp-hero-title">Are you ready?</h2>
+                                            <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
                                             <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="contact.html">Get Started <span><i class="fa-regular fa-plus"></i></span></a>
+                                                <a class="tp-btn" href="{{ route('login') }}">Login
+                                                    <span><i class="fa-regular fa-plus"></i></span></a>
                                             </div>
-                                            <div class="tp-hero-call d-flex align-items-center">
-                                         <span>
-                                          <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M29.6887 13.0168H25.1079C25.1079 13.0168 27.5332 8.62052 27.9335 8.12946C28.3382 7.63298 28.7214 7.94264 28.758 8.38069C28.7945 8.81866 28.7397 15.1698 28.7397 15.1698M22.9387 15.2699C22.9387 15.2699 19.4019 15.3144 19.2343 15.2585C19.0667 15.2027 19.503 14.9077 21.8218 11.5945C22.2549 10.9757 22.4932 10.4537 22.5947 10.0163L22.6306 9.73512C22.6306 8.70778 21.7978 7.875 20.7705 7.875C19.8665 7.875 19.1132 8.51977 18.9453 9.37455" stroke="url(#paint0_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <path d="M32.7861 26.6714L29.7163 23.6016C28.7645 22.6497 27.2212 22.6497 26.2694 23.6016L23.6842 26.1867C21.5426 28.3284 18.0577 27.4539 13.7745 23.1708C9.49123 18.8875 8.61683 15.4026 10.7585 13.2611L13.3436 10.6759C14.2954 9.72406 14.2954 8.18084 13.3436 7.22902L10.2737 4.15918C9.32192 3.20736 7.7787 3.20736 6.82688 4.15918L4.24177 6.74429C-0.279393 11.2655 2.32723 20.3406 9.46592 27.4793C16.6046 34.618 25.6798 37.2246 30.201 32.7035L32.7862 30.1183C33.7379 29.1665 33.7379 27.6233 32.7861 26.6714Z" stroke="url(#paint1_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <path d="M34.2298 21.7512C35.2892 19.7749 35.8906 17.5164 35.8906 15.1172C35.8906 7.35068 29.5946 1.05469 21.8281 1.05469C19.4289 1.05469 17.1704 1.65614 15.1941 2.71554M32.7861 26.6715L29.7163 23.6017C28.7645 22.6498 27.2212 22.6498 26.2694 23.6017L23.6842 26.1868C21.5426 28.3285 18.0577 27.454 13.7745 23.1709C9.49123 18.8876 8.61683 15.4027 10.7585 13.2611L13.3436 10.676C14.2954 9.72415 14.2954 8.18093 13.3436 7.22911L10.2737 4.15927C9.32192 3.20745 7.7787 3.20745 6.82688 4.15927L4.24177 6.74437C-0.279393 11.2655 2.32723 20.3407 9.46592 27.4794C16.6046 34.6181 25.6798 37.2247 30.201 32.7035L32.7862 30.1184C33.7379 29.1665 33.7379 27.6234 32.7861 26.6715Z" stroke="url(#paint2_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <defs>
-                                             <linearGradient id="paint0_linear_3043_11" x1="18.9453" y1="11.5808" x2="29.6887" y2="11.5808" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             <linearGradient id="paint1_linear_3043_11" x1="2" y1="19.1953" x2="33.5" y2="19.1953" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             <linearGradient id="paint2_linear_3043_11" x1="2" y1="18" x2="35.8906" y2="18" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             </defs>
-                                          </svg>
-                                         </span>
-                                                <div class="tp-hero-call-inner">
-                                                    <p>Need help?</p>
-                                                    <span><a href="tel:5550111">(808) 555-0111</a></span>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="tp-hero-thumb p-relative">
                                         <div class="tp-hero-thumb-shape">
-                                            <img class="shape-1" src="assets/img/hero/shape-2.png" alt="">
-                                            <img class="shape-2" src="assets/img/hero/shape-1.png" alt="">
-                                            <img class="shape-3" src="assets/img/hero/shape-1.png" alt="">
+                                            <img class="shape-1" src="{{ asset('front/assets/img/hero/shape-2.png') }}" alt="">
+                                            <img class="shape-2" src="{{ asset('front/assets/img/hero/shape-1.png') }}" alt="">
+                                            <img class="shape-3" src="{{ asset('front/assets/img/hero/shape-1.png') }}" alt="">
                                         </div>
-                                        <img src="assets/img/hero/img-2.jpg" alt="">
+                                        <img src="{{ asset('front/assets/img/hero/img-2.jpg') }}" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide pt-160 pb-115" data-bg-color="#16243E">
-                        <div class="tp-hero-bg" data-background="assets/img/hero/shape-bg.png"></div>
+                        <div class="tp-hero-bg" data-background="{{ asset('front/assets/img/hero/shape-bg.png') }}"></div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="tp-hero-content p-relative">
                                         <div class="tp-hero-title-wrapper">
-                                            <span class="tp-hero-subtitle">Be Invest</span>
-                                            <h2 class="tp-hero-title">Our mission is your financial success</h2>
-                                            <p>And In Order To Make A Business, Brand Advertising And Marketing Plays An Important <br> Role. Similarly, In Making Cultivation Business A Brand.</p>
+                                            <span class="tp-hero-subtitle">Do you need a new</span>
+                                            <h2 class="tp-hero-title">Banking on the go</h2>
+                                            <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
                                             <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="contact.html">Get Started <span><i class="fa-regular fa-plus"></i></span></a>
+                                                <a class="tp-btn" href="{{ route('personalInfo') }}">Join Us Today <span><i class="fa-regular fa-plus"></i></span></a>
                                             </div>
-                                            <div class="tp-hero-call d-flex align-items-center">
-                                         <span>
-                                          <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                             <path d="M29.6887 13.0168H25.1079C25.1079 13.0168 27.5332 8.62052 27.9335 8.12946C28.3382 7.63298 28.7214 7.94264 28.758 8.38069C28.7945 8.81866 28.7397 15.1698 28.7397 15.1698M22.9387 15.2699C22.9387 15.2699 19.4019 15.3144 19.2343 15.2585C19.0667 15.2027 19.503 14.9077 21.8218 11.5945C22.2549 10.9757 22.4932 10.4537 22.5947 10.0163L22.6306 9.73512C22.6306 8.70778 21.7978 7.875 20.7705 7.875C19.8665 7.875 19.1132 8.51977 18.9453 9.37455" stroke="url(#paint0_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <path d="M32.7861 26.6714L29.7163 23.6016C28.7645 22.6497 27.2212 22.6497 26.2694 23.6016L23.6842 26.1867C21.5426 28.3284 18.0577 27.4539 13.7745 23.1708C9.49123 18.8875 8.61683 15.4026 10.7585 13.2611L13.3436 10.6759C14.2954 9.72406 14.2954 8.18084 13.3436 7.22902L10.2737 4.15918C9.32192 3.20736 7.7787 3.20736 6.82688 4.15918L4.24177 6.74429C-0.279393 11.2655 2.32723 20.3406 9.46592 27.4793C16.6046 34.618 25.6798 37.2246 30.201 32.7035L32.7862 30.1183C33.7379 29.1665 33.7379 27.6233 32.7861 26.6714Z" stroke="url(#paint1_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <path d="M34.2298 21.7512C35.2892 19.7749 35.8906 17.5164 35.8906 15.1172C35.8906 7.35068 29.5946 1.05469 21.8281 1.05469C19.4289 1.05469 17.1704 1.65614 15.1941 2.71554M32.7861 26.6715L29.7163 23.6017C28.7645 22.6498 27.2212 22.6498 26.2694 23.6017L23.6842 26.1868C21.5426 28.3285 18.0577 27.454 13.7745 23.1709C9.49123 18.8876 8.61683 15.4027 10.7585 13.2611L13.3436 10.676C14.2954 9.72415 14.2954 8.18093 13.3436 7.22911L10.2737 4.15927C9.32192 3.20745 7.7787 3.20745 6.82688 4.15927L4.24177 6.74437C-0.279393 11.2655 2.32723 20.3407 9.46592 27.4794C16.6046 34.6181 25.6798 37.2247 30.201 32.7035L32.7862 30.1184C33.7379 29.1665 33.7379 27.6234 32.7861 26.6715Z" stroke="url(#paint2_linear_3043_11)" stroke-width="2.10938" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                             <defs>
-                                             <linearGradient id="paint0_linear_3043_11" x1="18.9453" y1="11.5808" x2="29.6887" y2="11.5808" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             <linearGradient id="paint1_linear_3043_11" x1="2" y1="19.1953" x2="33.5" y2="19.1953" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             <linearGradient id="paint2_linear_3043_11" x1="2" y1="18" x2="35.8906" y2="18" gradientUnits="userSpaceOnUse">
-                                             <stop stop-color="#004D6E"/>
-                                             <stop offset="1" stop-color="#00ACCC"/>
-                                             </linearGradient>
-                                             </defs>
-                                          </svg>
-                                         </span>
-                                                <div class="tp-hero-call-inner">
-                                                    <p>Need help?</p>
-                                                    <span><a href="tel:5550111">(808) 555-0111</a></span>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="tp-hero-thumb p-relative">
                                         <div class="tp-hero-thumb-shape">
-                                            <img class="shape-1" src="assets/img/hero/shape-2.png" alt="">
-                                            <img class="shape-2" src="assets/img/hero/shape-1.png" alt="">
-                                            <img class="shape-3" src="assets/img/hero/shape-1.png" alt="">
+                                            <img class="shape-1" src="{{ asset('front/assets/img/hero/shape-2.png') }}" alt="">
+                                            <img class="shape-2" src="{{ asset('front/assets/img/hero/shape-1.png') }}" alt="">
+                                            <img class="shape-3" src="{{ asset('front/assets/img/hero/shape-1.png') }}" alt="">
                                         </div>
-                                        <img src="assets/img/hero/img-3.jpg" alt="">
+                                        <img src="{{ asset('front/assets/img/hero/img-3.jpg') }}" alt="">
                                     </div>
                                 </div>
                             </div>
