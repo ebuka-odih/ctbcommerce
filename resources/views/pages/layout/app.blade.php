@@ -196,7 +196,7 @@
             </div>
         </div>
         <div class="tp-header-btn">
-            <a class="tp-btn d-none d-xl-block" href="contact.html">Get a quote <i class="fa-regular fa-arrow-right"></i></a>
+            <a class="tp-btn d-none d-xl-block" href="{{ route('login') }}">Login <i class="fa-regular fa-arrow-right"></i></a>
             <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
                 <button class="hamburger-btn">
                     <span></span>
@@ -216,8 +216,8 @@
             <div class="row align-items-center">
                 <div class="col-xl-3 col-6">
                     <div class="tp-header-logo-2 p-relative">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo-black.png" alt="">
+                        <a href="{{ route('index') }}">
+                            <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -255,21 +255,8 @@
                 </div>
                 <div class="col-xl-3 col-6">
                     <div class="tp-header-main-right-2 d-flex align-items-center justify-content-xl-end">
-                        <div class="tp-header-contact-2 d-flex align-items-center">
-                            <div class="tp-header-contact-search search-open-btn d-none d-xxl-block">
-                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                            </div>
-                            <div class="tp-header-contact-inner d-none d-xl-flex align-items-center">
-                                <div class="tp-header-contact-icon">
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                </div>
-                                <div class="tp-header-contact-content">
-                                    <p>Requesting A Call:</p>
-                                    <span><a href="tel:555-0111">(629) 555-0129</a></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn text-end">
+                        <a class="tp-btn d-none d-xl-block" href="{{ route('login') }}">Login <i class="fa-regular fa-arrow-right"></i></a>
+                        <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
                             <button class="hamburger-btn">
                                 <span></span>
                                 <span></span>
