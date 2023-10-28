@@ -47,42 +47,6 @@
 <!-- back to top end -->
 
 
-<!-- search area start -->
-<div class="search-area">
-    <div class="search-inner p-relative">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="search-wrapper">
-                        <div class="search-close">
-                            <button class="search-close-btn">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="search-content pt-35">
-                            <h3 class="heading text-center mb-30">Hi! How can we help You?</h3>
-                            <div class="d-flex justify-content-center px-5">
-                                <div class="search w-100 p-relative">
-                                    <input type="text" class="search-input" placeholder="Search...">
-                                    <button  class="search-icon">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="search-overlay"></div>
-<!-- search area end -->
-
-
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
     <div class="offcanvas__wrapper">
@@ -157,7 +121,7 @@
         <div class="tp-header-wrapper-inner header__sticky p-relative">
             <div class="tp-header-top d-none d-xl-flex">
                 <div class="tp-header-top-info">
-                    <a href="https://www.google.com/maps/search/6391+Elgin+St,+Wilmington,+DE,+USA/@39.7298967,-75.5645038,13z/data=!3m1!4b1" target="_blank"><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>6391 Elgin St. Celina, 10299</a>
+                    <a href="#" target="_blank"><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>6391 Elgin St. Celina, 10299</a>
                 </div>
 
             </div>
@@ -166,16 +130,17 @@
                     <nav class="tp-main-menu-content">
                         <ul>
                             <li><a href="{{ route('index') }}">Home</a></li>
-                            <li class="has-dropdown"><a href="service.html">Personal Banking</a>
+                            <li class="has-dropdown"><a >Personal Banking</a>
                                 <ul class="submenu">
-                                    <li><a href="service.html">Checking</a></li>
+                                    <li><a href="{{ route('personal.checking') }}">Checking</a></li>
                                     <li><a href="service-details.html">Savings, Money & CDS</a></li>
                                     <li><a href="service-details.html">Individual Retirement Account</a></li>
                                 </ul>
                             </li>
-                            <li class="has-dropdown"><a href="service.html">Cooperate Banking</a>
+                            <li class="has-dropdown">
+                                <a href="service.html">Cooperate Banking</a>
                                 <ul class="submenu">
-                                    <li><a href="service.html">Checking</a></li>
+                                    <li><a href="">Checking</a></li>
                                     <li><a href="service-details.html">Savings, Money & CDS</a></li>
                                     <li><a href="service-details.html">Business IRA</a></li>
                                 </ul>

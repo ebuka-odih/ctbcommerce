@@ -25,6 +25,9 @@ Route::get('demo', [AccountController::class, 'demo']);
 Route::post('demo', [AccountController::class, 'storeDemo'])->name('storeDemo');
 
 Route::view('/', 'pages.index')->name('index');
+Route::view('/personal/checking', 'pages.personal.checking')->name('personal.checking');
+
+
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');
 Route::post('signup/personal-info', [NewAccountController::class, 'storeAccountInfo'])->name('storeAccountInfo');
 Route::get('account/setup/xd{id}3et64', [NewAccountController::class, 'accountSetup'])->name('accountSetup');
