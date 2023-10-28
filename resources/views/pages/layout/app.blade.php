@@ -166,56 +166,33 @@
                     <nav class="tp-main-menu-content">
                         <ul>
                             <li><a href="{{ route('index') }}">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li class="has-dropdown"><a href="service.html">Services</a>
+                            <li class="has-dropdown"><a href="service.html">Personal Banking</a>
                                 <ul class="submenu">
-                                    <li><a href="service.html">Service</a></li>
-                                    <li><a href="service-details.html">Service Details</a></li>
+                                    <li><a href="service.html">Checking</a></li>
+                                    <li><a href="service-details.html">Savings, Money & CDS</a></li>
+                                    <li><a href="service-details.html">Individual Retirement Account</a></li>
                                 </ul>
                             </li>
-                            <li class="has-dropdown">
-                                <a href="index.html">Page</a>
+                            <li class="has-dropdown"><a href="service.html">Cooperate Banking</a>
                                 <ul class="submenu">
-                                    <li><a href="project.html">Project</a></li>
-                                    <li><a href="project-details.html">Project Details</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="team-details.html">Team Details</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="service.html">Checking</a></li>
+                                    <li><a href="service-details.html">Savings, Money & CDS</a></li>
+                                    <li><a href="service-details.html">Business IRA</a></li>
                                 </ul>
                             </li>
-                            <li class="has-dropdown"><a href="blog-classic.html">Blog</a>
+                            <li class="has-dropdown"><a href="service.html">Wealth Management</a>
                                 <ul class="submenu">
-                                    <li><a href="blog-classic.html">Blog</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="service.html">Trust Services</a></li>
+                                    <li><a href="service-details.html">Estate Planning & Settlement</a></li>
+                                    <li><a href="service-details.html">Financial Planning</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+
+                            <li><a href="contact.html">About Us</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="tp-header-main-right d-flex align-items-center justify-content-xl-end">
-                    <div class="tp-header-contact d-xl-flex align-items-center d-none">
-                        <div class="tp-header-contact-search search-open-btn d-none d-xxl-block">
-                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                        </div>
-                        <div class="tp-header-contact-inner d-flex align-items-center">
-                            <div class="tp-header-contact-icon">
-                                <span><i class="fa-solid fa-phone"></i></span>
-                            </div>
-                            <div class="tp-header-contact-content">
-                                <p>Requesting A Call:</p>
-                                <span><a href="tel:555-0111">(629) 555-0129</a></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tp-header-sticky-hamburger d-xl-none offcanvas-open-btn">
-                        <button class="hamburger-btn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="tp-header-btn">
@@ -248,79 +225,30 @@
                     <div class="tp-main-menu home-2 d-none d-xl-block">
                         <nav class="tp-main-menu-content">
                             <ul>
-                                <li class="has-dropdown">
-                                    <a href="index.html">Home</a>
-                                    <div class="tp-submenu submenu has-homemenu">
-                                        <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-3">
-                                            <div class="col homemenu">
-                                                <div class="homemenu-thumb mb-15">
-                                                    <img src="assets/img/menu/img-1.jpg" alt="">
-                                                    <div class="homemenu-btn">
-                                                        <a class="menu-btn show-1" href="index.html">Multi Page</a>
-                                                        <a class="menu-btn show-2" href="index1-one-page.html">One Page</a>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu-content text-center">
-                                                    <h4 class="homemenu-title">
-                                                        <a href="index.html">Home 01</a>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                            <div class="col homemenu">
-                                                <div class="homemenu-thumb mb-15">
-                                                    <img src="assets/img/menu/img-2.jpg" alt="">
-                                                    <div class="homemenu-btn">
-                                                        <a class="menu-btn show-1" href="index-2.html">Multi Page</a>
-                                                        <a class="menu-btn show-2" href="index2-one-page.html">One Page</a>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu-content text-center">
-                                                    <h4 class="homemenu-title">
-                                                        <a href="index-2.html">Home 02</a>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                            <div class="col homemenu">
-                                                <div class="homemenu-thumb mb-15">
-                                                    <img src="assets/img/menu/img-3.jpg" alt="">
-                                                    <div class="homemenu-btn">
-                                                        <a class="menu-btn show-1" href="index-3.html">Multi Page</a>
-                                                        <a class="menu-btn show-2" href="index3-one-page.html">One Page</a>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu-content text-center">
-                                                    <h4 class="homemenu-title">
-                                                        <a href="index-3.html">Home 03</a>
-                                                    </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li class="has-dropdown"><a href="service.html">Services</a>
+                                <li><a href="{{ route('index') }}">Home</a></li>
+                                <li class="has-dropdown"><a href="service.html">Personal Banking</a>
                                     <ul class="submenu">
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="service-details.html">Service Details</a></li>
+                                        <li><a href="service.html">Checking</a></li>
+                                        <li><a href="service-details.html">Savings, Money & CDS</a></li>
+                                        <li><a href="service-details.html">Individual Retirement Account</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-dropdown">
-                                    <a href="index.html">Page</a>
+                                <li class="has-dropdown"><a href="service.html">Cooperate Banking</a>
                                     <ul class="submenu">
-                                        <li><a href="project.html">Project</a></li>
-                                        <li><a href="project-details.html">Project Details</a></li>
-                                        <li><a href="team.html">Team</a></li>
-                                        <li><a href="team-details.html">Team Details</a></li>
-                                        <li><a href="faq.html">Faq</a></li>
+                                        <li><a href="service.html">Checking</a></li>
+                                        <li><a href="service-details.html">Savings, Money & CDS</a></li>
+                                        <li><a href="service-details.html">Business IRA</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-dropdown"><a href="blog-classic.html">Blog</a>
+                                <li class="has-dropdown"><a href="service.html">Wealth Management</a>
                                     <ul class="submenu">
-                                        <li><a href="blog-classic.html">Blog</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="service.html">Trust Services</a></li>
+                                        <li><a href="service-details.html">Estate Planning & Settlement</a></li>
+                                        <li><a href="service-details.html">Financial Planning</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+
+                                <li><a href="contact.html">About Us</a></li>
                             </ul>
                         </nav>
                     </div>
