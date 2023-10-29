@@ -138,9 +138,9 @@
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="service.html">Cooperate Banking</a>
+                                <a >Cooperate Banking</a>
                                 <ul class="submenu">
-                                    <li><a href="">Checking</a></li>
+                                    <li><a href="{{ route('business.checking') }}">Checking</a></li>
                                     <li><a href="service-details.html">Savings, Money & CDS</a></li>
                                     <li><a href="service-details.html">Business IRA</a></li>
                                 </ul>
