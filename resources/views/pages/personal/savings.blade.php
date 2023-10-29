@@ -10,9 +10,9 @@
                 <div class="row align-items-center">
                     <div class="col-sm-12">
                         <div class="breadcrumb__content">
-                            <h3 class="breadcrumb__title">PERSONAL CHECKING ACCOUNTS</h3>
+                            <h3 class="breadcrumb__title">PERSONAL SAVINGS ACCOUNTS</h3>
                             <p class="text-white">
-                                CHECKING ACCOUNTS THAT WORK FOR YOU - WHEREVER YOU ARE.
+                                LET US HELP PUT YOUR GOALS WITHIN REACH.
                             </p>
                         </div>
                     </div>
@@ -30,19 +30,19 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card" >
-                            <img src="{{ asset('img/1.jpg') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('img/4.png') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Basic Checking
+                                <h5 class="card-title">Personal Savings
+
                                 </h5>
                                 <p class="card-text">
-                                    The simple choice for your day-to-day checking
+                                    A simple solution to build your savings.
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush list-group-numbered">
-                                <li class="list-group-item">No minimum opening balance required</li>
-                                <li class="list-group-item">No monthly service charge with direct deposit</li>
-                                <li class="list-group-item">Free eStatements</li>
-                                <li class="list-group-item">Free online banking & bill pay</li>
+                                <li class="list-group-item">$50 minimum opening balance</li>
+                                <li class="list-group-item">Interest bearing</li>
+                                <li class="list-group-item">Low balance to avoid fees</li>
                             </ul>
                             <div class="card-body">
                                 <a href="{{ route('personalInfo') }}" class="btn btn-info">Open Now</a>
@@ -51,9 +51,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card" >
-                            <img src="{{ asset('img/2.jpg') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('img/5.png') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Interest Checking
+                                <h5 class="card-title">Money Market Savings
                                 </h5>
                                 <p class="card-text">
                                     Earn more interest as your balance grows.
@@ -62,8 +62,7 @@
                             <ul class="list-group list-group-flush list-group-numbered">
                                 <li class="list-group-item">No minimum opening balance required</li>
                                 <li class="list-group-item">Competitive interest rates</li>
-                                <li class="list-group-item">Free eStatements</li>
-                                <li class="list-group-item">Free online banking & bill pay</li>
+                                <li class="list-group-item">Up to 6 withdrawals with no fee</li>
                             </ul>
                             <div class="card-body">
                                 <a href="{{ route('personalInfo') }}" class="btn btn-info">Open Now</a>
@@ -72,19 +71,18 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card" >
-                            <img src="{{ asset('img/3.jpg') }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('img/6.png') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">55+ Interest Checking
+                                <h5 class="card-title">Certificate of Deposit (CD)
                                 </h5>
                                 <p class="card-text">
-                                    Pays interest and other benefits if you're over 55.
+                                    Enjoy higher returns on your savings at lower risk.
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush list-group-numbered">
-                                <li class="list-group-item">No minimum balance requirements</li>
-                                <li class="list-group-item">No monthly service charge</li>
-                                <li class="list-group-item">Free eStatements & standard checks</li>
-                                <li class="list-group-item">Free online banking & bill pay</li>
+                                <li class="list-group-item">Open with as little as $500</li>
+                                <li class="list-group-item">Competitive interest rates</li>
+                                <li class="list-group-item">Fixed-term options to reach your goals</li>
                             </ul>
                             <div class="card-body">
                                 <a href="{{ route('personalInfo') }}" class="btn btn-info">Open Now</a>
@@ -93,14 +91,17 @@
                     </div>
                 </div>
                 <hr>
-                    <div class="row">
+                <div class="row">
 
                     <div class="col-xxl-8 col-xl-8 col-lg-8">
                         <div class="tp-postbox-wrapper">
                             <article class="tp-postbox-item-wrapper mb-80">
 
                                 <h3 class="tp-postbox-title2">Features Account:</h3>
-                                <p>It is an account to manage your salary and help you organize your money, let him have a monthly savings while enjoying many other benefits:</p>
+                                <p>
+                                    It is an account to manage your salary and help you organize your money, let him have a monthly savings while enjoying many other benefits:
+
+                                </p>
 
                                 <div class="tp-sidebar-widget-content mt-3 mb-3">
                                     <ul>

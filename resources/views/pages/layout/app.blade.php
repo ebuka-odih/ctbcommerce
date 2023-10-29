@@ -133,8 +133,8 @@
                             <li class="has-dropdown"><a >Personal Banking</a>
                                 <ul class="submenu">
                                     <li><a href="{{ route('personal.checking') }}">Checking</a></li>
-                                    <li><a href="service-details.html">Savings, Money & CDS</a></li>
-                                    <li><a href="service-details.html">Individual Retirement Account</a></li>
+                                    <li><a href="{{ route('personal.savings') }}">Savings, Money & CDS</a></li>
+                                    <li><a href="{{ route('personal.ira') }}">Individual Retirement Account</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
@@ -191,11 +191,11 @@
                         <nav class="tp-main-menu-content">
                             <ul>
                                 <li><a href="{{ route('index') }}">Home</a></li>
-                                <li class="has-dropdown"><a href="service.html">Personal Banking</a>
+                                <li class="has-dropdown"><a >Personal Banking</a>
                                     <ul class="submenu">
-                                        <li><a href="service.html">Checking</a></li>
-                                        <li><a href="service-details.html">Savings, Money & CDS</a></li>
-                                        <li><a href="service-details.html">Individual Retirement Account</a></li>
+                                        <li><a href="{{ route('personal.checking') }}">Checking</a></li>
+                                        <li><a href="{{ route('personal.savings') }}">Savings, Money & CDS</a></li>
+                                        <li><a href="{{ route('personal.ira') }}">Individual Retirement Account</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown"><a href="service.html">Cooperate Banking</a>

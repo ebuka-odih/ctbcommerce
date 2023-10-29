@@ -26,6 +26,8 @@ Route::post('demo', [AccountController::class, 'storeDemo'])->name('storeDemo');
 
 Route::view('/', 'pages.index')->name('index');
 Route::view('/personal/checking', 'pages.personal.checking')->name('personal.checking');
+Route::view('/personal/savings', 'pages.personal.savings')->name('personal.savings');
+Route::view('/personal/ira', 'pages.personal.ira')->name('personal.ira');
 
 
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');
