@@ -94,21 +94,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3">
                         <div class="card" >
                             <img src="{{ asset('img/10.png') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Business Benefit Checking
+                                <h5 class="card-title">Analyzed Business Checking
                                 </h5>
                                 <p class="card-text">
-                                    A great solution for growing companies with medium volume business accounts.
+                                    A checking solution for businesses with higher balances and greater cash management needs.
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush list-group-numbered">
-                                <li class="list-group-item">No minimum balance requirements</li>
+                                <li class="list-group-item">No minimum opening balance required</li>
                                 <li class="list-group-item">Free debit card & online banking</li>
                                 <li class="list-group-item">Free eStatements & standard checks</li>
-                                <li class="list-group-item">Free debit card & online banking</li>
+                                <li class="list-group-item">Low per-item transaction fees</li>
                                 <li class="list-group-item">15 free basic Bill Pay items</li>
                             </ul>
                             <div class="card-body">
@@ -123,7 +123,9 @@
                     <div class="col-xxl-8 col-xl-8 col-lg-8">
                         <div class="tp-postbox-wrapper">
                             <article class="tp-postbox-item-wrapper mb-80">
-
+                                <p>Business Checking is a great solution for growing companies with low to medium volume business accounts. With this account, the first 200 business transactions each month are free, allowing you to manage your finances efficiently without the fees. Available well with your advisor the group that owns your account as this can change the characteristics and conditions thereof.</p>
+                                <p>Subject to conditions and eligibility. These insurances are endless incidents. While the cardholder meets the requirements of each insurance you will be covered as often as necessary and will be compensated equally
+                                </p>
                                 <h3 class="tp-postbox-title2">Features Account:</h3>
                                 <p>It is an account to manage your salary and help you organize your money, let him have a monthly savings while enjoying many other benefits:</p>
 
@@ -131,12 +133,15 @@
                                     <ul>
                                         <li><a ><i class="fa-solid fa-chevrons-right"></i> No management fee or handling.</a></li>
                                         <li><a ><i class="fa-solid fa-chevrons-right"></i> It allows you to separate your savings silver in the same account, without needing an additional product.</a></li>
+                                        <li><a ><i class="fa-solid fa-chevrons-right"></i> 5 free withdrawals per month at ATMs, multifunctional ATMs and bank offices. From the sixth retirement payment corresponding to the channel use1 be made.</a></li>
                                         <li><a ><i class="fa-solid fa-chevrons-right"></i> Unlimited free consultations through our Amiga, Website, Mobile Banking and Mobile Application Line (downloading our app for smartphones).</a></li>
                                         <li><a ><i class="fa-solid fa-chevrons-right"></i> Free notifications.</a></li>
                                     </ul>
                                 </div>
                                 <hr>
                                 <h4>More Features</h4>
+                                <p>From 2015 monthly withdrawals from savings accounts to $ 9,898,000 and accounts pensioner to $ 1,159,000 provided their monthly pension does not exceed this amount are exempt from 4 per thousand, if the account is marked as exempt from tax.</p>
+                                <p>Pay your everyday purchases at merchants with their debit card for my salary to free one of two insurance that protect you and your family.</p>
                                 <div class="tp-sidebar-widget-content mt-3 mb-3">
                                     <ul>
                                         <li><a ><i class="fa-solid fa-chevrons-right"></i> For security, you will receive a text message to the phone and / or email that tells about transactions equal to or greater than $ 50,000 for retirement amounts, deposits and $ 100,000 to 200,000 for purchases.</a></li>
