@@ -36,7 +36,7 @@
         <div class="bg-body-light d-print-none">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Invoice</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Payment Confirmation</h1>
 
                 </div>
             </div>
@@ -79,7 +79,6 @@
                                     <strong>Name:</strong> {{ $transfer->rep_name }}<br>
                                     <strong>Account No:</strong> {{ $transfer->acct_number }}<br>
                                     <strong>Bank Name:</strong> {{ $transfer->bank_name }}<br>
-                                    <strong>Transaction Type:</strong> {{ $transfer->type() }}<br>
                                 </div>
                             </div>
                             <!-- END Client Info -->
