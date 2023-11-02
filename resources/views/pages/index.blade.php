@@ -379,72 +379,7 @@
     </section>
     <!-- faq area end -->
 
-
-
-    <!-- testimonial area start -->
-    <section class="tp-testimonial-area tp-testimonial-bg-color p-relative pt-80 pb-50" data-bg-color="#F6F6F9">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tp-testimonial-title">
-                        <span class="tp-section-title-pre">Clients Testimonial</span>
-                    </div>
-                </div>
-                <div class="tp-testimonial-active swiper-container">
-                    <div class="swiper-wrapper mb-30 mt-20">
-                        <div class="swiper-slide">
-                            <div class="tp-testimonial-item-wrapper d-flex align-items-center">
-
-                                <div class="tp-testimonial-item-content p-relative">
-                                    <div class="tp-testimonial-item-rating">
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span><i class="fa-solid fa-star"></i></span>
-                                        <span><i class="fa-solid fa-star"></i></span>
-                                    </div>
-                                    <p>
-                                        I've been a CTBCommerce customer for years, and they never disappoint. Their online banking is super user-friendly, and I love that I can easily check my account balances, transfer funds, and pay bills right from my phone.
-                                    </p>
-                                    <h4 class="tp-testimonial-item-title">Hardli sefa</h4>
-                                    <span>Customer</span>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="tp-testimonial-item-wrapper d-flex align-items-center">
-                                <div class="tp-testimonial-item-content p-relative">
-                                    <div class="tp-testimonial-item-rating">
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span class="color"><i class="fa-solid fa-star"></i></span>
-                                        <span><i class="fa-solid fa-star"></i></span>
-                                        <span><i class="fa-solid fa-star"></i></span>
-                                    </div>
-                                    <p>
-                                        I've recently started using CTBCommerce for my banking needs. Their savings account options are fantastic, and I appreciate the competitive interest rates.
-                                    </p>
-                                    <h4 class="tp-testimonial-item-title">Sarah M</h4>
-                                    <span>Customer</span>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tp-testimonial-nav text-end">
-                    <button type="button" class="testimonial-button-prev-1"><i class="fa-regular fa-arrow-left"></i>
-                    </button>
-                    <button type="button" class="testimonial-button-next-1"><i class="fa-regular fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- testimonial area end -->
-
+    
 
 </main>
 
