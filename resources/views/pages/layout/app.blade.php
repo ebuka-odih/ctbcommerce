@@ -148,8 +148,8 @@
                             <li class="has-dropdown"><a >Wealth Management</a>
                                 <ul class="submenu">
                                     <li><a href="{{ route('trust-service') }}">Trust Services</a></li>
-                                    <li><a href="service-details.html">Estate Planning & Settlement</a></li>
-                                    <li><a href="service-details.html">Financial Planning</a></li>
+                                    <li><a href="{{ route('estate-planning') }}">Estate Planning & Settlement</a></li>
+                                    <li><a href="{{ route('financial-planning') }}">Financial Planning</a></li>
                                 </ul>
                             </li>
 
@@ -246,6 +246,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="tp-footer-widget tp-footer-col-4 mb-50">
+                        <h3 class="tp-footer-widget-title">Contact us</h3>
+                        <div class="tp-footer-widget-content">
+                            <div class="tp-footer-widget-contact">
+                                <div class="tp-footer-widget-contact-inner">
+                                    <a href="https://www.google.com/maps" target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i> 6391 Elgin St. Celina, 10299</a>
+                                </div>
+                                <div class="tp-footer-widget-contact-inner">
+                                    <a href="tel:123456765"><i class="fa-solid fa-phone"></i> (629) 555-0129</a>
+                                </div>
+                                <div class="tp-footer-widget-contact-inner">
+                                    <a href="mailto:info@ctbcommerce.com"><i class="fa-solid fa-envelope"></i>
+                                        <span >info@ctbcommerce.com</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="tp-footer-widget tp-footer-col-2 mb-50">
+                        <h3 class="tp-footer-widget-title">Featured Services</h3>
+                        <div class="tp-footer-widget-content">
+                            <ul>
+                                <li><a href="#">Foreign Currency Deposit</a></li>
+                                <li><a href="#"> Corporate Responsibility</a></li>
+                                <li><a href="#"> Information of interest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="tp-footer-widget tp-footer-col-1 mb-50">
                         <div class="tp-footer-logo mb-20">
                             <a href="index.html"> <img src="assets/img/logo/logo.png" alt=""></a>
@@ -261,57 +293,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-6">
-                    <div class="tp-footer-widget tp-footer-col-2 mb-50">
-                        <h3 class="tp-footer-widget-title">Quick links</h3>
-                        <div class="tp-footer-widget-content">
-                            <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Categories</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Blog Grid</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="tp-footer-widget tp-footer-col-3 mb-50">
-                        <h3 class="tp-footer-widget-title">Popular Post</h3>
-                        <div class="tp-footer-widget-content">
-                            <div class="tp-footer-widget-item">
-                                <h4 class="tp-footer-widget-item-title"><a href="blog-details.html">Ished fact that a reader</a></h4>
-                                <span><i class="fa-regular fa-calendar-days"></i> October 19, 2023</span>
-                            </div>
-                            <div class="tp-footer-widget-item">
-                                <h4 class="tp-footer-widget-item-title"><a href="blog-details.html">Will distrol acted desig </a></h4>
-                                <span><i class="fa-regular fa-calendar-days"></i> October 19, 2023</span>
-                            </div>
-                            <div class="tp-footer-widget-item">
-                                <h4 class="tp-footer-widget-item-title"><a href="blog-details.html">Transforming Business For You</a></h4>
-                                <span><i class="fa-regular fa-calendar-days"></i> October 19, 2023</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="tp-footer-widget tp-footer-col-4 mb-50">
-                        <h3 class="tp-footer-widget-title">Contact us</h3>
-                        <div class="tp-footer-widget-content">
-                            <div class="tp-footer-widget-contact">
-                                <div class="tp-footer-widget-contact-inner">
-                                    <a href="https://www.google.com/maps" target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i> 6391 Elgin St. Celina, 10299</a>
-                                </div>
-                                <div class="tp-footer-widget-contact-inner">
-                                    <a href="tel:123456765"><i class="fa-solid fa-phone"></i> (629) 555-0129</a>
-                                </div>
-                                <div class="tp-footer-widget-contact-inner">
-                                    <a href="https://template.wphix.com/cdn-cgi/l/email-protection#1970777f76597c61787469757c377a7674"><i class="fa-solid fa-envelope"></i> <span class="__cf_email__" data-cfemail="8fe6e1e9e0cfeaf7eee2ffe3eaa1ece0e2">[email&#160;protected]</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>
@@ -320,16 +303,15 @@
             <div class="row">
                 <div class="col-md-12 col-lg-6">
                     <div class="tp-footer-copyright-inner">
-                        <p>© Finbest 2023 | All Rights Reserved</p>
+                        <p>© {{ env('APP_NAME') }} {{ Date('Y') }} | All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <div class="tp-footer-copyright-inner text-lg-end">
-                        <a href="#">About us</a>
+                        <a href="{{ route('index') }}">Home</a>
+                        <a href="{{ route('about') }}">About us</a>
                         <a href="#">Categories</a>
-                        <a href="#">Services</a>
-                        <a href="#">Blog Grid</a>
-                        <a href="#">Contact Us</a>
+                        <a href="#">Categories</a>
                     </div>
                 </div>
             </div>

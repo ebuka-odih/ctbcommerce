@@ -25,6 +25,7 @@ Route::get('demo', [AccountController::class, 'demo']);
 Route::post('demo', [AccountController::class, 'storeDemo'])->name('storeDemo');
 
 Route::view('/', 'pages.index')->name('index');
+Route::view('/about', 'pages.about')->name('about');
 Route::view('/personal/checking', 'pages.personal.checking')->name('personal.checking');
 Route::view('/personal/savings', 'pages.personal.savings')->name('personal.savings');
 Route::view('/personal/ira', 'pages.personal.ira')->name('personal.ira');
@@ -32,6 +33,8 @@ Route::view('/business/checking', 'pages.business.checking')->name('business.che
 Route::view('/business/savings', 'pages.business.savings')->name('business.savings');
 Route::view('/business/ira', 'pages.business.ira')->name('business.ira');
 Route::view('/wealthmgt/trust-service', 'pages.wealth.trust-service')->name('trust-service');
+Route::view('/wealthmgt/estate-planning', 'pages.wealth.estate-planning')->name('estate-planning');
+Route::view('/wealthmgt/financial-planning', 'pages.wealth.financial-planning')->name('financial-planning');
 
 
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');
