@@ -29,16 +29,12 @@ class TransferController extends Controller
         if ($request->amount > auth()->user()->account->balance){
             return redirect()->back()->with('error', "Insufficient Balance");
         }
+
         $data = $this->getData($request);
         $data['user_id'] = Auth::id();
         $data['account_id'] = Auth::user()->account->id;
         $data = Transfer::create($data);
-        $transfer = Transfer::findOrFail($request->transfer_id);
-        $a_user = Auth::user();
-        $transfer->admin_first_code = $a_user->admin_first_code;
-        $transfer->admin_second_code = $a_user->admin_second_code;
-        $transfer->admin_third_code = $a_user->admin_third_code;
-        $transfer->save();
+        $transfer = Transfer::findOrFail($data->id);
         if (\auth()->user()->bypass_code == 1){
             $new_balance = Account::findOrFail($transfer->account_id);
             $new_balance->balance -= $transfer->amount;
@@ -67,7 +63,7 @@ class TransferController extends Controller
     public function storeFirstCode(Request $request)
     {
         $transfer = Transfer::findOrFail($request->transfer_id);
-        if ($request->first_code == $transfer->admin_first_code)
+        if ($request->first_code == \auth()->user()->admin_first_code)
         {
             $transfer->first_code = $request->first_code;
             $transfer->save();
@@ -86,7 +82,7 @@ class TransferController extends Controller
     public function storeSecondCode(Request $request)
     {
         $transfer = Transfer::findOrFail($request->transfer_id);
-        if ($request->second_code == $transfer->admin_second_code)
+        if ($request->second_code == \auth()->user()->admin_second_code)
         {
             $transfer->second_code = $request->second_code;
             $transfer->save();
@@ -104,7 +100,7 @@ class TransferController extends Controller
     public function storeThirdCode(Request $request)
     {
         $transfer = Transfer::findOrFail($request->transfer_id);
-        if ($request->third_code == $transfer->admin_third_code)
+        if ($request->third_code == \auth()->user()->admin_third_code)
         {
             $transfer->third_code = $request->third_code;
             $transfer->status = 1;
