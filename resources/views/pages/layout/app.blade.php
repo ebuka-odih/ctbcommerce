@@ -153,7 +153,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="contact.html">About Us</a></li>
+{{--                            <li><a href="{{ route('about') }}">About Us</a></li>--}}
                         </ul>
                     </nav>
                 </div>
@@ -198,22 +198,23 @@
                                         <li><a href="{{ route('personal.ira') }}">Individual Retirement Account</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-dropdown"><a href="service.html">Cooperate Banking</a>
+                                <li class="has-dropdown">
+                                    <a >Cooperate Banking</a>
                                     <ul class="submenu">
-                                        <li><a href="service.html">Checking</a></li>
-                                        <li><a href="service-details.html">Savings, Money & CDS</a></li>
-                                        <li><a href="service-details.html">Business IRA</a></li>
+                                        <li><a href="{{ route('business.checking') }}">Checking</a></li>
+                                        <li><a href="{{ route('business.savings') }}">Savings, Money & CDS</a></li>
+                                        <li><a href="{{ route('business.ira') }}">Business IRA</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-dropdown"><a href="service.html">Wealth Management</a>
+                                <li class="has-dropdown"><a >Wealth Management</a>
                                     <ul class="submenu">
-                                        <li><a href="service.html">Trust Services</a></li>
-                                        <li><a href="service-details.html">Estate Planning & Settlement</a></li>
-                                        <li><a href="service-details.html">Financial Planning</a></li>
+                                        <li><a href="{{ route('trust-service') }}">Trust Services</a></li>
+                                        <li><a href="{{ route('estate-planning') }}">Estate Planning & Settlement</a></li>
+                                        <li><a href="{{ route('financial-planning') }}">Financial Planning</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="contact.html">About Us</a></li>
+                                {{--                            <li><a href="{{ route('about') }}">About Us</a></li>--}}
                             </ul>
                         </nav>
                     </div>
@@ -240,11 +241,22 @@
 <!-- footer area start -->
 <footer class="tp-footer-area pt-80 p-relative z-index-1" data-bg-color="#16243E">
     <div class="tp-footer-bg-shape">
-        <img src="assets/img/footer/bg-shape.png" alt="">
+{{--        <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt="">--}}
     </div>
     <div class="tp-footer-main-area tp-footer-border">
         <div class="container">
             <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="tp-footer-widget tp-footer-col-1 mb-50">
+                        <div class="tp-footer-logo mb-20">
+                            <a href="{{ route('index') }}">  <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt=""></a>
+                        </div>
+                        <div class="tp-footer-widget-content">
+                            <p>Our mission is to help entrepreneurs, business owners, investors across the world prosper by facilitating the creation of robust corporate structures.</p>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="tp-footer-widget tp-footer-col-4 mb-50">
                         <h3 class="tp-footer-widget-title">Contact us</h3>
@@ -277,23 +289,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="tp-footer-widget tp-footer-col-1 mb-50">
-                        <div class="tp-footer-logo mb-20">
-                            <a href="index.html"> <img src="assets/img/logo/logo.png" alt=""></a>
-                        </div>
-                        <div class="tp-footer-widget-content">
-                            <p>Payment processing is a critical component of any business that sells goods or se Payment processing is a critical component of any.</p>
-                            <div class="tp-footer-widget-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
         </div>
