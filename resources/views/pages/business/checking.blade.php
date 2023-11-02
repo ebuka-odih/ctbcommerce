@@ -116,6 +116,50 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="card" >
+                            <img src="{{ asset('img/11.png') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Organization Checking
+                                </h5>
+                                <p class="card-text">
+                                    An interest-bearing checking account to satisfy the needs of non-profit organizations.
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush list-group-numbered">
+                                <li class="list-group-item">No minimum opening balance required</li>
+                                <li class="list-group-item">Free debit card & online banking</li>
+                                <li class="list-group-item">Free eStatements & standard checks</li>
+                                <li class="list-group-item">Low per-item transaction fees</li>
+                                <li class="list-group-item">15 free basic Bill Pay items</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="{{ route('personalInfo') }}" class="btn btn-info">Open Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="card" >
+                            <img src="{{ asset('img/12.png') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Public Funds Checking
+                                </h5>
+                                <p class="card-text">
+                                    Public Funds Interest Checking is optimal for public entities that maintain higher balances and want to earn competitive interest rates, based on the daily collected balance.
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush list-group-numbered">
+                                <li class="list-group-item">No minimum opening balance required</li>
+                                <li class="list-group-item">Free debit card & online banking</li>
+                                <li class="list-group-item">Free eStatements & standard checks</li>
+                                <li class="list-group-item">Low per-item transaction fees</li>
+                                <li class="list-group-item">15 free basic Bill Pay items</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="{{ route('personalInfo') }}" class="btn btn-info">Open Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <hr>
                 <div class="row">
@@ -168,9 +212,6 @@
                                                 <h3 class="tp-rc__post-title">
                                                     <a href="mailto:info@ctbcommerce"><i class="fa-regular fa-envelope"></i> info@ctbcommerce</a>
                                                 </h3>
-                                                <div class="tp-rc__post-meta">
-                                                    <span><i class="fa-regular fa-phone"></i>  +1 718-255-9168</span>
-                                                </div>
                                             </div>
                                         </div>
 

@@ -141,13 +141,13 @@
                                 <a >Cooperate Banking</a>
                                 <ul class="submenu">
                                     <li><a href="{{ route('business.checking') }}">Checking</a></li>
-                                    <li><a href="service-details.html">Savings, Money & CDS</a></li>
-                                    <li><a href="service-details.html">Business IRA</a></li>
+                                    <li><a href="{{ route('business.savings') }}">Savings, Money & CDS</a></li>
+                                    <li><a href="{{ route('business.ira') }}">Business IRA</a></li>
                                 </ul>
                             </li>
-                            <li class="has-dropdown"><a href="service.html">Wealth Management</a>
+                            <li class="has-dropdown"><a >Wealth Management</a>
                                 <ul class="submenu">
-                                    <li><a href="service.html">Trust Services</a></li>
+                                    <li><a href="{{ route('trust-service') }}">Trust Services</a></li>
                                     <li><a href="service-details.html">Estate Planning & Settlement</a></li>
                                     <li><a href="service-details.html">Financial Planning</a></li>
                                 </ul>

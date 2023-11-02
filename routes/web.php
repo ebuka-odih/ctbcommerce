@@ -29,6 +29,9 @@ Route::view('/personal/checking', 'pages.personal.checking')->name('personal.che
 Route::view('/personal/savings', 'pages.personal.savings')->name('personal.savings');
 Route::view('/personal/ira', 'pages.personal.ira')->name('personal.ira');
 Route::view('/business/checking', 'pages.business.checking')->name('business.checking');
+Route::view('/business/savings', 'pages.business.savings')->name('business.savings');
+Route::view('/business/ira', 'pages.business.ira')->name('business.ira');
+Route::view('/wealthmgt/trust-service', 'pages.wealth.trust-service')->name('trust-service');
 
 
 Route::get('signup/personal-info', [NewAccountController::class, 'personalInfo'])->name('personalInfo');

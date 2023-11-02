@@ -139,9 +139,6 @@
                                                 <h3 class="tp-rc__post-title">
                                                     <a href="mailto:info@ctbcommerce"><i class="fa-regular fa-envelope"></i> info@ctbcommerce</a>
                                                 </h3>
-                                                <div class="tp-rc__post-meta">
-                                                    <span><i class="fa-regular fa-phone"></i>  +1 718-255-9168</span>
-                                                </div>
                                             </div>
                                         </div>
 
