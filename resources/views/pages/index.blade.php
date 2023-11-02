@@ -21,7 +21,7 @@
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
                                             <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" target="_blank" href="{{ route('personalInfo') }}">Get Started <span><i class="fa-regular fa-plus"></i></span></a>
+                                                <a class="tp-btn" target="_blank" href="{{ route('personalInfo') }}">Sign Up <span><i class="fa-regular fa-plus"></i></span></a>
                                             </div>
 
                                         </div>
@@ -86,7 +86,7 @@
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
                                             <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="{{ route('personalInfo') }}">Join Us Today <span><i class="fa-regular fa-plus"></i></span></a>
+                                                <a class="tp-btn" href="{{ route('personalInfo') }}">Sign Up Today <span><i class="fa-regular fa-plus"></i></span></a>
                                             </div>
 
                                         </div>
@@ -138,7 +138,7 @@
                                     </p>
                                 </div>
                                 <div class="tp-service-item-thumb">
-                                    <a href="service-details.html">View More</a>
+                                    <a href="{{ route('loan') }}">View More</a>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                                     </p>
                                 </div>
                                 <div class="tp-service-item-thumb">
-                                    <a href="service-details.html">View More</a>
+                                    <a href="{{ route('investment') }}">View More</a>
                                 </div>
                             </div>
                         </div>
@@ -171,9 +171,7 @@
                                     <h4 class="tp-service-item-title"><a >Fast and easy banking</a></h4>
                                     <p> With online and mobile banking, our extensive ATM network, and convenient bank locations, your day-to-day banking won't slow you down. No matter what your banking needs are, we've got an account that fits.</p>
                                 </div>
-                                <div class="tp-service-item-thumb">
-                                    <a href="service-details.html">View More</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -250,12 +248,16 @@
                             <div class="tp-service-item-wrapper p-relative">
 
                                 <div class="tp-service-item-thumb">
-                                    <a href="service-details.html"><img src="{{ asset('front/assets/img/service/img-1.jpg') }}" alt=""></a>
+                                    <a href="{{ route('loan') }}"><img src="{{ asset('front/assets/img/service/img-1.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="tp-service-item-content">
                                     <h4 class="tp-service-item-title"><a >Protection With you</a></h4>
                                     <p>Find all the support and information they need to make all decisions about saving for your future.
                                     </p>
+
+                                </div>
+                                <div class="tp-service-item-thumb">
+                                    <a href="{{ route('loan') }}">View More</a>
                                 </div>
 
                             </div>
@@ -263,22 +265,25 @@
                         <div class="swiper-slide">
                             <div class="tp-service-item-wrapper p-relative">
                                 <div class="tp-service-item-thumb">
-                                    <a href="service-details.html"><img src="{{ asset('front/assets/img/service/img-2.jpg') }}" alt=""></a>
+                                    <a href="{{ route('investment') }}"><img src="{{ asset('front/assets/img/service/img-2.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="tp-service-item-content">
                                     <h4 class="tp-service-item-title"><a >For your future</a></h4>
                                     <p>Meet here all our range of products and services, rules of our products and everything related to your savings in pension.</p>
                                 </div>
+                                <div class="tp-service-item-thumb">
+                                    <a href="{{ route('investment') }}">View More</a>
+                                </div>
 
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="tp-service-item-wrapper p-relative">
                                 <div class="tp-service-item-thumb">
-                                    <a href="service-details.html"><img src="{{ asset('front/assets/img/service/img-3.jpg') }}" alt=""></a>
+                                    <a ><img src="{{ asset('front/assets/img/service/img-3.jpg') }}" alt=""></a>
                                 </div>
                                 <div class="tp-service-item-content">
-                                    <h4 class="tp-service-item-title"><a href="service-details.html">Zone Saver</a></h4>
+                                    <h4 class="tp-service-item-title"><a >Zone Saver</a></h4>
                                     <p>Accompany relevant share you mean, renewed and information of interest to learn to save you and your projects come true.
 
                                     </p>
@@ -379,7 +384,7 @@
     </section>
     <!-- faq area end -->
 
-    
+
 
 </main>
 
