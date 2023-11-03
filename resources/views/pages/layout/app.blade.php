@@ -305,8 +305,9 @@
                     <div class="tp-footer-copyright-inner text-lg-end">
                         <a href="{{ route('index') }}">Home</a>
                         <a href="{{ route('about') }}">About us</a>
-                        <a href="#">Categories</a>
-                        <a href="#">Categories</a>
+                        <a href="{{ route('portfoliomgt') }}">Services</a>
+                        <a href="{{ route('forex') }}">Portfolio</a>
+                        <a href="{{ route('contact') }}">Contact</a>
                     </div>
                 </div>
             </div>
