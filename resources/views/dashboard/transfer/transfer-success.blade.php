@@ -67,7 +67,7 @@
                                     <strong>Name:</strong> {{ auth()->user()->first_name." ".auth()->user()->last_name }}<br>
                                     <strong>Email:</strong> {{ auth()->user()->email }}<br>
                                     <strong>Bank Name:</strong> {{ env('APP_NAME') }}<br>
-                                    <strong>Account No:</strong> <span class="text text-primary">{{ auth()->user()->account->account_number }}</span><br>
+                                    <strong>Account No:</strong> <span class="text-primary">{{ auth()->user()->account->account_number }}</span><br>
                                 </div>
                             </div>
                             <!-- END Company Info -->
@@ -76,9 +76,9 @@
                             <div class="col-6 text-end">
                                 <p class="h3">RECEIVER</p>
                                 <div>
-                                    <strong>Name:</strong> {{ $transfer->rep_name }}<br>
-                                    <strong>Account No:</strong> {{ $transfer->acct_number }}<br>
-                                    <strong>Bank Name:</strong> {{ $transfer->bank_name }}<br>
+                                    <strong>Name:</strong> {{ $transfer->ben_name }}<br>
+                                    <strong>Account No:</strong> <span class="text-primary">{{ $transfer->acct_number }}</span><br>
+                                    <strong>Bank Name:</strong> {{ $transfer->ben_bank }}<br>
                                 </div>
                             </div>
                             <!-- END Client Info -->
