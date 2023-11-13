@@ -1,6 +1,22 @@
 @extends('pages.layout.app')
 @section('content')
 
+    <style>
+        .tp-contact-breadcrumb-content input, .tp-contact-breadcrumb-content textarea {
+            height: 40px;
+            background: var(--tp-common-white);
+            border: 1px solid #E3E3E3;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+        .tp-contact-breadcrumb-btn .tp-btn {
+            width: 100%;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+    </style>
 <main>
 
     <!-- hero area start -->
@@ -20,8 +36,42 @@
                                             <p>Take control with a new {{ env('APP_NAME') }} checking account</p>
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
-                                            <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" target="_blank" href="{{ route('personalInfo') }}">Sign Up <span><i class="fa-regular fa-plus"></i></span></a>
+
+                                            <div class="col-lg-6">
+                                                <div class="tp-contact-breadcrumb-content">
+                                                    <h4 class="text-white">Sign In</h4>
+                                                    <form  method="POST" action="{{ route('login') }}">
+                                                        @csrf
+                                                        @if ($errors->any())
+                                                            <div class="alert alert-danger">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                        <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="username" type="text" placeholder="User ID">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="password" type="password" placeholder="Passcode">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-breadcrumb-btn">
+                                                                    <button type="submit" class="tp-btn">LOGIN</button>
+                                                                    <p class="ajax-response"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -52,9 +102,42 @@
                                             <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
-                                            <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="{{ route('login') }}">Login
-                                                    <span><i class="fa-regular fa-plus"></i></span></a>
+
+                                            <div class="col-lg-6">
+                                                <div class="tp-contact-breadcrumb-content">
+                                                    <h4 class="text-white">Sign In</h4>
+                                                    <form  method="POST" action="{{ route('login') }}">
+                                                        @csrf
+                                                        @if ($errors->any())
+                                                            <div class="alert alert-danger">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                        <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="username" type="text" placeholder="User ID">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="password" type="password" placeholder="Passcode">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-breadcrumb-btn">
+                                                                    <button type="submit" class="tp-btn">LOGIN</button>
+                                                                    <p class="ajax-response"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -85,8 +168,41 @@
                                             <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
                                         <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
-                                            <div class="tp-hero-btn mr-30">
-                                                <a class="tp-btn" href="{{ route('personalInfo') }}">Sign Up Today <span><i class="fa-regular fa-plus"></i></span></a>
+                                            <div class="col-lg-6">
+                                                <div class="tp-contact-breadcrumb-content">
+                                                    <h4 class="text-white">Sign In</h4>
+                                                    <form  method="POST" action="{{ route('login') }}">
+                                                        @csrf
+                                                        @if ($errors->any())
+                                                            <div class="alert alert-danger">
+                                                                <ul>
+                                                                    @foreach ($errors->all() as $error)
+                                                                        <li>{{ $error }}</li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="username" type="text" placeholder="User ID">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-input">
+                                                                    <input name="password" type="password" placeholder="Passcode">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="tp-contact-breadcrumb-btn">
+                                                                    <button type="submit" class="tp-btn">LOGIN</button>
+                                                                    <p class="ajax-response"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
 
                                         </div>

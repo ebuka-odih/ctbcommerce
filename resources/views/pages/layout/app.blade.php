@@ -110,21 +110,16 @@
 
 
 <!-- header area start -->
-<header class="tp-header-area p-relative">
+<header  class="tp-header-area p-relative">
     <div class="tp-header-box p-relative">
         <div class="tp-header-logo p-relative">
             <span class="tp-header-logo-bg"></span>
             <a href="{{ route('index') }}">
-                <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt="">
+                <img height="50" width="150" src="{{ asset('img/logo.png') }}" alt="">
             </a>
         </div>
         <div class="tp-header-wrapper-inner header__sticky p-relative">
-            <div class="tp-header-top d-none d-xl-flex">
-                <div class="tp-header-top-info">
-                    <a href="#" target="_blank"><span><i class="fa-sharp fa-solid fa-location-dot"></i></span>6391 Elgin St. Celina, 10299</a>
-                </div>
 
-            </div>
             <div class="tp-header-main-menu d-flex align-items-center justify-content-between">
                 <div class="tp-main-menu d-none d-xl-block">
                     <nav class="tp-main-menu-content">
@@ -161,7 +156,7 @@
             </div>
         </div>
         <div class="tp-header-btn">
-            <a class="tp-btn d-none d-xl-block" href="{{ route('login') }}">Login <i class="fa-regular fa-arrow-right"></i></a>
+            <a style="color: cadetblue" class="tp- d-none d-xl-block" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
             <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
                 <button class="hamburger-btn">
                     <span></span>
@@ -175,66 +170,7 @@
 <!-- header area end -->
 
 <!-- sticky header start -->
-<header id="header-sticky" class="tp-header-main-sticky p-relative">
-    <div class="tp-header-space-2">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-xl-3 col-6">
-                    <div class="tp-header-logo-2 p-relative">
-                        <a href="{{ route('index') }}">
-                            <img height="70" width="200" src="{{ asset('img/logo.png') }}" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-none d-xl-block">
-                    <div class="tp-main-menu home-2 d-none d-xl-block">
-                        <nav class="tp-main-menu-content">
-                            <ul>
-                                <li><a href="{{ route('index') }}">Home</a></li>
-                                <li class="has-dropdown"><a >Personal Banking</a>
-                                    <ul class="submenu">
-                                        <li><a href="{{ route('personal.checking') }}">Checking</a></li>
-                                        <li><a href="{{ route('personal.savings') }}">Savings, Money & CDS</a></li>
-                                        <li><a href="{{ route('personal.ira') }}">Individual Retirement Account</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown">
-                                    <a >Corperate Banking</a>
-                                    <ul class="submenu">
-                                        <li><a href="{{ route('business.checking') }}">Checking</a></li>
-                                        <li><a href="{{ route('business.savings') }}">Savings, Money & CDS</a></li>
-                                        <li><a href="{{ route('business.ira') }}">Business IRA</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown"><a >Wealth Management</a>
-                                    <ul class="submenu">
-                                        <li><a href="{{ route('trust-service') }}">Trust Services</a></li>
-                                        <li><a href="{{ route('estate-planning') }}">Estate Planning & Settlement</a></li>
-                                        <li><a href="{{ route('financial-planning') }}">Financial Planning</a></li>
-                                    </ul>
-                                </li>
-
-                                {{--                            <li><a href="{{ route('about') }}">About Us</a></li>--}}
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-6">
-                    <div class="tp-header-main-right-2 d-flex align-items-center justify-content-xl-end">
-                        <a class="tp-btn d-none d-xl-block" href="{{ route('login') }}">Login <i class="fa-regular fa-arrow-right"></i></a>
-                        <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
-                            <button class="hamburger-btn">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+@include('pages.layout.header')
 <!-- sticky header end -->
 @yield('content')
 
