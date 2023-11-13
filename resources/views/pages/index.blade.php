@@ -16,6 +16,10 @@
             padding: 10px 30px;
             border-radius: 5px;
         }
+        .pb-90 {
+             padding-bottom: 1px;
+        }
+
     </style>
 <main>
 
@@ -287,6 +291,9 @@
                                     <h4 class="tp-service-item-title"><a >Fast and easy banking</a></h4>
                                     <p> With online and mobile banking, our extensive ATM network, and convenient bank locations, your day-to-day banking won't slow you down. No matter what your banking needs are, we've got an account that fits.</p>
                                 </div>
+                                <div style="visibility: hidden" class="tp-service-item-thumb">
+                                    <a href="{{ route('investment') }}">View More</a>
+                                </div>
 
                             </div>
                         </div>
@@ -404,6 +411,9 @@
 
                                     </p>
                                 </div>
+                                <div style="visibility: hidden" class="tp-service-item-thumb">
+                                    <a href="{{ route('loan') }}">View More</a>
+                                </div>
 
                             </div>
                         </div>
@@ -416,48 +426,17 @@
     <!-- service area end -->
 
 
-    <!-- brand area start -->
-    <div class="tp-brand-area tp-brand-background p-relative pb-120">
-        <div class="container">
-            <div class="tp-brand-wrapper p-relative wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" data-background="assets/img/brand/bg-shape.png">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="tp-brand-thumb">
-                            <img src="assets/img/brand/img-1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="tp-brand-thumb">
-                            <img src="assets/img/brand/img-2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="tp-brand-thumb text-center">
-                            <img src="assets/img/brand/img-3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="tp-brand-thumb text-lg-end">
-                            <img src="assets/img/brand/img-4.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- brand area end -->
-
 
     <!-- faq area start -->
 
-    <section class="tp-faq-area p-relative pt-120 pb-120" data-background="assets/img/faq/bg-shape.png">
+    <section class="tp-faq-area p-relative pt-50 pb-120" data-background="{{ asset('front/assets/img/faq/bg-shape.png') }}">
         <div class="tp-faq-bg"></div>
-        <div style="margin-bottom: 30px" class="container">
+        <div style="margin-bottom: 50px" class="container">
             <div class="row">
                <div  class="col-3">
                    <div class="card bg-secondary ">
                        <div style="color: white" class="card-body text-white">
-                           <H4 class="text-white">OUR INSURANCE</H4>
+                           <H4 class="text-white">INSURANCES</H4>
                            <p class="text-white">Your peace of mind is priceless, we offer a broad portfolio of solutions to ensure what you love most</p>
                        </div>
                    </div>
@@ -465,7 +444,7 @@
                 <div class="col-3">
                    <div class="card bg-primary">
                        <div class="card-body ">
-                           <H4 class="text-white">OUR BENEFIT</H4>
+                           <H4 class="text-white">BENEFIT</H4>
                            <P class="text-white">We have created alliances with recognized entities that contribute to improving quality of your life.
                            </P>
                        </div>
@@ -474,7 +453,7 @@
                 <div class="col-3">
                    <div class="card bg-secondary">
                        <div class="card-body ">
-                           <H4 class="text-white">SOCIAL PROGRAMS
+                           <H4 class="text-white">SOCIAL
                            </H4>
                            <P class="text-white">
                                Our programs with social sense, everyday comprehensively improve the quality of life of our members.
@@ -485,7 +464,7 @@
                 <div class="col-3">
                    <div class="card bg-primary">
                        <div class="card-body ">
-                           <H4 class="text-white">RESORT OPTIONS
+                           <H4 class="text-white">RESORT
                            </H4>
                            <P class="text-white">
                                We offer the best alternatives for recreation, relaxation and adventure to share with family and friends.
