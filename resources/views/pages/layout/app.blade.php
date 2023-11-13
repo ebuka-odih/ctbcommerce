@@ -199,11 +199,9 @@
                         <div class="tp-footer-widget-content">
                             <div class="tp-footer-widget-contact">
                                 <div class="tp-footer-widget-contact-inner">
-                                    <a href="https://www.google.com/maps" target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i> 6391 Elgin St. Celina, 10299</a>
+                                    <a  target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i> 6391 Elgin St. Celina, 10299</a>
                                 </div>
-                                <div class="tp-footer-widget-contact-inner">
-                                    <a href="tel:123456765"><i class="fa-solid fa-phone"></i> (629) 555-0129</a>
-                                </div>
+
                                 <div class="tp-footer-widget-contact-inner">
                                     <a href="mailto:info@ctbcommerce.com"><i class="fa-solid fa-envelope"></i>
                                         <span >info@ctbcommerce.com</span>
@@ -218,9 +216,9 @@
                         <h3 class="tp-footer-widget-title">Featured Services</h3>
                         <div class="tp-footer-widget-content">
                             <ul>
-                                <li><a href="#">Foreign Currency Deposit</a></li>
-                                <li><a href="#"> Corporate Responsibility</a></li>
-                                <li><a href="#"> Information of interest</a></li>
+                                <li><a href="{{ route('contact') }}">Foreign Currency Deposit</a></li>
+                                <li><a href="{{ route('contact') }}"> Corporate Responsibility</a></li>
+                                <li><a href="{{ route('contact') }}"> Information of interest</a></li>
                             </ul>
                         </div>
                     </div>

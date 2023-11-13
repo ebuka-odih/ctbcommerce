@@ -36,13 +36,13 @@
                         <div class="">
                             <h3>Contact Us</h3>
 
-                            <p>Our customer support and acount management teams provide the best customer service
-                                expirience. We 're always ready to help find solution to your issues. </p>
+                            <p>Our customer support and account management teams provide the best customer service
+                                experience. We 're always ready to help find solution to your issues. </p>
                         </div>
                         <div class="col-md-8">
                             <h3>Contact Form</h3>
 
-                            <p>Please fill the form below so we can provide quick and effifcient service.
+                            <p>Please fill the form below so we can provide quick and efficient service.
                             </p>
                             <br>
                             <form id="form-contact" method="post" class="form-theme" action="account/sendmail">
@@ -65,7 +65,7 @@
                                         <div class="tp-rc__post d-flex align-items-center">
                                             <div class="tp-rc__post-content">
                                                 <h3 class="tp-rc__post-title">
-                                                    <a href="mailto:info@ctbcommerce"><i class="fa-regular fa-envelope"></i> info@ctbcommerce</a>
+                                                    <a href="mailto:info@ctbcommerce.com"><i class="fa-regular fa-envelope"></i> info@ctbcommerce.com</a>
                                                 </h3>
                                             </div>
                                         </div>
