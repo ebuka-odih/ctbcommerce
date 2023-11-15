@@ -433,7 +433,7 @@
         <div class="tp-faq-bg"></div>
         <div style="margin-bottom: 50px" class="container">
             <div class="row">
-               <div  class="col-3">
+               <div  class="col-lg-3 col-md-12">
                    <div class="card bg-secondary ">
                        <div style="color: white" class="card-body text-white">
                            <H4 class="text-white">INSURANCES</H4>
@@ -441,7 +441,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-12">
                    <div class="card bg-primary">
                        <div class="card-body ">
                            <H4 class="text-white">BENEFIT</H4>
@@ -450,7 +450,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-12">
                    <div class="card bg-secondary">
                        <div class="card-body ">
                            <H4 class="text-white">SOCIAL
@@ -461,7 +461,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-12">
                    <div class="card bg-primary">
                        <div class="card-body ">
                            <H4 class="text-white">RESORT
