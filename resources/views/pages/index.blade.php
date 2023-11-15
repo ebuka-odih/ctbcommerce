@@ -431,7 +431,7 @@
 
     <section class="tp-faq-area p-relative pt-50 pb-120" data-background="{{ asset('front/assets/img/faq/bg-shape.png') }}">
         <div class="tp-faq-bg"></div>
-        <div style="margin-bottom: 50px" class="container">
+        <div style="margin-bottom: 100px" class="container">
             <div class="row">
                <div  class="col-lg-3 col-md-12">
                    <div class="card bg-secondary ">
@@ -441,7 +441,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-lg-3 col-md-12">
+                <div class="col-lg-3 col-md-12 mb-3">
                    <div class="card bg-primary">
                        <div class="card-body ">
                            <H4 class="text-white">BENEFIT</H4>
@@ -450,7 +450,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-lg-3 col-md-12">
+                <div class="col-lg-3 col-md-12 mb-3">
                    <div class="card bg-secondary">
                        <div class="card-body ">
                            <H4 class="text-white">SOCIAL
@@ -461,7 +461,7 @@
                        </div>
                    </div>
                </div>
-                <div class="col-lg-3 col-md-12">
+                <div class="col-lg-3 col-md-12 mb-3">
                    <div class="card bg-primary">
                        <div class="card-body ">
                            <H4 class="text-white">RESORT
