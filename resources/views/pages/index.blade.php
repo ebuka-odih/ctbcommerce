@@ -21,13 +21,78 @@
         }
 
     </style>
+    <style>
+        div.sticky{
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            /* margin-bottom: 10px; */
+            position: absolute;
+            z-index: 999;
+            top: 440px;
+            left: 20em;
+            border: thin #ccc solid;
+        }
+        @media only screen and (max-width: 600px) {
+            div.sticky{
+               display: none;
+            }
+        }
+    </style>
 <main>
 
     <!-- hero area start -->
     <section class="tp-hero-area p-relative">
         <div class="tp-hero-wrapper-slider">
             <div class="tp-hero-active swiper-container">
+                <div class=" sticky">
+
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="tp-contact-breadcrumb-content">
+                            <h4 class="text-dark text-center">Sign In</h4>
+                            <form  method="POST" action="{{ route('login') }}">
+                                @csrf
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="tp-contact-input">
+                                            <input name="username" type="text" placeholder="User ID">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="tp-contact-input">
+                                            <input name="password" type="password" placeholder="Passcode">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="tp-contact-breadcrumb-btn">
+                                            <button type="submit" class="tp-btn">LOGIN</button>
+                                            <p class="ajax-response"></p>
+                                        </div>
+                                    </div>
+                                    @if (Route::has('password.request'))
+                                        <a class="btn-link btn-sm pull-right" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Password?') }}
+                                        </a>
+                                    @endif
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="swiper-wrapper">
+
+
                     <div class="swiper-slide pt-160 pb-115" data-bg-color="#16243E">
                         <div class="tp-hero-bg" data-background="{{ asset('front/assets/img/hero/shape-bg.png') }}"></div>
                         <div class="container">
@@ -39,46 +104,7 @@
                                             <h2 class="tp-hero-title">Go from financial stress to financial yes</h2>
                                             <p>Take control with a new {{ env('APP_NAME') }} checking account</p>
                                         </div>
-                                        <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 
-                                            <div class="col-lg-6">
-                                                <div class="tp-contact-breadcrumb-content">
-                                                    <h4 class="text-white">Sign In</h4>
-                                                    <form  method="POST" action="{{ route('login') }}">
-                                                        @csrf
-                                                        @if ($errors->any())
-                                                            <div class="alert alert-danger">
-                                                                <ul>
-                                                                    @foreach ($errors->all() as $error)
-                                                                        <li>{{ $error }}</li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
-                                                        @endif
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="username" type="text" placeholder="User ID">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="password" type="password" placeholder="Passcode">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-breadcrumb-btn">
-                                                                    <button type="submit" class="tp-btn">LOGIN</button>
-                                                                    <p class="ajax-response"></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
@@ -105,46 +131,8 @@
                                             <h2 class="tp-hero-title">Are you ready?</h2>
                                             <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
-                                        <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 
-                                            <div class="col-lg-6">
-                                                <div class="tp-contact-breadcrumb-content">
-                                                    <h4 class="text-white">Sign In</h4>
-                                                    <form  method="POST" action="{{ route('login') }}">
-                                                        @csrf
-                                                        @if ($errors->any())
-                                                            <div class="alert alert-danger">
-                                                                <ul>
-                                                                    @foreach ($errors->all() as $error)
-                                                                        <li>{{ $error }}</li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
-                                                        @endif
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="username" type="text" placeholder="User ID">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="password" type="password" placeholder="Passcode">
-                                                                </div>
-                                                            </div>
 
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-breadcrumb-btn">
-                                                                    <button type="submit" class="tp-btn">LOGIN</button>
-                                                                    <p class="ajax-response"></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
@@ -171,45 +159,8 @@
                                             <h2 class="tp-hero-title">Banking on the go</h2>
                                             <p>{{ env('APP_NAME') }} included multiple features</p>
                                         </div>
-                                        <div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
-                                            <div class="col-lg-6">
-                                                <div class="tp-contact-breadcrumb-content">
-                                                    <h4 class="text-white">Sign In</h4>
-                                                    <form  method="POST" action="{{ route('login') }}">
-                                                        @csrf
-                                                        @if ($errors->any())
-                                                            <div class="alert alert-danger">
-                                                                <ul>
-                                                                    @foreach ($errors->all() as $error)
-                                                                        <li>{{ $error }}</li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
-                                                        @endif
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="username" type="text" placeholder="User ID">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-input">
-                                                                    <input name="password" type="password" placeholder="Passcode">
-                                                                </div>
-                                                            </div>
 
-                                                            <div class="col-md-12">
-                                                                <div class="tp-contact-breadcrumb-btn">
-                                                                    <button type="submit" class="tp-btn">LOGIN</button>
-                                                                    <p class="ajax-response"></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
 
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
@@ -303,6 +254,9 @@
             </div>
         </div>
     </section>
+    <!-- Button trigger modal -->
+
+
 
 
 

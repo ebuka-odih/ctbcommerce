@@ -20,6 +20,20 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('front/assets/css/main.css') }}">
+
+    <style>
+        /* Default styles for the button */
+        .login_btn {
+            display: none; /* Hidden by default on all devices */
+        }
+
+        /* Media query for screens with a maximum width of 768 pixels (typical for phones and smaller tablets) */
+        @media only screen and (max-width: 768px) {
+            .login_btn {
+                display: block; /* Display the button on smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -61,24 +75,23 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="index.html">
-                        <img src="assets/img/logo/logo-black.png" alt="logo">
+                    <a href="{{ route('index') }}">
+                        <img height="50" width="150" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
                 </div>
             </div>
 
-            <div class="tp-main-menu-mobile fix d-xl-none mb-40"></div>
+            <div class="tp-main-menu-mobile fix d-xl-none mb-40">
+
+            </div>
+            <div style="margin-bottom: 20px; margin-top: 10px">
+                <a style="color: cadetblue; " class="new_acct " target="_blank" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
+
+            </div>
 
             <div class="offcanvas__contact">
                 <h4 class="offcanvas__title">Contacts</h4>
-                <div class="offcanvas__contact-content d-flex">
-                    <div class="offcanvas__contact-content-icon">
-                        <i class="fa-sharp fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="offcanvas__contact-content-content">
-                        <a >86 Road Broklyn Street, 600 </a>
-                    </div>
-                </div>
+
                 <div class="offcanvas__contact-content d-flex">
                     <div class="offcanvas__contact-content-icon">
                         <i class="fa-solid fa-envelope"></i>
@@ -87,14 +100,7 @@
                         <a href="https://template.wphix.com/cdn-cgi/l/email-protection#b5dbd0d0d1ddd0d9c5f5d6dad8c5d4dbcc9bd6dad8"> <span>info@ctbcommerce.com</span>  </a>
                     </div>
                 </div>
-{{--                <div class="offcanvas__contact-content d-flex">--}}
-{{--                    <div class="offcanvas__contact-content-icon">--}}
-{{--                        <i class="fa-solid fa-phone"></i>--}}
-{{--                    </div>--}}
-{{--                    <div class="offcanvas__contact-content-content">--}}
-{{--                        <a href="tel:01310-069824"> +92 666 888 0000</a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+
 
             </div>
 
@@ -113,12 +119,16 @@
             <a href="{{ route('index') }}">
                 <img height="50" width="150" src="{{ asset('img/logo.png') }}" alt="">
             </a>
+
         </div>
+
         <div class="tp-header-wrapper-inner header__sticky p-relative">
+
 
             <div class="tp-header-main-menu d-flex align-items-center justify-content-between">
                 <div class="tp-main-menu d-none d-xl-block">
                     <nav class="tp-main-menu-content">
+
                         <ul>
                             <li><a href="{{ route('index') }}">Home</a></li>
                             <li class="has-dropdown"><a >Personal Banking</a>
@@ -144,13 +154,15 @@
                                 </ul>
                             </li>
 
-{{--                            <li><a href="{{ route('about') }}">About Us</a></li>--}}
                         </ul>
                     </nav>
                 </div>
 
             </div>
         </div>
+        <a style="margin: 30px; background-color: cadetblue; font-weight: bolder; " href="#" class="login_btn btn btn-sm text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Login
+        </a>
         <div class="tp-header-btn">
             <a style="color: cadetblue" class="tp- d-none d-xl-block" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
             <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
@@ -246,6 +258,63 @@
 </footer>
 <!-- footer area end -->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome Back</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="tp-contact-breadcrumb-content">
+                        <h4 class="text-dark text-center">Sign In</h4>
+                        <form  method="POST" action="{{ route('login') }}">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tp-contact-input">
+                                        <input name="username" type="text" placeholder="User ID">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="tp-contact-input">
+                                        <input name="password" type="password" placeholder="Passcode">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="tp-contact-breadcrumb-btn">
+                                        <button type="submit" class="tp-btn">LOGIN</button>
+                                        <p class="ajax-response"></p>
+                                    </div>
+                                </div>
+                                @if (Route::has('password.request'))
+                                    <a class="btn-link btn-sm pull-right" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- JS here -->
