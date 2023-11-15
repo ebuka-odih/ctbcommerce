@@ -76,7 +76,7 @@
                         <i class="fa-sharp fa-solid fa-location-dot"></i>
                     </div>
                     <div class="offcanvas__contact-content-content">
-                        <a href="https://www.google.com/maps/search/86+Road+Broklyn+Street,+600+New+York,+USA/@40.6897806,-74.0278086,12z/data=!3m1!4b1">86 Road Broklyn Street, 600 </a>
+                        <a >86 Road Broklyn Street, 600 </a>
                     </div>
                 </div>
                 <div class="offcanvas__contact-content d-flex">
@@ -84,24 +84,20 @@
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="offcanvas__contact-content-content">
-                        <a href="https://template.wphix.com/cdn-cgi/l/email-protection#b5dbd0d0d1ddd0d9c5f5d6dad8c5d4dbcc9bd6dad8"> <span class="__cf_email__" data-cfemail="95dbf0f0f1fdf0f9e5d5f6faf8e5f4fbecbbf6faf8">[email&#160;protected]</span>  </a>
+                        <a href="https://template.wphix.com/cdn-cgi/l/email-protection#b5dbd0d0d1ddd0d9c5f5d6dad8c5d4dbcc9bd6dad8"> <span>info@ctbcommerce.com</span>  </a>
                     </div>
                 </div>
-                <div class="offcanvas__contact-content d-flex">
-                    <div class="offcanvas__contact-content-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="offcanvas__contact-content-content">
-                        <a href="tel:01310-069824"> +92 666 888 0000</a>
-                    </div>
-                </div>
+{{--                <div class="offcanvas__contact-content d-flex">--}}
+{{--                    <div class="offcanvas__contact-content-icon">--}}
+{{--                        <i class="fa-solid fa-phone"></i>--}}
+{{--                    </div>--}}
+{{--                    <div class="offcanvas__contact-content-content">--}}
+{{--                        <a href="tel:01310-069824"> +92 666 888 0000</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
             </div>
-            <div class="offcanvas__social">
-                <a class="icon facebook" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="icon twitter" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="icon youtube" href="#"><i class="fab fa-youtube"></i></a>
-                <a class="icon linkedin" href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
+
         </div>
     </div>
 </div>
