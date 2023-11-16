@@ -45,9 +45,9 @@
     <section class="tp-hero-area p-relative">
         <div class="tp-hero-wrapper-slider">
             <div class="tp-hero-active swiper-container">
-                <div class=" sticky">
+                <div class="col-lg-3 sticky">
 
-                    <div class="col-lg-10 offset-lg-1">
+                    <div class="col-lg-12">
                         <div class="tp-contact-breadcrumb-content">
                             <h4 class="text-dark text-center">Sign In</h4>
                             <form  method="POST" action="{{ route('login') }}">
@@ -100,7 +100,6 @@
                                 <div class="col-lg-7">
                                     <div class="tp-hero-content p-relative">
                                         <div class="tp-hero-title-wrapper">
-                                            <span class="tp-hero-subtitle">Welcome</span>
                                             <h2 class="tp-hero-title">Go from financial stress to financial yes</h2>
                                             <p>Take control with a new {{ env('APP_NAME') }} checking account</p>
                                         </div>
