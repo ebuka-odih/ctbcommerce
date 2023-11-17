@@ -85,7 +85,7 @@
 
             </div>
             <div style="margin-bottom: 20px; margin-top: 10px">
-                <a style="color: cadetblue; font-weight: bolder" class="new_acct " target="_blank" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
+                <a style="color: cadetblue; font-weight: bolder" class="new_acct " target="_blank" href="{{ route('personalInfo') }}">Open an Account <i class="fa-regular fa-arrow-right"></i></a>
 
             </div>
 

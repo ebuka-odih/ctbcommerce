@@ -29,7 +29,7 @@
             /* margin-bottom: 10px; */
             position: absolute;
             z-index: 999;
-            top: 440px;
+            top: 420px;
             left: 8em;
             border: thin #ccc solid;
         }
