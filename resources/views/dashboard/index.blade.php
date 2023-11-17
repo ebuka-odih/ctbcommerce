@@ -127,11 +127,11 @@
         <!-- END Latest Transactions -->
 
         <!-- View More -->
-        <div class="text-center">
-            <a class="btn btn-sm btn-alt-secondary fw-semibold" href="javascript:void(0)">
-                <i class="fa fa-arrow-down opacity-50 me-1"></i> View More..
-            </a>
-        </div>
+{{--        <div class="text-center">--}}
+{{--            <a class="btn btn-sm btn-alt-secondary fw-semibold" href="javascript:void(0)">--}}
+{{--                <i class="fa fa-arrow-down opacity-50 me-1"></i> View More..--}}
+{{--            </a>--}}
+{{--        </div>--}}
         <!-- END View More -->
     </div>
     <!-- END Page Content -->
