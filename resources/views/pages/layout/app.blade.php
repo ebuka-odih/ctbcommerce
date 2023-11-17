@@ -207,10 +207,6 @@
                         <div class="tp-footer-widget-content">
                             <div class="tp-footer-widget-contact">
                                 <div class="tp-footer-widget-contact-inner">
-                                    <a  target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i> 6391 Elgin St. Celina, 10299</a>
-                                </div>
-
-                                <div class="tp-footer-widget-contact-inner">
                                     <a href="mailto:info@ctbcommerce.com"><i class="fa-solid fa-envelope"></i>
                                         <span >info@ctbcommerce.com</span>
                                     </a>

@@ -30,7 +30,7 @@
             position: absolute;
             z-index: 999;
             top: 440px;
-            left: 20em;
+            left: 8em;
             border: thin #ccc solid;
         }
         @media only screen and (max-width: 600px) {
