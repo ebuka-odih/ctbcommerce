@@ -99,21 +99,14 @@
             <!-- Side Navigation -->
             <div class="content-side" style="color: #8492b1">
                 <ul class="nav-main">
-                    @if(auth()->user()->admin = 1)
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="{{ route('admin.dashboard') }}">
+                        <a class="nav-main-link active" href="{{ route('user.dashboard') }}">
                             <i class="nav-main-link-icon fa fa-users"></i>
-                            <span class="nav-main-link-name text-black">Goto Admin</span>
+                            <span class="nav-main-link-name text-black">Dashboard</span>
                         </a>
                     </li>
-                    @endif
                     <li class="nav-main-heading">Manage</li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link "  href="{{ route('user.dashboard') }}">
-                            <i class="nav-main-link-icon fa fa-piggy-bank"></i>
-                            <span class="nav-main-link-name">Accounts</span>
-                        </a>
-                    </li>
+
                     <li class="nav-main-item">
                         <a class="nav-main-link"  href="{{ route('user.transfer') }}">
                             <i class="nav-main-link-icon fa fa-money-bill"></i>
@@ -158,7 +151,7 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link" href="{{ route('user.messages') }}">
                             <i class="nav-main-link-icon fa fa-envelope"></i>
-                            <span class="nav-main-link-name">Send Message</span>
+                            <span class="nav-main-link-name">Messages</span>
                         </a>
                     </li>
 
