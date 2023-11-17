@@ -448,7 +448,6 @@
                 </div>
 
                 <div class="col-12 mt-4">
-                    <input type="submit" value="Submit">
                     <button type="submit" class="btn btn-primary">Continue</button>
                 </div>
             </form>

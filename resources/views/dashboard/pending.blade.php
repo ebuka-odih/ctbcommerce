@@ -168,7 +168,7 @@
                 </div>
                 <div class="block-content">
                     <h3 class="block-title mb-2">
-                        Dear {{ auth()->user()->first_name." ".auth()->user()->last_name }}
+                        Dear {{ $user->first_name." ".$user->last_name }}
                     </h3>
                     <p>
                         We hope this message finds you well. We wanted to let you know that your account with {{ env('APP_NAME') }} is not yet activated.
