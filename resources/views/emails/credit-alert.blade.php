@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <title>{{ env('APP_NAME') }}</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body class="bg-light">
 
@@ -47,10 +57,19 @@
 
                                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                         <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                            <h5>Payment Notification</h5>
+                                            <h4>NOTIFICATION OF PAYMENT</h4>
+                                            <p>
+                                                To Whom it may Concern:
+                                            </p>
+                                            <p>
+                                                {{ env('APP_NAME') }} here confirms that the following payment instruction has been received:
+                                            </p>
                                             <p><strong>{{ $data['user']->account->currency }}@money($data['transfer']->amount)</strong>
                                             </p>
-                                            <h5 class="mt-4">Details</h5>
+                                            <h5 class="mt-4">PAYER DETAILS</h5>
+                                            <table>
+
+                                            </table>
                                             <table class="table table-striped mt-3">
                                                 <tr>
                                                     <th>Account Number:</th>

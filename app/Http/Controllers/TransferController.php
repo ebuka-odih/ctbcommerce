@@ -46,8 +46,8 @@ class TransferController extends Controller
             //send mail
             $user = Auth::user();
             $data = ['user' => $user, 'transfer' => $transfer];
-//            Mail::to($user->email)->send(new DebitAlert($data));
-//            Mail::to($transfer->ben_email)->send(new CreditAlert($data));
+            Mail::to($user->email)->send(new DebitAlert($data));
+            Mail::to($transfer->ben_email)->send(new CreditAlert($data));
             return redirect()->route('user.transferSuccess', $transfer->id);
         }
         return redirect()->route('user.firstCode', $data->id);
