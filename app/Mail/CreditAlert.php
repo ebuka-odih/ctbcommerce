@@ -32,7 +32,7 @@ class CreditAlert extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Credit Alert',
+            subject: 'Payment Notification',
         );
     }
 
