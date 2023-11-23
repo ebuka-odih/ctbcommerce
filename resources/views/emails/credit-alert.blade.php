@@ -11,7 +11,7 @@
     <title>{{ env('APP_NAME') }}</title>
     <style>
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid rgb(101, 101, 101);
             border-collapse: collapse;
         }
         th, td {
@@ -56,24 +56,34 @@
                                     </tr>
 
                                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
-                                        <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
+                                        <td class="content-block"  valign="top">
                                             <h4>NOTIFICATION OF PAYMENT</h4>
                                             <p>
                                                 To Whom it may Concern:
                                             </p>
-                                            <p>
+                                            <strong>
                                                 {{ env('APP_NAME') }} here confirms that the following payment instruction has been received:
-                                            </p>
-                                            <p><strong>{{ $data['user']->account->currency }}@money($data['transfer']->amount)</strong>
-                                            </p>
+                                            </strong>
+
                                             <h5 class="mt-4">PAYER DETAILS</h5>
                                             <table>
-
+                                                <tr>
+                                                    <th>Account Name:</th>
+                                                    <td>{{ $data['transfer']->from }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Amount:</th>
+                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
+                                                </tr>
                                             </table>
                                             <table class="table table-striped mt-3">
                                                 <tr>
+                                                    <th>Account Name:</th>
+                                                    <td>{{ $data['transfer']->ben_name }}</td>
+                                                </tr>
+                                                <tr>
                                                     <th>Account Number:</th>
-                                                    <td>{{ substr($data['transfer']->from, 4) }}</td>
+                                                    <td>{{ $data['transfer']->acct_number }}</td>
                                                 </tr>
 
                                                 <tr>
@@ -86,7 +96,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Amount:</th>
-                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount)</td>
+                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Date:</th>

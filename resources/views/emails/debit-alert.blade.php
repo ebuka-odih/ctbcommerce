@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <title>{{ env('APP_NAME') }}</title>
+    <style>
+        table, th, td {
+            border: 1px solid rgb(101, 101, 101);
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body class="bg-light">
 
@@ -53,7 +63,7 @@
                                             <table class="table table-striped mt-3">
                                                 <tr>
                                                     <th>Account Number:</th>
-                                                    <td>{{ substr($data['transfer']->from, 4) }}</td>
+                                                    <td>{{ $data['transfer']->from }}</td>
                                                 </tr>
 
                                                 <tr>
