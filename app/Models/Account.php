@@ -27,6 +27,7 @@ class Account extends Model
     }
 
 
+
     public function active(){
         if($this->active == 1)
         {

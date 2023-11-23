@@ -89,6 +89,7 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
+                    
                     <div class="col-md-4 mb-3">
                         <label for="inputPassword4" class="form-label">ID Number<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="inputPassword4" name="id_number" value="{{ old('id_number') }}" required>
