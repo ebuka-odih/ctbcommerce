@@ -63,34 +63,41 @@ class NewAccountController extends Controller
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        $id = $request->user_id;
+        $user = User::findOrFail($id);
+
         // Upload and store the first image
         if ($request->hasFile('id_front_img')) {
             $image = $request->file('id_front_img');
-            $input1['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $input1['imagename1'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input1['imagename']);
+            $image->move($destinationPath, $input1['imagename1']);
+
+            $user->id_front_img = $input1['imagename1'];
+            $user->save();
         }
         // Upload and store the second image
         if ($request->hasFile('id_back_img')) {
             $image = $request->file('id_back_img');
-            $input2['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $input2['imagename2'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input2['imagename']);
+            $image->move($destinationPath, $input2['imagename2']);
+
+            $user->id_back_img = $input2['imagename2'];
+            $user->save();
         }
         if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
-            $input3['imagename'] = time().'.'.$image->getClientOriginalExtension();
+            $input3['imagename3'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input3['imagename']);
+            $image->move($destinationPath, $input3['imagename3']);
+
+            $user->avatar = $input3['imagename3'];
+            $user->save();
         }
-        $id = $request->user_id;
-        $user = User::findOrFail($id);
         $user->identification_type = $request->identification_type;
         $user->id_number = $request->id_number;
         $user->id_expiry = $request->id_expiry;
-        $user->id_front_img = $input1['imagename'];
-        $user->id_back_img = $input2['imagename'];
-        $user->avatar = $input3['imagename'];
         $user->save();
 
         $this->autoCreate($user->id, $request['account_type'], $request['currency']);
@@ -104,7 +111,7 @@ class NewAccountController extends Controller
           'middle_name' => 'nullable',
           'last_name' => 'required',
           'username' => ['required', 'string', 'unique:users', 'alpha_dash', 'min:3', 'max:30'],
-          'email' => 'required',
+          'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
           'title' => 'required',
           'date_of_birth' => 'required',
           'country' => 'nullable',
