@@ -76,6 +76,7 @@
                                                     <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                             </table>
+                                            <br><br>
                                             <table class="table table-striped mt-3">
                                                 <tr>
                                                     <th>Account Name:</th>
