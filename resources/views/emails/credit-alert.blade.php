@@ -73,10 +73,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Amount:</th>
-                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
+                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount) </td>
                                                 </tr>
                                             </table>
                                             <br><br>
+                                            <h5>PAYEE DETAILS </h5>
                                             <table class="table table-striped mt-3">
                                                 <tr>
                                                     <th>Account Name:</th>
@@ -97,7 +98,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Amount:</th>
-                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
+                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount) </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Date:</th>
