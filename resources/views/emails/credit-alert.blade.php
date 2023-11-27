@@ -11,7 +11,7 @@
     <title>{{ env('APP_NAME') }}</title>
     <style>
         table, th, td {
-            border: 1px solid rgb(101, 101, 101);
+            /*border: 1px solid rgb(101, 101, 101);*/
             border-collapse: collapse;
         }
         th, td {
