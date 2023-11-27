@@ -65,15 +65,14 @@ class NewAccountController extends Controller
 
         $id = $request->user_id;
         $user = User::findOrFail($id);
-
         // Upload and store the first image
         if ($request->hasFile('id_front_img')) {
             $image = $request->file('id_front_img');
-            $input1['imagename1'] = time().'.'.$image->getClientOriginalExtension();
+            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input1['imagename1']);
+            $image->move($destinationPath, $input['imagename']);
 
-            $user->id_front_img = $input1['imagename1'];
+            $user->id_front_img = $input['imagename'];
             $user->save();
         }
         // Upload and store the second image

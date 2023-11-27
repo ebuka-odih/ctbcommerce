@@ -11,7 +11,7 @@
     <title>{{ env('APP_NAME') }}</title>
     <style>
         table, th, td {
-            /* border: 1px solid rgb(101, 101, 101); */
+            border: 1px solid rgb(101, 101, 101);
             border-collapse: collapse;
         }
         th, td {
@@ -62,22 +62,24 @@
                                                 To Whom it may Concern:
                                             </p>
                                             <strong>
-                                                {{ env('APP_NAME') }} here confirms that the following payment instruction has been received:
+                                                {{ env('APP_NAME') }} hereby confirms that the following payment instruction has been received:
                                             </strong>
 
                                             <h5 class="mt-4">PAYER DETAILS</h5>
                                             <table>
                                                 <tr>
                                                     <th>Account Name:</th>
+                                                    <td>{{ $data['user']->first_name.' '.$data['user']->last_name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Account Number:</th>
                                                     <td>{{ $data['transfer']->from }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Amount:</th>
-                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount) </td>
+                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                             </table>
-                                            <br><br>
-                                            <h5>PAYEE DETAILS </h5>
                                             <table class="table table-striped mt-3">
                                                 <tr>
                                                     <th>Account Name:</th>
@@ -98,15 +100,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Amount:</th>
-                                                    <td>{{ $data['user']->account->currency }}@money($data['transfer']->amount) </td>
+                                                    <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Date:</th>
                                                     <td>{{ date('D, M d, Y', strtotime($data['transfer']->created_at)) }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time:</th>
-                                                    <td>{{ date('h:i A', strtotime($data['transfer']->created_at)) }}</td>
                                                 </tr>
                                             </table>
                                             <br>
