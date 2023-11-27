@@ -43,6 +43,9 @@
                     </div>
                 </div>
                 <div class="col-6 col-lg-2">
+                    <a style="margin-top: 10px; background-color: cadetblue; font-weight: bolder; width: 100px" href="#" class="login_btn btn btn-sm text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Login
+                    </a>
                     <div class="tp-header-main-right-2 d-flex align-items-center justify-content-xl-end">
                         <a style="color: cadetblue" class="t d-none d-xl-block" target="_blank" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
                         <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">

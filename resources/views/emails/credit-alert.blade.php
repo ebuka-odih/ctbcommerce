@@ -80,7 +80,7 @@
                                                     <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                             </table>
-                                            
+
                                             <h5>PAYEE DETAILS </h5>
                                             <table class="table table-striped mt-3">
                                                 <tr>

@@ -139,7 +139,7 @@
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a >Corperate Banking</a>
+                                <a >Corporate Banking</a>
                                 <ul class="submenu">
                                     <li><a href="{{ route('business.checking') }}">Checking</a></li>
                                     <li><a href="{{ route('business.savings') }}">Savings, Money & CDS</a></li>
@@ -164,7 +164,7 @@
             Login
         </a>
         <div class="tp-header-btn">
-            <a style="color: cadetblue; font-weight: bolder;" class="tp- d-none d-xl-block" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
+            <a style="color: cadetblue; font-weight: bolder;" class="tp- d-none d-xl-block" target="_blank" href="{{ route('personalInfo') }}">Open An Account <i class="fa-regular fa-arrow-right"></i></a>
             <div class="tp-header-main-right-hamburger-btn d-xl-none offcanvas-open-btn">
                 <button class="hamburger-btn">
                     <span></span>
