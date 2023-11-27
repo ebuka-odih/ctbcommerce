@@ -66,7 +66,7 @@
                                             </strong>
 
                                             <h5 class="mt-4">PAYER DETAILS</h5>
-                                            <table>
+                                            <table class="mb-5">
                                                 <tr>
                                                     <th>Account Name:</th>
                                                     <td>{{ $data['user']->first_name.' '.$data['user']->last_name }}</td>
@@ -80,7 +80,7 @@
                                                     <td>@money($data['transfer']->amount) {{ $data['user']->account->currency }}</td>
                                                 </tr>
                                             </table>
-                                            <br><br>
+                                            
                                             <h5>PAYEE DETAILS </h5>
                                             <table class="table table-striped mt-3">
                                                 <tr>
