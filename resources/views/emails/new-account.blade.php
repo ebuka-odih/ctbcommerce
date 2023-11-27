@@ -65,7 +65,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Currency Type:</th>
-                                                    <td>{{ $user->account->currency }}</td>
+                                                    <td>{{ $user->account->currency() }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Username:</th>
