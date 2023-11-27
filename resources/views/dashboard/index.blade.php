@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-4 py-3">
                         <div class="fs-1 fw-light text-success mb-1">
-                            +{{ optional($user->account)->currency }}@money(optional($income))
+                            +{{ optional($user->account)->currency }}@money($income)
                         </div>
                         <a class="link-fx fs-sm fw-bold text-uppercase text-muted" href="javascript:void(0)">Today Income
                         </a>
