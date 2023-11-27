@@ -1,101 +1,50 @@
-<div class="block-content">
+public function storeAccountSetup(Request $request)
+{
+$request->validate([
+'identification_type' => 'required|string|max:255',
+'id_expiry' => 'required|string|max:255',
+'id_number' => 'required|string|max:255',
+'id_front_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+'id_back_img' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+]);
 
-    <form class="row g-3" method="POST" action="{{ route('admin.updateAccountSetup', $user->id) }}" enctype="multipart/form-data">
-        @method('PATCH')
-        @csrf
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        @if(session()->has('success'))
-            <div class="alert alert-success">
-                {{ session()->get('success') }}
-            </div>
-        @endif
-        <input type="hidden" name="user_id" value="{{ $user->id }}">
+$id = $request->user_id;
+$user = User::findOrFail($id);
+// Upload and store the first image
+if ($request->hasFile('id_front_img')) {
+$image = $request->file('id_front_img');
+$input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+$destinationPath = public_path('/files');
+$image->move($destinationPath, $input['imagename']);
 
-        <h4 style="color: #123771">Identification</h4>
-        <span class="text-danger">* required</span>
-        <div class="row mt-3 mb-4">
-            <div class="col-md-4 mb-3">
-                <label for="cus_identification" class="form-label">Identification Type<span class="text-danger">*</span></label>
-                <select name="identification_type" class="form-control" id="cus_identification">
-                    <option selected disabled>Identification...</option>
-                    <option value="passport">Passport</option>
-                    <option value="driver_license">Driver's License</option>
-                    <option value="national_id">National ID</option>
-                    <option value="voter_id">Voter ID</option>
-                    <option value="social_security">Social Security Number</option>
-                    <option value="student_id">Student ID</option>
-                    <option value="employee_id">Employee ID</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="inputPassword4" class="form-label">ID Number<span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="inputPassword4" name="id_number" value="{{ old('id_number', optional($user)->id_number) }}" >
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="inputPassword4" class="form-label">ID Expiry Date<span class="text-danger">*</span></label>
-                <input type="date" class="form-control" id="inputPassword4" name="id_expiry" value="{{ old('id_expiry', optional($user)->id_expiry) }}" >
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="inputPassword4" class="form-label">ID Image Front<span class="text-danger">*</span></label>
-                <input type="file" class="form-control" id="inputPassword4" name="id_front_img"  >
-                <img class="mt-2" src="{{ asset('files/'.$user->id_front_img) }}" height="100" width="100" alt="">
-            </div>
-            <div class="col-md-4 mb-3">
-                <label for="inputPassword4" class="form-label">ID Image Back<span class="text-danger">*</span></label>
-                <input type="file" class="form-control" id="inputPassword4" name="id_back_img"  >
-                <img class="mt-2" src="{{ asset('files/'.$user->id_back_img) }}" height="100" width="100" alt="">
+$user->id_front_img = $input['imagename'];
+$user->save();
+}
+// Upload and store the second image
+if ($request->hasFile('id_back_img')) {
+$image = $request->file('id_back_img');
+$input2['imagename2'] = time().'.'.$image->getClientOriginalExtension();
+$destinationPath = public_path('/files');
+$image->move($destinationPath, $input2['imagename2']);
 
-            </div>
+$user->id_back_img = $input2['imagename2'];
+$user->save();
+}
+if ($request->hasFile('avatar')) {
+$image = $request->file('avatar');
+$input3['imagename3'] = time().'.'.$image->getClientOriginalExtension();
+$destinationPath = public_path('/files');
+$image->move($destinationPath, $input3['imagename3']);
 
-        </div>
-        <hr>
-        <h4 style="color: #123771">Account Info</h4>
-        <div class="row mb-4 mt-3">
-            <div class="col-md-12 col-lg-4 mb-3">
-                <label for="inputAddress" class="form-label">Account Type<span class="text-danger">*</span></label>
-                <select id="inputAddress" name="account_type" class="form-control">
-                    <option selected disabled>Choose Account Type...</option>
-                    <option value="Savings Account">Savings Account</option>
-                    <option value="Checking Account">Checking Account</option>
-                    <option value="Business Account">Business Account</option>
-                    <option value="Private Client Account ">Private Client Account</option>
-                    <option value="Joint Account">Joint Account</option>
-                    <option value="Fixed Deposit Account">Fixed Deposit Account</option>
-                    <option value="Current Account">Current Account</option>
-                    <option value="Individual Retirement Account (IRA)">Individual Retirement Account (IRA) </option>
-                    <option value="Trust Fund Account">Trust Fund Account</option>
-                </select>
-            </div>
-            <div class="col-md-12 col-lg-4 mb-3">
-                <label for="inputAddress" class="form-label">Preferred Currency<span class="text-danger">*</span></label>
-                <select id="inputAddress" name="currency" class="form-control">
-                    <option selected disabled>Choose Currency...</option>
-                    <option value="$">USD</option>
-                    <option value="€">EURO</option>
-                    <option value="£">GBP</option>
-                </select>
-            </div>
-            <div class="col-md-12 col-lg-4 mb-3">
-                <label for="inputAddress" class="form-label">Profit Picture<span class="text-danger">*</span></label>
-                <input type="file" name="avatar" class="form-control" id="inputAddress"  >
-                <img class="mt-2" src="{{ asset('files/'.$user->avatar) }}" height="100" width="100" alt="">
-            </div>
+$user->avatar = $input3['imagename3'];
+$user->save();
+}
+$user->identification_type = $request->identification_type;
+$user->id_number = $request->id_number;
+$user->id_expiry = $request->id_expiry;
+$user->save();
 
-        </div>
-
-
-        <div class="col-12 mt-2 mb-4">
-            <button type="submit" class="btn btn-primary">Update Account Info</button>
-        </div>
-    </form>
-
-</div>
+$this->autoCreate($user->id, $request['account_type'], $request['currency']);
+return redirect()->route('terms', $user->id);
+}

@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+
 
 class NewAccountController extends Controller
 {
@@ -65,43 +67,46 @@ class NewAccountController extends Controller
 
         $id = $request->user_id;
         $user = User::findOrFail($id);
-        // Upload and store the first image
-        if ($request->hasFile('id_front_img')) {
-            $image = $request->file('id_front_img');
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input['imagename']);
 
-            $user->id_front_img = $input['imagename'];
+        // Helper function to handle image uploads
+        $this->uploadImage($request->file('id_front_img'), 'id_front_img', $user);
+        $this->uploadImage($request->file('id_back_img'), 'id_back_img', $user);
+        $this->uploadImage($request->file('avatar'), 'avatar', $user);
+
+        // Database transaction to ensure data consistency
+        DB::beginTransaction();
+
+        try {
+            $user->identification_type = $request->identification_type;
+            $user->id_number = $request->id_number;
+            $user->id_expiry = $request->id_expiry;
             $user->save();
-        }
-        // Upload and store the second image
-        if ($request->hasFile('id_back_img')) {
-            $image = $request->file('id_back_img');
-            $input2['imagename2'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input2['imagename2']);
 
-            $user->id_back_img = $input2['imagename2'];
-            $user->save();
-        }
-        if ($request->hasFile('avatar')) {
-            $image = $request->file('avatar');
-            $input3['imagename3'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/files');
-            $image->move($destinationPath, $input3['imagename3']);
+            $this->autoCreate($user->id, $request['account_type'], $request['currency']);
 
-            $user->avatar = $input3['imagename3'];
-            $user->save();
-        }
-        $user->identification_type = $request->identification_type;
-        $user->id_number = $request->id_number;
-        $user->id_expiry = $request->id_expiry;
-        $user->save();
+            // Commit the transaction if everything is successful
+            DB::commit();
+        } catch (\Exception $e) {
+            // Rollback the transaction on error
+            DB::rollback();
 
-        $this->autoCreate($user->id, $request['account_type'], $request['currency']);
+            // Handle the exception
+            // You might want to log the error or display a user-friendly message
+            return redirect()->back()->with('error', 'An error occurred. Please try again.');
+        }
+
         return redirect()->route('terms', $user->id);
     }
+
+// Helper function to handle image uploads
+    private function uploadImage($file, $fieldName, $user)
+    {
+        $imageName = time() . '_' . $file->getClientOriginalName();
+        $destinationPath = public_path('/files');
+        $file->move($destinationPath, $imageName);
+        $user->$fieldName = $imageName;
+    }
+
 
     protected function getData(Request $request)
     {
