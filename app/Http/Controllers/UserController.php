@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AddFund;
+use App\Models\Funding;
 use App\Models\Transfer;
 use App\Models\User;
 use App\Rules\MatchOldPassword;
@@ -18,11 +19,29 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $transactions = Transfer::whereUserId(auth()->id())->latest()->paginate(4);
+        $funding = Funding::whereUserId(auth()->id())->latest()->paginate(4);
         $income = AddFund::whereUserId(\auth()->id())->whereDate('created_at', Carbon::today())->select('amount')->sum('amount');
         $expenses = Transfer::whereUserId(\auth()->id())->whereDate('created_at', Carbon::today())
             ->where('debit_inflow', true)->select('amount')->sum('amount');
-        return view('dashboard.index', compact('user', 'transactions', 'income', 'expenses'));
+        return view('dashboard.index', compact('user', 'transactions', 'income', 'expenses', 'funding'));
+
     }
+
+
+    public function showHistory()
+    {
+        $debitHistory = Transfer::whereUserId(auth()->id())->latest()->paginate(4);
+        $creditHistory = AddFund::whereUserId(auth()->id())->latest()->paginate(4);
+
+        // Merge the two collections
+        $combinedHistory = $debitHistory->merge($creditHistory);
+
+        // Sort the combined collection by the 'created_at' timestamp
+        $sortedHistory = $combinedHistory->sortByDesc('created_at');
+
+        return view('dashboard.test-history', ['history' => $sortedHistory]);
+    }
+
     public function acctPending($id)
     {
         $user = User::findOrFail($id);

@@ -36,6 +36,7 @@ class AdminAddFundController extends Controller
             $debit->note = $request->note;
             $debit->status = 1;
             $debit->user_id = $request->user_id;
+            $debit->created_at = $request->created_at;
             $debit->save();
             $user = User::findOrFail($request->user_id);
             $user->account->balance -= $request->amount;
@@ -48,6 +49,7 @@ class AdminAddFundController extends Controller
             $deposit->note = $request->note;
             $deposit->status = 1;
             $deposit->user_id = $request->user_id;
+            $deposit->created_at = $request->created_at;
             $deposit->save();
             $user = User::findOrFail($request->user_id);
             $user->account->balance += $request->amount;

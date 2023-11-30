@@ -18,7 +18,7 @@ class TransferController extends Controller
         return view('dashboard.transfer.transfer');
     }
 
-    public function transactions()
+    public function transferHistory()
     {
         $transactions = Transfer::whereUserId(\auth()->id())->latest()->paginate(10);
         return view('dashboard.transfer.transactions', compact('transactions'));

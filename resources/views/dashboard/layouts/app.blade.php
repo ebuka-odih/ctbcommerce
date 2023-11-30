@@ -113,6 +113,12 @@
                             <span class="nav-main-link-name">Transfer</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link"  href="{{ route('user.transferHistory') }}">
+                            <i class="nav-main-link-icon fa fa-money-bill-wave"></i>
+                            <span class="nav-main-link-name">Transfer History</span>
+                        </a>
+                    </li>
 
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="{{ route('user.transactions') }}">

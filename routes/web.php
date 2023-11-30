@@ -7,6 +7,7 @@ use App\Http\Controllers\NewAccountController;
 use App\Http\Controllers\OTPVerificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SendMessageController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -63,9 +64,10 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::get('support', [UserController::class, 'support'])->name('support');
+    Route::get('showHistory', [UserController::class, 'showHistory'])->name('showHistory');
 
     Route::get('transfer', [TransferController::class, 'transfer'])->name('transfer');
-    Route::get('transactions', [TransferController::class, 'transactions'])->name('transactions');
+    Route::get('transfer/history', [TransferController::class, 'transferHistory'])->name('transferHistory');
     Route::post('storeTransfer', [TransferController::class, 'storeTransfer'])->name('storeTransfer');
     Route::get('first/transfer/code/{id}', [TransferController::class, 'firstCode'])->name('firstCode');
     Route::post('first/transfer/code', [TransferController::class, 'storeFirstCode'])->name('storeFirstCode');
@@ -84,6 +86,8 @@ Route::group(['middleware' => ['auth', 'active'], 'prefix' => 'user', 'as' => 'u
 
     Route::get('messages', [SendMessageController::class, 'messages'])->name('messages');
     Route::get('view/message/{id}', [SendMessageController::class, 'viewMessage'])->name('viewMessage');
+
+    Route::get('transactions', [TransactionController::class, 'transactions'])->name('transactions');
 
 });
 
