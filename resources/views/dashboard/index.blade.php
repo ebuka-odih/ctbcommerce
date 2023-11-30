@@ -111,7 +111,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($funding as $item)
+                        @forelse($funding as $item)
                             @if($item->type > 1)
                         <tr>
                             <td class="text-center">
@@ -153,7 +153,11 @@
                                     </td>
                                 </tr>
                             @endif
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="4">No Transaction</td>
+                            </tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div>
