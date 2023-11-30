@@ -155,7 +155,7 @@
                             @endif
                         @empty
                             <tr>
-                                <td colspan="4">No Transaction</td>
+                                <td colspan="5" class="text-center">No Transaction</td>
                             </tr>
                         @endforelse
                         </tbody>
