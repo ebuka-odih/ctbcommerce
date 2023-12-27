@@ -107,7 +107,7 @@
                             <th>Amount</th>
                             <th >Description</th>
                             <th >Status</th>
-                            <th class="text-center" style="width: 100px;">Actions</th>
+                    
                         </tr>
                         </thead>
                         <tbody>
@@ -124,13 +124,7 @@
                             <td>
                                 {!! $item->status() !!}
                             </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <a href="button" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                </div>
-                            </td>
+                            
                         </tr>
                             @else
                                 <tr class="text-danger">
@@ -144,13 +138,7 @@
                                     <td>
                                         {!! $item->status() !!}
                                     </td>
-                                    <td class="text-center">
-                                        <div class="btn-group">
-                                            <a href="button" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit">
-                                                <i class="fa fa-eye"></i>
-                                            </a>
-                                        </div>
-                                    </td>
+                                   
                                 </tr>
                             @endif
                         @empty
